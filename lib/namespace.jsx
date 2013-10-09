@@ -21,10 +21,10 @@ class Namespace implements Dumpable {
         {
             throw new Error("class doesn't have name");
         }
-        return this._searchClass([], classObj.name.split('.'), classObj);
+        return this._defineClass([], classObj.name.split('.'), classObj);
     }
 
-    function _searchClass(nameParts : string[], remainedNameParts : string[], classObj : ClassInfo) : Namespace
+    function _defineClass(nameParts : string[], remainedNameParts : string[], classObj : ClassInfo) : Namespace
     {
         var result : Namespace;
         if (remainedNameParts.length == 0)
@@ -43,7 +43,43 @@ class Namespace implements Dumpable {
             {
                 this.childSpaces[namespace] = new Namespace(nameParts.join('.'), namespace);
             }
-            result = this.childSpaces[namespace]._searchClass(nameParts, remainedNameParts, classObj);
+            result = this.childSpaces[namespace]._defineClass(nameParts, remainedNameParts, classObj);
+        }
+        return result;
+    }
+
+    function getBaseClasses (global : Namespace) : ClassInfo[]
+    {
+        var result = [] : ClassInfo[];
+        var target = this.classInfo;
+        while (target.baseclass)
+        {
+            var names = target.baseclass.split('.');
+            var currentSpace = global;
+            var notFound = false;
+            for (var i = 0; i < names.length; i++)
+            {
+                var nextSpace = currentSpace.childSpaces[names[i]];
+                if (!nextSpace)
+                {
+                    notFound = true;
+                    break;
+                }
+                currentSpace = nextSpace;
+            }
+            if (notFound)
+            {
+                break;
+            }
+            target = currentSpace.classInfo;
+            if (target)
+            {
+                result.push(target);
+            }
+            else
+            {
+                break;
+            }
         }
         return result;
     }
@@ -73,8 +109,12 @@ class Namespace implements Dumpable {
         }
     }
 
-    function write(result : string[], typeinfo : TypeInfo) : void
+    function write(result : string[], typeinfo : TypeInfo, global : Namespace = null) : void
     {
+        if (!global)
+        {
+            global = this;
+        }
         var indent = this.fqname.split('.').length;
         if (this.classInfo)
         {
@@ -87,7 +127,7 @@ class Namespace implements Dumpable {
                 }
                 console.log(this.classInfo.name, "is private, but used from", typeinfo.used[this.classInfo.name]);
             }
-            this.classInfo.dump(result);
+            this.classInfo.dump(result, this.getBaseClasses(global));
         }
         else if (this.fqname != '')
         {
@@ -101,7 +141,7 @@ class Namespace implements Dumpable {
         }
         this._sortName(this.childSpaces, (name) -> {
             result.push('');
-            this.childSpaces[name].write(result, typeinfo);
+            this.childSpaces[name].write(result, typeinfo, global);
         });
         if (this.classInfo)
         {

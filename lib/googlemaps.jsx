@@ -66,7 +66,7 @@ native class google {
             function equals(other : google.maps.LatLng) : boolean;
             function lat() : number;
             function lng() : number;
-            function toString() : string;
+            override function toString() : string;
             function toUrlValue() : string;
             function toUrlValue(precision : number) : string;
         }
@@ -83,7 +83,7 @@ native class google {
             function intersects(other : google.maps.LatLngBounds) : boolean;
             function isEmpty() : boolean;
             function toSpan() : google.maps.LatLng;
-            function toString() : string;
+            override function toString() : string;
             function toUrlValue() : string;
             function toUrlValue(precision : number) : string;
             function union(other : google.maps.LatLngBounds) : google.maps.LatLngBounds;
@@ -102,7 +102,7 @@ native class google {
 
             function constructor (x : number, y : number);
             function equals(other : google.maps.Point) : boolean;
-            function toString() : string;
+            override function toString() : string;
         }
 
         class Size {
@@ -112,7 +112,7 @@ native class google {
             function constructor (width : number, height : number);
             function constructor (width : number, height : number, widthUnit : string, heightUnit : string);
             function equals(other : google.maps.Size) : boolean;
-            function toString() : string;
+            override function toString() : string;
         }
     }
 }

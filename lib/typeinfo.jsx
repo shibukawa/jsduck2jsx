@@ -7,6 +7,7 @@ class Rule
     var params : Map.<string[]>; // for method param. [param, ret]
     var type : string;           // for property or method return value
     var skips : string[];        // skip parameter convination for class
+    var omitOverride : boolean;
 }
 
 class TypeInfo
@@ -129,7 +130,7 @@ class TypeInfo
         return type;
     }
 
-    function convertMethod (ruleKey : string, member : Nullable.<string>, params : string[][], ret : string, existingMethods : Map.<boolean>) : Nullable.<string>
+    function convertMethod (ruleKey : string, member : string, params : string[][], ret : string, definitions : string[], internalNames : string[]) : void
     {
         var convertedParams = [] : string[];
         var types = [] : string[];
@@ -138,7 +139,7 @@ class TypeInfo
             var convertedType = this.convertType(params[i][1], ruleKey);
             if (!convertedType)
             {
-                return null;
+                return;
             }
             var name = params[i][0];
             if (name == 'class')
@@ -156,12 +157,16 @@ class TypeInfo
         }
         if (rule)
         {
-            if (rule.skips && rule.skips.indexOf(key) != -1)
+            if (rule.skip || rule.skips && rule.skips.indexOf(key) != -1)
             {
-                return null;
+                return;
             }
             if (rule.params && rule.params.hasOwnProperty(key))
             {
+                if (!rule.params[key])
+                {
+                    return;
+                }
                 if (rule.params[key][1])
                 {
                     ret = rule.params[key][1];
@@ -178,28 +183,34 @@ class TypeInfo
                     key = rule.params[key][0];
                 }
             }
+            else if (rule.type)
+            {
+                ret = rule.type;
+            }
         }
-        else if (existingMethods[types.join(',')])
+        else if (internalNames.indexOf((member as string) + '(' + types.join(',') + ')') != -1)
         {
-            return null;
+            return;
         }
         else
         {
             ret = this.convertType(ret, ruleKey);
         }
-        existingMethods[types.join(',')] = true;
+        internalNames.push(member + '(' + types.join(',') + ')');
+        var result : string;
         if (member == 'constructor')
         {
-            return ['function ', member, ' (', key, ')'].join('');
+            result = ['function ', member, ' (', key, ')'].join('');
         }
         else if (member)
         {
-            return ['function ', member, ' (', key, ') : ', ret].join('');
+            result = ['function ', member, ' (', key, ') : ', ret].join('');
         }
         else
         {
-            return ['function  (', key, ') : ', ret].join('');
+            result = ['function  (', key, ') : ', ret].join('');
         }
+        definitions.push(result);
     }
 
     function checkUsedFlag(name : string, key : string) : void
@@ -208,5 +219,15 @@ class TypeInfo
         {
             this.used[name] = key;
         }
+    }
+
+    function omitOverride(classname : string, method : string, key : string) : boolean
+    {
+        var rule = this.specialRule[classname + '#' + method];
+        if (rule && rule.omitOverride)
+        {
+            return true;
+        }
+        return false;
     }
 }

@@ -219,8 +219,8 @@ native class Ext
 
     class AbstractComponent extends Ext.Evented
     {
-        static function addMembers (members : variant) : Ext.AbstractComponent;
-        static function addStatics (members : variant) : Ext.AbstractComponent;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -245,8 +245,8 @@ native class Ext
         function register (item : variant) : void;
         function registerType (type : string, cls : function  () : void) : void;
         function unregister (item : variant) : void;
-        static function addMembers (members : variant) : Ext.AbstractManager;
-        static function addStatics (members : variant) : Ext.AbstractManager;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -259,20 +259,20 @@ native class Ext
 
     class ActionSheet extends Ext.Sheet
     {
-        function getBaseCls () : string;
-        function getBottom () : number;
-        function getDefaultType () : string;
-        function getHeight () : string;
-        function getLeft () : number;
-        function getRight () : number;
-        function setBaseCls (baseCls : string) : void;
-        function setBottom (bottom : number) : void;
-        function setDefaultType (defaultType : string) : void;
-        function setHeight (height : string) : void;
-        function setLeft (left : number) : void;
-        function setRight (right : number) : void;
-        static function addMembers (members : variant) : Ext.ActionSheet;
-        static function addStatics (members : variant) : Ext.ActionSheet;
+        override function getBaseCls () : string;
+        override function getBottom () : number;
+        override function getDefaultType () : string;
+        override function getHeight () : string;
+        override function getLeft () : number;
+        override function getRight () : number;
+        override function setBaseCls (baseCls : string) : void;
+        override function setBottom (bottom : number) : void;
+        override function setDefaultType (defaultType : string) : void;
+        override function setHeight (height : string) : void;
+        override function setLeft (left : number) : void;
+        override function setRight (right : number) : void;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -286,8 +286,8 @@ native class Ext
     {
         static var autoAbort : boolean;
 
-        static function addMembers (members : variant) : Ext.Ajax;
-        static function addStatics (members : variant) : Ext.Ajax;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -300,11 +300,11 @@ native class Ext
     class Anim extends Ext.Base
     {
         static function constructor (config : variant);
-        static function initConfig (el : variant, runConfig : variant) : Ext.Anim;
+        static function initConfig (el : variant, runConfig : variant) : variant;
         static function run (el : Ext.dom.Element, anim : string, config : variant) : void;
         static function run (el : HTMLElement, anim : string, config : variant) : void;
-        static function addMembers (members : variant) : Ext.Anim;
-        static function addStatics (members : variant) : Ext.Anim;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -377,12 +377,12 @@ native class Ext
 
     class Audio extends Ext.Media
     {
-        function getCls () : string;
-        function getUrl () : string;
-        function setCls (cls : string) : void;
-        function setUrl (url : string) : void;
-        static function addMembers (members : variant) : Ext.Audio;
-        static function addStatics (members : variant) : Ext.Audio;
+        override function getCls () : string;
+        override function getUrl () : string;
+        override function setCls (cls : string) : void;
+        override function setUrl (url : string) : void;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -402,10 +402,10 @@ native class Ext
         function destroy () : void;
         function getInitialConfig (name : string) : variant;
         function getInitialConfig () : variant;
-        function initConfig (instanceConfig : variant) : Ext.Base;
+        function initConfig (instanceConfig : variant) : variant;
         function statics () : Ext.Class;
-        static function addMembers (members : variant) : Ext.Base;
-        static function addStatics (members : variant) : Ext.Base;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -420,7 +420,7 @@ native class Ext
         function getAutoEvent () : string;
         function getBadgeCls () : string;
         function getBadgeText () : string;
-        function getBaseCls () : string;
+        override function getBaseCls () : string;
         function getHandler () : function () : void;
         function getIcon () : string;
         function getIconAlign () : string;
@@ -430,12 +430,12 @@ native class Ext
         function getPressedDelay () : variant;
         function getScope () : variant;
         function getText () : string;
-        function getUi () : string;
-        function initialize () : void;
+        override function getUi () : string;
+        override function initialize () : void;
         function setAutoEvent (autoEvent : string) : void;
         function setBadgeCls (badgeCls : string) : void;
         function setBadgeText (badgeText : string) : void;
-        function setBaseCls (baseCls : string) : void;
+        override function setBaseCls (baseCls : string) : void;
         function setHandler (handler : function  () : void) : void;
         function setIcon (icon : string) : void;
         function setIconAlign (iconAlign : string) : void;
@@ -446,9 +446,9 @@ native class Ext
         function setPressedDelay (pressedDelay : boolean) : void;
         function setScope (scope : variant) : void;
         function setText (text : string) : void;
-        function setUi (ui : string) : void;
-        static function addMembers (members : variant) : Ext.Button;
-        static function addStatics (members : variant) : Ext.Button;
+        override function setUi (ui : string) : void;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -466,8 +466,8 @@ native class Ext
 
     class ClassManager
     {
-        static function addNameAliasMappings (aliases : variant) : Ext.ClassManager;
-        static function addNameAlternateMappings (alternates : variant) : Ext.ClassManager;
+        static function addNameAliasMappings (aliases : variant) : variant;
+        static function addNameAlternateMappings (alternates : variant) : variant;
         static function get (name : string) : Ext.Class;
         static function getAliasesByName (name : string) : variant[];
         static function getByAlias (alias : string) : Ext.Class;
@@ -480,9 +480,9 @@ native class Ext
         static function instantiate (name : string, args : variant) : variant;
         static function instantiateByAlias (alias : string, args : variant) : variant;
         static function isCreated (className : string) : boolean;
-        static function set (name : string, value : variant) : Ext.ClassManager;
-        static function setAlias (cls : Ext.Class, alias : string) : Ext.ClassManager;
-        static function setAlias (cls : string, alias : string) : Ext.ClassManager;
+        static function set (name : string, value : variant) : variant;
+        static function setAlias (cls : Ext.Class, alias : string) : variant;
+        static function setAlias (cls : string, alias : string) : variant;
         static function setNamespace (name : string, value : variant) : void;
     }
 
@@ -492,7 +492,7 @@ native class Ext
         function addCls (cls : string, prefix : string, suffix : string) : void;
         function addCls (cls : string, prefix : string) : void;
         function addCls (cls : string) : void;
-        function destroy () : void;
+        override function destroy () : void;
         function disable () : void;
         function enable () : void;
         function getAlignmentInfo (component : variant, alignment : variant) : void;
@@ -539,9 +539,9 @@ native class Ext
         function getXTypes () : string;
         function getZIndex () : number;
         function hasParent () : boolean;
-        function hide (animation : variant) : Ext.Component;
-        function hide (animation : boolean) : Ext.Component;
-        function hide () : Ext.Component;
+        function hide (animation : variant) : variant;
+        function hide (animation : boolean) : variant;
+        function hide () : variant;
         function initialize () : void;
         function isDisabled () : boolean;
         function isHidden () : boolean;
@@ -621,16 +621,16 @@ native class Ext
         function setWidth (width : number) : void;
         function setWidth (width : string) : void;
         function setZIndex (zIndex : number) : void;
-        function show (animation : variant) : Ext.Component;
-        function show (animation : boolean) : Ext.Component;
-        function show () : Ext.Component;
+        function show (animation : variant) : variant;
+        function show (animation : boolean) : variant;
+        function show () : variant;
         function showBy (component : Ext.Component, alignment : string) : void;
         function showBy (component : Ext.Component) : void;
         function up (selector : string) : Ext.Container;
         function up () : Ext.Container;
         function updateStyleHtmlCls (newHtmlCls : variant, oldHtmlCls : variant) : void;
-        static function addMembers (members : variant) : Ext.Component;
-        static function addStatics (members : variant) : Ext.Component;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -663,7 +663,7 @@ native class Ext
         function applyMasked (masked : Ext.Mask) : variant;
         function applyMasked (masked : Ext.LoadMask) : variant;
         function child (selector : string) : Ext.Component;
-        function destroy () : void;
+        override function destroy () : void;
         function down (selector : string) : Ext.Component;
         function getActiveItem () : variant;
         function getAt (index : number) : Ext.Component;
@@ -682,15 +682,15 @@ native class Ext
         function getMasked () : variant;
         function getModal () : boolean;
         function getScrollable () : Ext.scroll.View;
-        function hide () : Ext.Container;
+        override function hide () : variant;
         function insert (index : number, item : variant) : void;
         function mask (mask : variant) : void;
         function query (selector : string) : variant[];
         function remove (item : variant, destroy : boolean) : Ext.Component;
         function remove (item : variant) : Ext.Component;
-        function removeAll (destroy : boolean, everything : boolean) : Ext.Container;
-        function removeAt (index : number) : Ext.Container;
-        function removeInnerAt (index : number) : Ext.Container;
+        function removeAll (destroy : boolean, everything : boolean) : variant;
+        function removeAt (index : number) : variant;
+        function removeInnerAt (index : number) : variant;
         function setActiveItem (activeItem : variant) : void;
         function setActiveItem (activeItem : string) : void;
         function setActiveItem (activeItem : number) : void;
@@ -711,10 +711,10 @@ native class Ext
         function setScrollable (scrollable : boolean) : Ext.scroll.View;
         function setScrollable (scrollable : string) : Ext.scroll.View;
         function setScrollable (scrollable : variant) : Ext.scroll.View;
-        function show () : Ext.Container;
+        override function show () : variant;
         function unmask () : void;
-        static function addMembers (members : variant) : Ext.Container;
-        static function addStatics (members : variant) : Ext.Container;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -787,11 +787,11 @@ native class Ext
 
     class Decorator extends Ext.Component
     {
-        function destroy () : void;
+        override function destroy () : void;
         function getComponent () : variant;
         function setComponent (component : variant) : void;
-        static function addMembers (members : variant) : Ext.Decorator;
-        static function addStatics (members : variant) : Ext.Decorator;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -873,8 +873,8 @@ native class Ext
 
     class DomQuery extends Ext.dom.Query
     {
-        static function addMembers (members : variant) : Ext.DomQuery;
-        static function addStatics (members : variant) : Ext.DomQuery;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -888,8 +888,8 @@ native class Ext
     class Evented extends Ext.Base
     {
         function constructor (config : variant);
-        static function addMembers (members : variant) : Ext.Evented;
-        static function addStatics (members : variant) : Ext.Evented;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -962,22 +962,22 @@ native class Ext
 
     class Img extends Ext.Component
     {
-        function destroy () : void;
+        override function destroy () : void;
         function getBackgroundCls () : string;
-        function getBaseCls () : string;
+        override function getBaseCls () : string;
         function getImageCls () : string;
         function getMode () : string;
         function getSrc () : string;
-        function hide () : Ext.Img;
-        function initialize () : void;
+        override function hide () : variant;
+        override function initialize () : void;
         function setBackgroundCls (backgroundCls : string) : void;
-        function setBaseCls (baseCls : string) : void;
+        override function setBaseCls (baseCls : string) : void;
         function setImageCls (imageCls : string) : void;
         function setMode (mode : string) : void;
         function setSrc (src : string) : void;
-        function show () : Ext.Img;
-        static function addMembers (members : variant) : Ext.Img;
-        static function addStatics (members : variant) : Ext.Img;
+        override function show () : variant;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -998,10 +998,10 @@ native class Ext
 
     class Label extends Ext.Component
     {
-        function getBaseCls () : string;
-        function setBaseCls (baseCls : string) : void;
-        static function addMembers (members : variant) : Ext.Label;
-        static function addStatics (members : variant) : Ext.Label;
+        override function getBaseCls () : string;
+        override function setBaseCls (baseCls : string) : void;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1014,16 +1014,16 @@ native class Ext
     class LoadMask extends Ext.Mask
     {
         function bindStore (store : Ext.data.Store) : void;
-        function getCls () : string;
+        override function getCls () : string;
         function getIndicator () : boolean;
         function getMessage () : string;
         function getMessageCls () : string;
-        function setCls (cls : string) : void;
+        override function setCls (cls : string) : void;
         function setIndicator (indicator : boolean) : void;
         function setMessage (message : string) : void;
         function setMessageCls (messageCls : string) : void;
-        static function addMembers (members : variant) : Ext.LoadMask;
-        static function addStatics (members : variant) : Ext.LoadMask;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1037,7 +1037,7 @@ native class Ext
     {
         static var history : variant[];
 
-        static function addClassPathMappings (paths : Object ) : Ext.Loader;
+        static function addClassPathMappings (paths : Object ) : variant;
         static function exclude (excludes : variant[]) : variant;
         static function getConfig (name : string) : variant;
         static function getPath (className : string) : string;
@@ -1066,14 +1066,14 @@ native class Ext
         static function require (expressions : variant[], excludes : string) : void;
         static function require (expressions : variant[], excludes : variant[]) : void;
         static function require (expressions : variant[]) : void;
-        static function setConfig (name : variant, value : variant) : Ext.Loader;
-        static function setConfig (name : variant) : Ext.Loader;
-        static function setConfig (name : string, value : variant) : Ext.Loader;
-        static function setConfig (name : string) : Ext.Loader;
-        static function setPath (name : string, path : string) : Ext.Loader;
-        static function setPath (name : string) : Ext.Loader;
-        static function setPath (name : variant, path : string) : Ext.Loader;
-        static function setPath (name : variant) : Ext.Loader;
+        static function setConfig (name : variant, value : variant) : variant;
+        static function setConfig (name : variant) : variant;
+        static function setConfig (name : string, value : variant) : variant;
+        static function setConfig (name : string) : variant;
+        static function setPath (name : string, path : string) : variant;
+        static function setPath (name : string) : variant;
+        static function setPath (name : variant, path : string) : variant;
+        static function setPath (name : variant) : variant;
         static function syncRequire (expressions : string, fn : function  () : void, scope : variant, excludes : string) : void;
         static function syncRequire (expressions : string, fn : function  () : void, scope : variant, excludes : variant[]) : void;
         static function syncRequire (expressions : string, fn : function  () : void, scope : variant) : void;
@@ -1105,7 +1105,7 @@ native class Ext
         static function deprecate () : void;
         static function error () : void;
         static function info () : void;
-        static function log (message : string, priority : number) : Ext.Logger;
+        static function log (message : string, priority : number) : variant;
         static function verbose () : void;
         static function warn () : void;
     }
@@ -1113,13 +1113,13 @@ native class Ext
     class Map extends Ext.Container
     {
         function constructor ();
-        function getBaseCls () : string;
+        override function getBaseCls () : string;
         function getGeo () : Ext.util.Geolocation;
         function getMap () : google.maps.Map;
         function getMapListeners () : variant;
         function getUseCurrentLocation () : variant;
-        function initialize () : void;
-        function setBaseCls (baseCls : string) : void;
+        override function initialize () : void;
+        override function setBaseCls (baseCls : string) : void;
         function setGeo (geo : Ext.util.Geolocation) : void;
         function setMap (map : google.maps.Map) : void;
         function setMapCenter (coordinates : variant) : void;
@@ -1128,8 +1128,8 @@ native class Ext
         function setMapOptions (mapOptions : variant) : void;
         function setUseCurrentLocation (useCurrentLocation : boolean) : void;
         function setUseCurrentLocation (useCurrentLocation : Ext.util.Geolocation) : void;
-        static function addMembers (members : variant) : Ext.Map;
-        static function addStatics (members : variant) : Ext.Map;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1141,12 +1141,12 @@ native class Ext
 
     class Mask extends Ext.Component
     {
-        function getBaseCls () : string;
+        override function getBaseCls () : string;
         function getTransparent () : boolean;
-        function setBaseCls (baseCls : string) : void;
+        override function setBaseCls (baseCls : string) : void;
         function setTransparent (transparent : boolean) : void;
-        static function addMembers (members : variant) : Ext.Mask;
-        static function addStatics (members : variant) : Ext.Mask;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1159,7 +1159,7 @@ native class Ext
     class Media extends Ext.Component
     {
         function constructor ();
-        function destroy () : void;
+        override function destroy () : void;
         function getAutoPause () : boolean;
         function getAutoResume () : boolean;
         function getCurrentTime () : number;
@@ -1171,7 +1171,7 @@ native class Ext
         function getPreload () : boolean;
         function getUrl () : string;
         function getVolume () : number;
-        function initialize () : void;
+        override function initialize () : void;
         function isPlaying () : boolean;
         function pause () : void;
         function play () : void;
@@ -1189,8 +1189,8 @@ native class Ext
         function updateEnableControls (enableControls : variant) : void;
         function updateLoop (loop : variant) : void;
         function updateUrl (newUrl : variant) : void;
-        static function addMembers (members : variant) : Ext.Media;
-        static function addStatics (members : variant) : Ext.Media;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1207,50 +1207,50 @@ native class Ext
     class MessageBox extends Ext.Sheet
     {
         function constructor (config : variant);
-        function alert (title : string, message : string, fn : function  () : void, scope : variant) : Ext.MessageBox;
-        function alert (title : string, message : string, fn : function  () : void) : Ext.MessageBox;
-        function alert (title : string, message : string, scope : variant) : Ext.MessageBox;
-        function alert (title : string, message : string) : Ext.MessageBox;
-        function confirm (title : string, message : string, fn : function  () : void, scope : variant) : Ext.MessageBox;
-        function confirm (title : string, message : string, fn : function  () : void) : Ext.MessageBox;
-        function getBaseCls () : string;
+        function alert (title : string, message : string, fn : function  () : void, scope : variant) : variant;
+        function alert (title : string, message : string, fn : function  () : void) : variant;
+        function alert (title : string, message : string, scope : variant) : variant;
+        function alert (title : string, message : string) : variant;
+        function confirm (title : string, message : string, fn : function  () : void, scope : variant) : variant;
+        function confirm (title : string, message : string, fn : function  () : void) : variant;
+        override function getBaseCls () : string;
         function getButtons () : variant;
         function getDefaultTextHeight () : number;
-        function getHideAnimation () : variant;
+        override function getHideAnimation () : variant;
         function getLayout () : variant;
         function getPrompt () : variant;
-        function getShowAnimation () : variant;
+        override function getShowAnimation () : variant;
         function getTitle () : string;
-        function getUi () : string;
-        function getZIndex () : number;
-        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : boolean, value : string, prompt : variant) : Ext.MessageBox;
-        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : boolean, value : string) : Ext.MessageBox;
-        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : boolean, prompt : variant) : Ext.MessageBox;
-        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : boolean) : Ext.MessageBox;
-        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : number, value : string, prompt : variant) : Ext.MessageBox;
-        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : number, value : string) : Ext.MessageBox;
-        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : number, prompt : variant) : Ext.MessageBox;
-        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : number) : Ext.MessageBox;
-        function prompt (title : string, message : string, fn : function  () : void, scope : variant, value : string, prompt : variant) : Ext.MessageBox;
-        function prompt (title : string, message : string, fn : function  () : void, scope : variant, value : string) : Ext.MessageBox;
-        function prompt (title : string, message : string, fn : function  () : void, scope : variant, prompt : variant) : Ext.MessageBox;
-        function prompt (title : string, message : string, fn : function  () : void, scope : variant) : Ext.MessageBox;
-        function setBaseCls (baseCls : string) : void;
+        override function getUi () : string;
+        override function getZIndex () : number;
+        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : boolean, value : string, prompt : variant) : variant;
+        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : boolean, value : string) : variant;
+        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : boolean, prompt : variant) : variant;
+        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : boolean) : variant;
+        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : number, value : string, prompt : variant) : variant;
+        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : number, value : string) : variant;
+        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : number, prompt : variant) : variant;
+        function prompt (title : string, message : string, fn : function  () : void, scope : variant, multiLine : number) : variant;
+        function prompt (title : string, message : string, fn : function  () : void, scope : variant, value : string, prompt : variant) : variant;
+        function prompt (title : string, message : string, fn : function  () : void, scope : variant, value : string) : variant;
+        function prompt (title : string, message : string, fn : function  () : void, scope : variant, prompt : variant) : variant;
+        function prompt (title : string, message : string, fn : function  () : void, scope : variant) : variant;
+        override function setBaseCls (baseCls : string) : void;
         function setButtons (buttons : variant[]) : void;
         function setButtons (buttons : variant) : void;
         function setDefaultTextHeight (defaultTextHeight : number) : void;
-        function setHideAnimation (hideAnimation : variant) : void;
+        override function setHideAnimation (hideAnimation : variant) : void;
         function setIconCls (iconCls : string) : void;
-        function setLayout (layout : variant) : void;
+        override function setLayout (layout : variant) : void;
         function setMessage (message : string) : void;
         function setPrompt (prompt : variant) : void;
-        function setShowAnimation (showAnimation : variant) : void;
+        override function setShowAnimation (showAnimation : variant) : void;
         function setTitle (title : string) : void;
-        function setUi (ui : string) : void;
-        function setZIndex (zIndex : number) : void;
-        function show (config : variant) : Ext.MessageBox;
-        static function addMembers (members : variant) : Ext.MessageBox;
-        static function addStatics (members : variant) : Ext.MessageBox;
+        override function setUi (ui : string) : void;
+        override function setZIndex (zIndex : number) : void;
+        override function show (config : variant) : variant;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1262,8 +1262,8 @@ native class Ext
 
     class Msg extends Ext.MessageBox
     {
-        static function addMembers (members : variant) : Ext.Msg;
-        static function addStatics (members : variant) : Ext.Msg;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1302,10 +1302,10 @@ native class Ext
 
     class Panel extends Ext.Container
     {
-        function getBaseCls () : string;
-        function setBaseCls (baseCls : string) : void;
-        static function addMembers (members : variant) : Ext.Panel;
-        static function addStatics (members : variant) : Ext.Panel;
+        override function getBaseCls () : string;
+        override function setBaseCls (baseCls : string) : void;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1318,27 +1318,27 @@ native class Ext
     class ProgressIndicator extends Ext.Container
     {
         function constructor ();
-        function getBaseCls () : string;
-        function getCentered () : boolean;
-        function getHidden () : boolean;
-        function getHideAnimation () : variant;
-        function getModal () : boolean;
+        override function getBaseCls () : string;
+        override function getCentered () : boolean;
+        override function getHidden () : boolean;
+        override function getHideAnimation () : variant;
+        override function getModal () : boolean;
         function getMonitoredStates () : variant;
-        function getShowAnimation () : variant;
-        function setBaseCls (baseCls : string) : void;
-        function setCentered (centered : boolean) : void;
+        override function getShowAnimation () : variant;
+        override function setBaseCls (baseCls : string) : void;
+        override function setCentered (centered : boolean) : void;
         function setFallbackText (fallbackText : string) : void;
         function setFallbackText (fallbackText : variant) : void;
-        function setHidden (hidden : boolean) : void;
-        function setHideAnimation (hideAnimation : variant) : void;
+        override function setHidden (hidden : boolean) : void;
+        override function setHideAnimation (hideAnimation : variant) : void;
         function setLoadingText (loadingText : string) : void;
         function setLoadingText (loadingText : Ext.XTemplate) : void;
         function setLoadingText (loadingText : variant) : void;
-        function setModal (modal : boolean) : void;
+        override function setModal (modal : boolean) : void;
         function setMonitoredStates (monitoredStates : variant) : void;
-        function setShowAnimation (showAnimation : variant) : void;
-        static function addMembers (members : variant) : Ext.ProgressIndicator;
-        static function addStatics (members : variant) : Ext.ProgressIndicator;
+        override function setShowAnimation (showAnimation : variant) : void;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1350,8 +1350,8 @@ native class Ext
 
     class Promise extends Ext.Base
     {
-        static function addMembers (members : variant) : Ext.Promise;
-        static function addStatics (members : variant) : Ext.Promise;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1368,8 +1368,8 @@ native class Ext
         function getAllowDepress () : boolean;
         function getAllowMultiple () : boolean;
         function getAllowToggle () : boolean;
-        function getBaseCls () : string;
-        function getDefaultType () : string;
+        override function getBaseCls () : string;
+        override function getDefaultType () : string;
         function getLayout () : variant;
         function getPressedButtons () : variant[];
         function getPressedCls () : string;
@@ -1377,13 +1377,13 @@ native class Ext
         function setAllowDepress (allowDepress : boolean) : void;
         function setAllowMultiple (allowMultiple : boolean) : void;
         function setAllowToggle (allowToggle : boolean) : void;
-        function setBaseCls (baseCls : string) : void;
-        function setDefaultType (defaultType : string) : void;
-        function setLayout (layout : variant) : void;
+        override function setBaseCls (baseCls : string) : void;
+        override function setDefaultType (defaultType : string) : void;
+        override function setLayout (layout : variant) : void;
         function setPressedButtons (pressedButtons : variant[]) : void;
         function setPressedCls (pressedCls : string) : void;
-        static function addMembers (members : variant) : Ext.SegmentedButton;
-        static function addStatics (members : variant) : Ext.SegmentedButton;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1395,26 +1395,26 @@ native class Ext
 
     class Sheet extends Ext.Panel
     {
-        function getBaseCls () : string;
-        function getCentered () : boolean;
+        override function getBaseCls () : string;
+        override function getCentered () : boolean;
         function getEnter () : string;
         function getExit () : string;
-        function getHideAnimation () : variant;
-        function getModal () : boolean;
-        function getShowAnimation () : variant;
+        override function getHideAnimation () : variant;
+        override function getModal () : boolean;
+        override function getShowAnimation () : variant;
         function getStretchX () : boolean;
         function getStretchY () : boolean;
-        function setBaseCls (baseCls : string) : void;
-        function setCentered (centered : boolean) : void;
+        override function setBaseCls (baseCls : string) : void;
+        override function setCentered (centered : boolean) : void;
         function setEnter (enter : string) : void;
         function setExit (exit : string) : void;
-        function setHideAnimation (hideAnimation : variant) : void;
-        function setModal (modal : boolean) : void;
-        function setShowAnimation (showAnimation : variant) : void;
+        override function setHideAnimation (hideAnimation : variant) : void;
+        override function setModal (modal : boolean) : void;
+        override function setShowAnimation (showAnimation : variant) : void;
         function setStretchX (stretchX : boolean) : void;
         function setStretchY (stretchY : boolean) : void;
-        static function addMembers (members : variant) : Ext.Sheet;
-        static function addStatics (members : variant) : Ext.Sheet;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1426,12 +1426,12 @@ native class Ext
 
     class Spacer extends Ext.Component
     {
-        function getFlex () : number;
-        function getWidth () : number;
-        function setFlex (flex : number) : void;
-        function setWidth (width : number) : void;
-        static function addMembers (members : variant) : Ext.Spacer;
-        static function addStatics (members : variant) : Ext.Spacer;
+        override function getFlex () : number;
+        override function getWidth () : number;
+        override function setFlex (flex : number) : void;
+        override function setWidth (width : number) : void;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1483,7 +1483,7 @@ native class Ext
         function applyOut (values : variant[], out : variant[]) : variant[];
         function applyTemplate (values : variant) : string;
         function applyTemplate (values : variant[]) : string;
-        function compile () : Ext.Template;
+        function compile () : variant;
         function insertAfter (el : string, values : variant, returnElement : boolean) : variant;
         function insertAfter (el : string, values : variant) : variant;
         function insertAfter (el : string, values : variant[], returnElement : boolean) : variant;
@@ -1532,10 +1532,10 @@ native class Ext
         function overwrite (el : Ext.dom.Element, values : variant) : variant;
         function overwrite (el : Ext.dom.Element, values : variant[], returnElement : boolean) : variant;
         function overwrite (el : Ext.dom.Element, values : variant[]) : variant;
-        function set (html : string, compile : boolean) : Ext.Template;
-        function set (html : string) : Ext.Template;
-        static function addMembers (members : variant) : Ext.Template;
-        static function addStatics (members : variant) : Ext.Template;
+        function set (html : string, compile : boolean) : variant;
+        function set (html : string) : variant;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1551,12 +1551,12 @@ native class Ext
 
     class Title extends Ext.Component
     {
-        function getBaseCls () : string;
+        override function getBaseCls () : string;
         function getTitle () : string;
-        function setBaseCls (baseCls : string) : void;
+        override function setBaseCls (baseCls : string) : void;
         function setTitle (title : string) : void;
-        static function addMembers (members : variant) : Ext.Title;
-        static function addStatics (members : variant) : Ext.Title;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1568,28 +1568,28 @@ native class Ext
 
     class TitleBar extends Ext.Container
     {
-        function getBaseCls () : string;
-        function getCls () : string;
-        function getDefaultType () : string;
-        function getItems () : variant;
+        override function getBaseCls () : string;
+        override function getCls () : string;
+        override function getDefaultType () : string;
+        override function getItems () : variant;
         function getMaxButtonWidth () : string;
-        function getMinHeight () : string;
+        override function getMinHeight () : string;
         function getTitle () : string;
         function getTitleAlign () : string;
-        function getUi () : string;
-        function initialize () : void;
-        function setBaseCls (baseCls : string) : void;
-        function setCls (cls : string) : void;
-        function setDefaultType (defaultType : string) : void;
-        function setItems (items : variant[]) : void;
-        function setItems (items : variant) : void;
+        override function getUi () : string;
+        override function initialize () : void;
+        override function setBaseCls (baseCls : string) : void;
+        override function setCls (cls : string) : void;
+        override function setDefaultType (defaultType : string) : void;
+        override function setItems (items : variant[]) : void;
+        override function setItems (items : variant) : void;
         function setMaxButtonWidth (maxButtonWidth : string) : void;
-        function setMinHeight (minHeight : string) : void;
+        override function setMinHeight (minHeight : string) : void;
         function setTitle (title : string) : void;
         function setTitleAlign (titleAlign : string) : void;
-        function setUi (ui : string) : void;
-        static function addMembers (members : variant) : Ext.TitleBar;
-        static function addStatics (members : variant) : Ext.TitleBar;
+        override function setUi (ui : string) : void;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1602,26 +1602,26 @@ native class Ext
     class Toolbar extends Ext.Container
     {
         function constructor (config : variant);
-        function getBaseCls () : string;
-        function getDefaultType () : string;
-        function getDocked () : string;
+        override function getBaseCls () : string;
+        override function getDefaultType () : string;
+        override function getDocked () : string;
         function getLayout () : variant;
-        function getMinHeight () : string;
+        override function getMinHeight () : string;
         function getTitle () : Ext.Title;
-        function getUi () : string;
+        override function getUi () : string;
         function hideTitle () : void;
-        function setBaseCls (baseCls : string) : void;
-        function setDefaultType (defaultType : string) : void;
-        function setDocked (docked : string) : void;
-        function setLayout (layout : variant) : void;
-        function setLayout (layout : string) : void;
-        function setMinHeight (minHeight : string) : void;
+        override function setBaseCls (baseCls : string) : void;
+        override function setDefaultType (defaultType : string) : void;
+        override function setDocked (docked : string) : void;
+        override function setLayout (layout : variant) : void;
+        override function setLayout (layout : string) : void;
+        override function setMinHeight (minHeight : string) : void;
         function setTitle (title : string) : void;
         function setTitle (title : Ext.Title) : void;
-        function setUi (ui : string) : void;
+        override function setUi (ui : string) : void;
         function showTitle () : void;
-        static function addMembers (members : variant) : Ext.Toolbar;
-        static function addStatics (members : variant) : Ext.Toolbar;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1664,8 +1664,8 @@ native class Ext
         function ltEq (target : number) : boolean;
         function match (target : string) : boolean;
         function match (target : number) : boolean;
-        function setVersion (packageName : string, version : string) : Ext.Version;
-        function setVersion (packageName : string, version : Ext.Version) : Ext.Version;
+        function setVersion (packageName : string, version : string) : variant;
+        function setVersion (packageName : string, version : Ext.Version) : variant;
         function toArray () : Number[];
         function toNumber (value : number) : number;
         static function compare (current : string, target : string) : number;
@@ -1674,18 +1674,18 @@ native class Ext
 
     class Video extends Ext.Media
     {
-        function getCls () : string;
+        override function getCls () : string;
         function getPosterUrl () : string;
-        function getUrl () : variant;
-        function initialize () : void;
-        function setCls (cls : string) : void;
+        override function getUrl () : variant;
+        override function initialize () : void;
+        override function setCls (cls : string) : void;
         function setPosterUrl (posterUrl : string) : void;
-        function setUrl (url : string) : void;
+        override function setUrl (url : string) : void;
         function setUrl (url : variant[]) : void;
         function updatePosterUrl (newUrl : variant) : void;
-        function updateUrl (newUrl : variant) : void;
-        static function addMembers (members : variant) : Ext.Video;
-        static function addStatics (members : variant) : Ext.Video;
+        override function updateUrl (newUrl : variant) : void;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1697,8 +1697,8 @@ native class Ext
 
     class Viewport extends Ext.viewport.Default
     {
-        static function addMembers (members : variant) : Ext.Viewport;
-        static function addStatics (members : variant) : Ext.Viewport;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1712,9 +1712,9 @@ native class Ext
     {
         function applyOut (values : variant, out : variant[], parent : variant) : variant[];
         function applyOut (values : variant[], out : variant[], parent : variant) : variant[];
-        function compile () : Ext.XTemplate;
-        static function addMembers (members : variant) : Ext.XTemplate;
-        static function addStatics (members : variant) : Ext.XTemplate;
+        override function compile () : variant;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1749,8 +1749,8 @@ native class Ext
         function doTag (tag : string) : void;
         function doText (text : string) : void;
         function doTpl () : void;
-        static function addMembers (members : variant) : Ext.XTemplateParser;
-        static function addStatics (members : variant) : Ext.XTemplateParser;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1797,8 +1797,8 @@ native class Ext
             function setScope (scope : variant) : void;
             function setTitle (title : variant) : void;
             function setUrl (url : string) : void;
-            static function addMembers (members : variant) : Ext.app.Action;
-            static function addStatics (members : variant) : Ext.app.Action;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -1820,7 +1820,7 @@ native class Ext
             function getCurrentProfile () : Ext.app.Profile;
             function getHistory () : Ext.app.History;
             function getLaunch () : function () : void;
-            function getName () : string;
+            override function getName () : string;
             function getProfiles () : variant[];
             function getRequires () : string[];
             function getRouter () : Ext.app.Router;
@@ -1835,8 +1835,8 @@ native class Ext
             function setProfiles (profiles : variant[]) : void;
             function setRequires (requires : string[]) : void;
             function setRouter (router : Ext.app.Router) : void;
-            static function addMembers (members : variant) : Ext.app.Application;
-            static function addStatics (members : variant) : Ext.app.Application;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -1866,8 +1866,8 @@ native class Ext
             function setRoutes (routes : variant) : void;
             function setStores (stores : string[]) : void;
             function setViews (views : variant[]) : void;
-            static function addMembers (members : variant) : Ext.app.Controller;
-            static function addStatics (members : variant) : Ext.app.Controller;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -1888,8 +1888,8 @@ native class Ext
             function setActions (actions : variant[]) : void;
             function setToken (token : string) : void;
             function setUpdateUrl (updateUrl : boolean) : void;
-            static function addMembers (members : variant) : Ext.app.History;
-            static function addStatics (members : variant) : Ext.app.History;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -1905,7 +1905,7 @@ native class Ext
             function getApplication () : Ext.app.Application;
             function getControllers () : variant[];
             function getModels () : variant[];
-            function getName () : string;
+            override function getName () : string;
             function getNamespace () : string;
             function getStores () : variant[];
             function getViews () : variant[];
@@ -1918,8 +1918,8 @@ native class Ext
             function setNamespace (namespace : string) : void;
             function setStores (stores : variant[]) : void;
             function setViews (views : variant[]) : void;
-            static function addMembers (members : variant) : Ext.app.Profile;
-            static function addStatics (members : variant) : Ext.app.Profile;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -1941,8 +1941,8 @@ native class Ext
             function recognize (url : string) : variant;
             function setDefaults (defaults : variant) : void;
             function setRoutes (routes : variant[]) : void;
-            static function addMembers (members : variant) : Ext.app.Router;
-            static function addStatics (members : variant) : Ext.app.Router;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -1959,8 +1959,8 @@ native class Ext
         class Behavior extends Ext.Base
         {
             function constructor (component : variant);
-            static function addMembers (members : variant) : Ext.behavior.Behavior;
-            static function addStatics (members : variant) : Ext.behavior.Behavior;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -1976,8 +1976,8 @@ native class Ext
 
     class browser extends Ext.env.Browser
     {
-        static function addMembers (members : variant) : Ext.browser;
-        static function addStatics (members : variant) : Ext.browser;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -1992,30 +1992,30 @@ native class Ext
 
         class Carousel extends Ext.Container
         {
-            function destroy () : void;
+            override function destroy () : void;
             function getActiveIndex () : number;
             function getAnimation () : variant;
-            function getBaseCls () : string;
+            override function getBaseCls () : string;
             function getBufferSize () : number;
             function getDirection () : string;
             function getDirectionLock () : boolean;
             function getIndicator () : boolean;
             function getItemConfig () : variant;
             function getItemLength () : variant;
-            function getUi () : string;
-            function next () : Ext.carousel.Carousel;
-            function previous () : Ext.carousel.Carousel;
+            override function getUi () : string;
+            function next () : variant;
+            function previous () : variant;
             function setAnimation (animation : variant) : void;
-            function setBaseCls (baseCls : string) : void;
+            override function setBaseCls (baseCls : string) : void;
             function setBufferSize (bufferSize : number) : void;
             function setDirection (direction : string) : void;
             function setDirectionLock (directionLock : boolean) : void;
             function setIndicator (indicator : boolean) : void;
             function setItemConfig (itemConfig : variant) : void;
             function setItemLength (itemLength : variant) : void;
-            function setUi (ui : string) : void;
-            static function addMembers (members : variant) : Ext.carousel.Carousel;
-            static function addStatics (members : variant) : Ext.carousel.Carousel;
+            override function setUi (ui : string) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -2040,7 +2040,7 @@ native class Ext
             function bindStore (store : Ext.data.Store) : void;
             function cancelLayout () : void;
             function getAxes () : variant;
-            function getBackground () : variant;
+            override function getBackground () : variant;
             function getColors () : variant;
             function getHighlightItem () : variant;
             function getInnerPadding () : variant;
@@ -2054,7 +2054,7 @@ native class Ext
             function getShadow () : variant;
             function getStore () : Ext.data.Store;
             function getSurface (name : variant, type : variant) : Ext.draw.Surface;
-            function initialize () : void;
+            override function initialize () : void;
             function redraw () : void;
             function resumeThicknessChanged () : void;
             function scheduleLayout () : void;
@@ -2063,7 +2063,7 @@ native class Ext
             function setAxes (axes : Ext.chart.axis.Axis) : void;
             function setAxes (axes : variant[]) : void;
             function setAxes (axes : variant) : void;
-            function setBackground (background : variant) : void;
+            override function setBackground (background : variant) : void;
             function setColors (colors : boolean) : void;
             function setColors (colors : variant[]) : void;
             function setHighlightItem (highlightItem : variant) : void;
@@ -2079,8 +2079,8 @@ native class Ext
             function setShadow (shadow : variant) : void;
             function setStore (store : Ext.data.Store) : void;
             function suspendThicknessChanged () : void;
-            static function addMembers (members : variant) : Ext.chart.AbstractChart;
-            static function addStatics (members : variant) : Ext.chart.AbstractChart;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -2094,13 +2094,13 @@ native class Ext
         {
             function getFlipXY () : boolean;
             function getInnerRegion () : variant[];
-            function onPlaceWatermark () : void;
+            override function onPlaceWatermark () : void;
             function performLayout () : void;
-            function redraw () : void;
+            override function redraw () : void;
             function setFlipXY (flipXY : boolean) : void;
             function setInnerRegion (innerRegion : variant[]) : void;
-            static function addMembers (members : variant) : Ext.chart.CartesianChart;
-            static function addStatics (members : variant) : Ext.chart.CartesianChart;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -2113,27 +2113,27 @@ native class Ext
         class Legend extends Ext.dataview.DataView
         {
             function constructor ();
-            function getBaseCls () : string;
+            override function getBaseCls () : string;
             function getDisableSelection () : boolean;
-            function getDocked () : string;
+            override function getDocked () : string;
             function getHorizontalHeight () : number;
-            function getInline () : boolean;
-            function getItemTpl () : variant[];
-            function getPadding () : number;
+            override function getInline () : boolean;
+            override function getItemTpl () : variant[];
+            override function getPadding () : number;
             function getToggleable () : boolean;
             function getVerticalWidth () : number;
-            function setBaseCls (baseCls : string) : void;
+            override function setBaseCls (baseCls : string) : void;
             function setDisableSelection (disableSelection : boolean) : void;
-            function setDocked (docked : string) : void;
+            override function setDocked (docked : string) : void;
             function setHorizontalHeight (horizontalHeight : number) : void;
-            function setInline (inline : boolean) : void;
+            override function setInline (inline : boolean) : void;
             function setItemTpl (itemTpl : variant[]) : void;
-            function setPadding (padding : number) : void;
-            function setScrollable (scrollable : variant) : void;
+            override function setPadding (padding : number) : void;
+            override function setScrollable (scrollable : variant) : void;
             function setToggleable (toggleable : boolean) : void;
             function setVerticalWidth (verticalWidth : number) : void;
-            static function addMembers (members : variant) : Ext.chart.Legend;
-            static function addStatics (members : variant) : Ext.chart.Legend;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -2147,8 +2147,8 @@ native class Ext
         {
             function constructor ();
             function bindMarker (name : string, marker : Ext.chart.Markers) : void;
-            static function addMembers (members : variant) : Ext.chart.MarkerHolder;
-            static function addStatics (members : variant) : Ext.chart.MarkerHolder;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -2162,7 +2162,7 @@ native class Ext
         {
             function constructor ();
             function clear (category : string) : void;
-            function getBBox () : void;
+            override function getBBox () : void;
             function getMarkerBBoxFor (category : string, index : variant, isWithoutTransform : boolean) : void;
             function getMarkerBBoxFor (category : string, index : variant) : void;
             function putMarkerFor (category : string, markerAttr : variant, index : string, canonical : boolean, keepRevision : boolean) : void;
@@ -2172,8 +2172,8 @@ native class Ext
             function putMarkerFor (category : string, markerAttr : variant, index : number, canonical : boolean) : void;
             function putMarkerFor (category : string, markerAttr : variant, index : number) : void;
             function render (surface : variant, ctx : variant, clipRegion : variant) : variant;
-            static function addMembers (members : variant) : Ext.chart.Markers;
-            static function addStatics (members : variant) : Ext.chart.Markers;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -2187,11 +2187,11 @@ native class Ext
         {
             function getCenter () : variant[];
             function getRadius () : number;
-            function redraw () : void;
+            override function redraw () : void;
             function setCenter (center : variant[]) : void;
             function setRadius (radius : number) : void;
-            static function addMembers (members : variant) : Ext.chart.PolarChart;
-            static function addStatics (members : variant) : Ext.chart.PolarChart;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -2203,9 +2203,9 @@ native class Ext
 
         class SpaceFillingChart extends Ext.chart.AbstractChart
         {
-            function redraw () : void;
-            static function addMembers (members : variant) : Ext.chart.SpaceFillingChart;
-            static function addStatics (members : variant) : Ext.chart.SpaceFillingChart;
+            override function redraw () : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -2221,7 +2221,7 @@ native class Ext
             class Axis extends Ext.Base
             {
                 function constructor (config : variant);
-                function destroy () : void;
+                override function destroy () : void;
                 function getBackground () : variant;
                 function getChart () : Ext.chart.AbstractChart;
                 function getCoordFor (value : variant, field : string, idx : number, items : Ext.util.MixedCollection) : number;
@@ -2278,8 +2278,8 @@ native class Ext
                 function setTitle (title : variant) : void;
                 function setTitleMargin (titleMargin : number) : void;
                 function setVisibleRange (visibleRange : variant[]) : void;
-                static function addMembers (members : variant) : Ext.chart.axis.Axis;
-                static function addStatics (members : variant) : Ext.chart.axis.Axis;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2291,12 +2291,12 @@ native class Ext
 
             class Category extends Ext.chart.axis.Axis
             {
-                function getLayout () : string;
-                function getSegmenter () : string;
+                override function getLayout () : string;
+                override function getSegmenter () : string;
                 function setLayout (layout : string) : void;
                 function setSegmenter (segmenter : string) : void;
-                static function addMembers (members : variant) : Ext.chart.axis.Category;
-                static function addStatics (members : variant) : Ext.chart.axis.Category;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2309,13 +2309,13 @@ native class Ext
             class Numeric extends Ext.chart.axis.Axis
             {
                 function getAggregator () : string;
-                function getLayout () : string;
-                function getSegmenter () : string;
+                override function getLayout () : string;
+                override function getSegmenter () : string;
                 function setAggregator (aggregator : string) : void;
                 function setLayout (layout : string) : void;
                 function setSegmenter (segmenter : string) : void;
-                static function addMembers (members : variant) : Ext.chart.axis.Numeric;
-                static function addStatics (members : variant) : Ext.chart.axis.Numeric;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2327,26 +2327,26 @@ native class Ext
 
             class Time extends Ext.chart.axis.Numeric
             {
-                function getAggregator () : string;
+                override function getAggregator () : string;
                 function getCalculateByLabelSize () : boolean;
                 function getCoordFor (value : variant) : number;
                 function getDateFormat () : variant;
                 function getFromDate () : Date;
-                function getLayout () : string;
-                function getSegmenter () : string;
+                override function getLayout () : string;
+                override function getSegmenter () : string;
                 function getStep () : variant[];
                 function getToDate () : Date;
-                function setAggregator (aggregator : string) : void;
+                override function setAggregator (aggregator : string) : void;
                 function setCalculateByLabelSize (calculateByLabelSize : boolean) : void;
                 function setDateFormat (dateFormat : string) : void;
                 function setDateFormat (dateFormat : boolean) : void;
                 function setFromDate (fromDate : Date) : void;
-                function setLayout (layout : string) : void;
-                function setSegmenter (segmenter : string) : void;
+                override function setLayout (layout : string) : void;
+                override function setSegmenter (segmenter : string) : void;
                 function setStep (step : variant[]) : void;
                 function setToDate (toDate : Date) : void;
-                static function addMembers (members : variant) : Ext.chart.axis.Time;
-                static function addStatics (members : variant) : Ext.chart.axis.Time;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2361,8 +2361,8 @@ native class Ext
 
                 class CombineDuplicate extends Ext.chart.axis.layout.Discrete
                 {
-                    static function addMembers (members : variant) : Ext.chart.axis.layout.CombineDuplicate;
-                    static function addStatics (members : variant) : Ext.chart.axis.layout.CombineDuplicate;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -2379,8 +2379,8 @@ native class Ext
                     function setAdjustMaximumByMajorUnit (adjustMaximumByMajorUnit : boolean) : void;
                     function setAdjustMinimumByMajorUnit (adjustMinimumByMajorUnit : boolean) : void;
                     function snapEnds (context : variant, min : variant, max : variant, estStepSize : variant) : void;
-                    static function addMembers (members : variant) : Ext.chart.axis.layout.Continuous;
-                    static function addStatics (members : variant) : Ext.chart.axis.layout.Continuous;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -2392,13 +2392,13 @@ native class Ext
 
                 class Discrete extends Ext.chart.axis.layout.Layout
                 {
-                    function calculateLayout (context : variant) : variant;
-                    function calculateMajorTicks (context : variant) : void;
+                    override function calculateLayout (context : variant) : variant;
+                    override function calculateMajorTicks (context : variant) : void;
                     function processData () : void;
                     function snapEnds (context : variant, min : variant, max : variant, estStepSize : variant) : void;
                     function trimByRange (context : variant, out : variant, trimMin : variant, trimMax : variant) : void;
-                    static function addMembers (members : variant) : Ext.chart.axis.layout.Discrete;
-                    static function addStatics (members : variant) : Ext.chart.axis.layout.Discrete;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -2419,8 +2419,8 @@ native class Ext
                     function setAxis (axis : Ext.chart.axis.Axis) : void;
                     function snapEnds (context : variant, min : number, max : number, estStepSize : number) : void;
                     function trimByRange (context : variant, out : variant, trimMin : number, trimMax : number) : void;
-                    static function addMembers (members : variant) : Ext.chart.axis.layout.Layout;
-                    static function addStatics (members : variant) : Ext.chart.axis.layout.Layout;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -2438,11 +2438,11 @@ native class Ext
                 {
                     function add (value : variant, step : variant, unit : variant) : void;
                     function align (value : variant, step : variant, unit : variant) : variant;
-                    function diff (min : variant, max : variant, unit : variant) : number;
+                    override function diff (min : variant, max : variant, unit : variant) : number;
                     function preferredStep (min : variant, estStepSize : variant, minIdx : variant, data : variant) : variant;
-                    function renderer (value : variant, context : variant) : string;
-                    static function addMembers (members : variant) : Ext.chart.axis.segmenter.Names;
-                    static function addStatics (members : variant) : Ext.chart.axis.segmenter.Names;
+                    override function renderer (value : variant, context : variant) : string;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -2456,12 +2456,12 @@ native class Ext
                 {
                     function add (value : variant, step : variant, unit : variant) : void;
                     function align (value : variant, step : variant, unit : variant) : variant;
-                    function diff (min : variant, max : variant, unit : variant) : number;
+                    override function diff (min : variant, max : variant, unit : variant) : number;
                     function exactStep (start : variant, estStepSize : variant) : variant;
-                    function preferredStep (min : variant, estStepSize : variant) : variant;
-                    function renderer (value : variant, context : variant) : string;
-                    static function addMembers (members : variant) : Ext.chart.axis.segmenter.Numeric;
-                    static function addStatics (members : variant) : Ext.chart.axis.segmenter.Numeric;
+                    override function preferredStep (min : variant, estStepSize : variant) : variant;
+                    override function renderer (value : variant, context : variant) : string;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -2482,8 +2482,8 @@ native class Ext
                     function preferredStep (start : variant, estStepSize : variant) : variant;
                     function renderer (value : variant, context : variant) : string;
                     function setAxis (axis : Ext.chart.axis.Axis) : void;
-                    static function addMembers (members : variant) : Ext.chart.axis.segmenter.Segmenter;
-                    static function addStatics (members : variant) : Ext.chart.axis.segmenter.Segmenter;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -2497,14 +2497,14 @@ native class Ext
                 {
                     function add (value : variant, step : variant, unit : variant) : void;
                     function align (date : variant, step : variant, unit : variant) : variant;
-                    function diff (min : variant, max : variant, unit : variant) : number;
-                    function from (value : variant) : variant;
+                    override function diff (min : variant, max : variant, unit : variant) : number;
+                    override function from (value : variant) : variant;
                     function getStep () : variant;
-                    function preferredStep (min : variant, estStepSize : variant) : variant;
-                    function renderer (value : variant, context : variant) : string;
+                    override function preferredStep (min : variant, estStepSize : variant) : variant;
+                    override function renderer (value : variant, context : variant) : string;
                     function setStep (step : variant) : void;
-                    static function addMembers (members : variant) : Ext.chart.axis.segmenter.Time;
-                    static function addStatics (members : variant) : Ext.chart.axis.segmenter.Time;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -2526,8 +2526,8 @@ native class Ext
 
             class CircularGrid extends Ext.draw.sprite.Circle
             {
-                static function addMembers (members : variant) : Ext.chart.grid.CircularGrid;
-                static function addStatics (members : variant) : Ext.chart.grid.CircularGrid;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2540,8 +2540,8 @@ native class Ext
             class HorizontalGrid extends Ext.draw.sprite.Sprite
             {
                 function render (surface : variant, ctx : variant, clipRegion : variant) : variant;
-                static function addMembers (members : variant) : Ext.chart.grid.HorizontalGrid;
-                static function addStatics (members : variant) : Ext.chart.grid.HorizontalGrid;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2555,8 +2555,8 @@ native class Ext
             {
                 function render () : variant;
                 function updatePath (path : variant, attr : variant) : void;
-                static function addMembers (members : variant) : Ext.chart.grid.RadialGrid;
-                static function addStatics (members : variant) : Ext.chart.grid.RadialGrid;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2569,8 +2569,8 @@ native class Ext
             class VerticalGrid extends Ext.draw.sprite.Sprite
             {
                 function render (surface : variant, ctx : variant, clipRegion : variant) : variant;
-                static function addMembers (members : variant) : Ext.chart.grid.VerticalGrid;
-                static function addStatics (members : variant) : Ext.chart.grid.VerticalGrid;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2589,7 +2589,7 @@ native class Ext
                 var throttleGap : number;
 
                 function constructor (config : variant);
-                function destroy () : void;
+                override function destroy () : void;
                 function getChart () : Ext.chart.AbstractChart;
                 function getEnabled () : boolean;
                 function getGesture () : string;
@@ -2600,8 +2600,8 @@ native class Ext
                 function setChart (chart : Ext.chart.AbstractChart) : void;
                 function setEnabled (enabled : boolean) : void;
                 function setGesture (gesture : string) : void;
-                static function addMembers (members : variant) : Ext.chart.interactions.Abstract;
-                static function addStatics (members : variant) : Ext.chart.interactions.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2615,15 +2615,15 @@ native class Ext
             {
                 function constructor ();
                 function getAxes () : variant;
-                function getGesture () : string;
+                override function getGesture () : string;
                 function getUndoButton () : variant;
                 function onGesture (e : variant) : void;
                 function setAxes (axes : variant) : void;
                 function setAxes (axes : variant[]) : void;
-                function setGesture (gesture : string) : void;
+                override function setGesture (gesture : string) : void;
                 function setUndoButton (undoButton : variant) : void;
-                static function addMembers (members : variant) : Ext.chart.interactions.CrossZoom;
-                static function addStatics (members : variant) : Ext.chart.interactions.CrossZoom;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2635,11 +2635,11 @@ native class Ext
 
             class ItemHighlight extends Ext.chart.interactions.Abstract
             {
-                function getGesture () : string;
+                override function getGesture () : string;
                 function onGesture (series : variant, item : variant, e : variant) : void;
-                function setGesture (gesture : string) : void;
-                static function addMembers (members : variant) : Ext.chart.interactions.ItemHighlight;
-                static function addStatics (members : variant) : Ext.chart.interactions.ItemHighlight;
+                override function setGesture (gesture : string) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2651,13 +2651,13 @@ native class Ext
 
             class ItemInfo extends Ext.chart.interactions.Abstract
             {
-                function getGesture () : string;
+                override function getGesture () : string;
                 function getPanel () : variant;
                 function onGesture (series : variant, item : variant) : void;
-                function setGesture (gesture : string) : void;
+                override function setGesture (gesture : string) : void;
                 function setPanel (panel : variant) : void;
-                static function addMembers (members : variant) : Ext.chart.interactions.ItemInfo;
-                static function addStatics (members : variant) : Ext.chart.interactions.ItemInfo;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2669,7 +2669,7 @@ native class Ext
 
             class PanZoom extends Ext.chart.interactions.Abstract
             {
-                function destroy () : void;
+                override function destroy () : void;
                 function getAxes () : variant;
                 function getHideLabelInGesture () : boolean;
                 function getMaxZoom () : variant;
@@ -2688,8 +2688,8 @@ native class Ext
                 function setPanGesture (panGesture : string) : void;
                 function setShowOverflowArrows (showOverflowArrows : boolean) : void;
                 function setZoomOnPanGesture (zoomOnPanGesture : boolean) : void;
-                static function addMembers (members : variant) : Ext.chart.interactions.PanZoom;
-                static function addStatics (members : variant) : Ext.chart.interactions.PanZoom;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2701,11 +2701,11 @@ native class Ext
 
             class Rotate extends Ext.chart.interactions.Abstract
             {
-                function getGesture () : string;
+                override function getGesture () : string;
                 function onGesture (e : variant) : void;
-                function setGesture (gesture : string) : void;
-                static function addMembers (members : variant) : Ext.chart.interactions.Rotate;
-                static function addStatics (members : variant) : Ext.chart.interactions.Rotate;
+                override function setGesture (gesture : string) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2717,8 +2717,8 @@ native class Ext
 
             class RotatePie3D extends Ext.chart.interactions.Rotate
             {
-                static function addMembers (members : variant) : Ext.chart.interactions.RotatePie3D;
-                static function addStatics (members : variant) : Ext.chart.interactions.RotatePie3D;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2734,11 +2734,11 @@ native class Ext
 
             class Callout extends Ext.draw.modifier.Modifier
             {
-                function popUp (attr : variant, changes : variant) : void;
-                function prepareAttributes (attr : variant) : void;
-                function pushDown (attr : variant, changes : variant) : variant;
-                static function addMembers (members : variant) : Ext.chart.label.Callout;
-                static function addStatics (members : variant) : Ext.chart.label.Callout;
+                override function popUp (attr : variant, changes : variant) : void;
+                override function prepareAttributes (attr : variant) : void;
+                override function pushDown (attr : variant, changes : variant) : variant;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2755,8 +2755,8 @@ native class Ext
                 function render (surface : variant, ctx : variant, clipRegion : variant) : variant;
                 function setField (field : variant) : void;
                 function setFx (fx : variant) : void;
-                static function addMembers (members : variant) : Ext.chart.label.Label;
-                static function addStatics (members : variant) : Ext.chart.label.Label;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2772,11 +2772,9 @@ native class Ext
 
             class Area extends Ext.chart.series.StackedCartesian
             {
-                var seriesType : string;
-                var type : string;
 
-                static function addMembers (members : variant) : Ext.chart.series.Area;
-                static function addStatics (members : variant) : Ext.chart.series.Area;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2788,12 +2786,10 @@ native class Ext
 
             class Bar extends Ext.chart.series.StackedCartesian
             {
-                var seriesType : string;
-                var type : string;
 
-                function getItemForPoint (x : variant, y : variant) : variant;
-                static function addMembers (members : variant) : Ext.chart.series.Bar;
-                static function addStatics (members : variant) : Ext.chart.series.Bar;
+                override function getItemForPoint (x : variant, y : variant) : variant;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2805,8 +2801,6 @@ native class Ext
 
             class CandleStick extends Ext.chart.series.Cartesian
             {
-                var seriesType : string;
-                var type : string;
 
                 function getCloseField () : string;
                 function getHighField () : string;
@@ -2816,8 +2810,8 @@ native class Ext
                 function setHighField (highField : string) : void;
                 function setLowField (lowField : string) : void;
                 function setOpenField (openField : string) : void;
-                static function addMembers (members : variant) : Ext.chart.series.CandleStick;
-                static function addStatics (members : variant) : Ext.chart.series.CandleStick;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2831,7 +2825,7 @@ native class Ext
             {
                 function constructor ();
                 function getItemForPoint (x : variant, y : variant) : variant;
-                function getSprites () : void;
+                override function getSprites () : void;
                 function getXAxis () : Ext.chart.axis.Axis;
                 function getXField () : string;
                 function getYAxis () : Ext.chart.axis.Axis;
@@ -2841,8 +2835,8 @@ native class Ext
                 function setXField (xField : string) : void;
                 function setYAxis (yAxis : Ext.chart.axis.Axis) : void;
                 function setYField (yField : string) : void;
-                static function addMembers (members : variant) : Ext.chart.series.Cartesian;
-                static function addStatics (members : variant) : Ext.chart.series.Cartesian;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2854,11 +2848,9 @@ native class Ext
 
             class Gauge extends Ext.chart.series.Series
             {
-                var seriesType : string;
-                var type : string;
 
                 function getCenter () : variant[];
-                function getColors () : variant[];
+                override function getColors () : variant[];
                 function getDonut () : number;
                 function getField () : string;
                 function getMaximum () : number;
@@ -2870,13 +2862,13 @@ native class Ext
                 function getRegion () : variant[];
                 function getRotation () : number;
                 function getSectors () : variant[];
-                function getShowInLegend () : boolean;
-                function getSprites () : void;
+                override function getShowInLegend () : boolean;
+                override function getSprites () : void;
                 function getTotalAngle () : variant;
                 function getValue () : number;
                 function getWholeDisk () : boolean;
                 function setCenter (center : variant[]) : void;
-                function setColors (colors : variant[]) : void;
+                override function setColors (colors : variant[]) : void;
                 function setDonut (donut : number) : void;
                 function setField (field : string) : void;
                 function setMaximum (maximum : number) : void;
@@ -2888,12 +2880,12 @@ native class Ext
                 function setRegion (region : variant[]) : void;
                 function setRotation (rotation : number) : void;
                 function setSectors (sectors : variant[]) : void;
-                function setShowInLegend (showInLegend : boolean) : void;
+                override function setShowInLegend (showInLegend : boolean) : void;
                 function setTotalAngle (totalAngle : variant) : void;
                 function setValue (value : number) : void;
                 function setWholeDisk (wholeDisk : boolean) : void;
-                static function addMembers (members : variant) : Ext.chart.series.Gauge;
-                static function addStatics (members : variant) : Ext.chart.series.Gauge;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2906,8 +2898,6 @@ native class Ext
 
             class Line extends Ext.chart.series.Cartesian
             {
-                var seriesType : string;
-                var type : string;
 
                 function getAggregator () : variant;
                 function getFill () : boolean;
@@ -2920,8 +2910,8 @@ native class Ext
                 function setSmooth (smooth : boolean) : void;
                 function setSmooth (smooth : number) : void;
                 function setStep (step : boolean) : void;
-                static function addMembers (members : variant) : Ext.chart.series.Line;
-                static function addStatics (members : variant) : Ext.chart.series.Line;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2933,26 +2923,24 @@ native class Ext
 
             class Pie extends Ext.chart.series.Polar
             {
-                var seriesType : string;
-                var type : string;
 
                 function getDonut () : variant;
-                function getHidden () : variant[];
+                override function getHidden () : variant[];
                 function getItemForAngle (angle : number) : variant;
                 function getItemForPoint (x : variant, y : variant) : variant;
-                function getRotation () : number;
-                function getSprites () : void;
-                function getStyle () : variant;
+                override function getRotation () : number;
+                override function getSprites () : void;
+                override function getStyle () : variant;
                 function getTotalAngle () : number;
                 function provideLegendInfo (target : variant) : void;
                 function setDonut (donut : boolean) : void;
                 function setDonut (donut : number) : void;
-                function setHidden (hidden : variant[]) : void;
-                function setRotation (rotation : number) : void;
-                function setStyle (style : variant) : void;
+                override function setHidden (hidden : variant[]) : void;
+                override function setRotation (rotation : number) : void;
+                override function setStyle (style : variant) : void;
                 function setTotalAngle (totalAngle : number) : void;
-                static function addMembers (members : variant) : Ext.chart.series.Pie;
-                static function addStatics (members : variant) : Ext.chart.series.Pie;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2964,25 +2952,23 @@ native class Ext
 
             class Pie3D extends Ext.chart.series.Polar
             {
-                var seriesType : string;
-                var type : string;
 
                 function getDistortion () : number;
                 function getDonut () : variant;
                 function getField () : string;
                 function getRegion () : variant[];
-                function getRotation () : number;
-                function getSprites () : void;
+                override function getRotation () : number;
+                override function getSprites () : void;
                 function getThickness () : number;
                 function setDistortion (distortion : number) : void;
                 function setDonut (donut : boolean) : void;
                 function setDonut (donut : number) : void;
                 function setField (field : string) : void;
                 function setRegion (region : variant[]) : void;
-                function setRotation (rotation : number) : void;
+                override function setRotation (rotation : number) : void;
                 function setThickness (thickness : number) : void;
-                static function addMembers (members : variant) : Ext.chart.series.Pie3D;
-                static function addStatics (members : variant) : Ext.chart.series.Pie3D;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -2999,7 +2985,7 @@ native class Ext
                 function getOffsetY () : number;
                 function getRadius () : number;
                 function getRotation () : number;
-                function getShowInLegend () : boolean;
+                override function getShowInLegend () : boolean;
                 function getXAxis () : variant;
                 function getXField () : string;
                 function getYAxis () : variant;
@@ -3009,13 +2995,13 @@ native class Ext
                 function setOffsetY (offsetY : number) : void;
                 function setRadius (radius : number) : void;
                 function setRotation (rotation : number) : void;
-                function setShowInLegend (showInLegend : boolean) : void;
+                override function setShowInLegend (showInLegend : boolean) : void;
                 function setXAxis (xAxis : variant) : void;
                 function setXField (xField : string) : void;
                 function setYAxis (yAxis : variant) : void;
                 function setYField (yField : string) : void;
-                static function addMembers (members : variant) : Ext.chart.series.Polar;
-                static function addStatics (members : variant) : Ext.chart.series.Polar;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -3027,12 +3013,10 @@ native class Ext
 
             class Radar extends Ext.chart.series.Polar
             {
-                var seriesType : string;
-                var type : string;
 
                 function getItemForPoint (x : variant, y : variant) : variant;
-                static function addMembers (members : variant) : Ext.chart.series.Radar;
-                static function addStatics (members : variant) : Ext.chart.series.Radar;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -3044,14 +3028,12 @@ native class Ext
 
             class Scatter extends Ext.chart.series.Cartesian
             {
-                var seriesType : string;
-                var type : string;
 
-                function getItemInstancing () : variant;
-                function provideLegendInfo (target : variant) : void;
-                function setItemInstancing (itemInstancing : variant) : void;
-                static function addMembers (members : variant) : Ext.chart.series.Scatter;
-                static function addStatics (members : variant) : Ext.chart.series.Scatter;
+                override function getItemInstancing () : variant;
+                override function provideLegendInfo (target : variant) : void;
+                override function setItemInstancing (itemInstancing : variant) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -3067,7 +3049,7 @@ native class Ext
                 var type : string;
 
                 function constructor (config : variant);
-                function destroy () : void;
+                override function destroy () : void;
                 function getAnimate () : variant;
                 function getBackground () : variant;
                 function getColors () : variant[];
@@ -3111,8 +3093,8 @@ native class Ext
                 function setSubStyle (subStyle : variant) : void;
                 function setSurface (surface : variant) : void;
                 function setTitle (title : string) : void;
-                static function addMembers (members : variant) : Ext.chart.series.Series;
-                static function addStatics (members : variant) : Ext.chart.series.Series;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -3124,15 +3106,15 @@ native class Ext
 
             class StackedCartesian extends Ext.chart.series.Cartesian
             {
-                function getHidden () : variant[];
-                function getItemForPoint (x : variant, y : variant) : variant;
-                function getSprites () : void;
+                override function getHidden () : variant[];
+                override function getItemForPoint (x : variant, y : variant) : variant;
+                override function getSprites () : void;
                 function getStacked () : boolean;
-                function provideLegendInfo (target : variant) : void;
-                function setHidden (hidden : variant[]) : void;
+                override function provideLegendInfo (target : variant) : void;
+                override function setHidden (hidden : variant[]) : void;
                 function setStacked (stacked : boolean) : void;
-                static function addMembers (members : variant) : Ext.chart.series.StackedCartesian;
-                static function addStatics (members : variant) : Ext.chart.series.StackedCartesian;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -3151,8 +3133,8 @@ native class Ext
                     function getAggregator () : variant;
                     function renderClipped (surface : variant, ctx : variant, clip : variant, region : variant) : void;
                     function setAggregator (aggregator : variant) : void;
-                    static function addMembers (members : variant) : Ext.chart.series.sprite.Aggregative;
-                    static function addStatics (members : variant) : Ext.chart.series.sprite.Aggregative;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -3165,8 +3147,8 @@ native class Ext
                 class Area extends Ext.chart.series.sprite.StackedCartesian
                 {
                     function renderClipped (surface : variant, ctx : variant, clip : variant, clipRegion : variant) : void;
-                    static function addMembers (members : variant) : Ext.chart.series.sprite.Area;
-                    static function addStatics (members : variant) : Ext.chart.series.sprite.Area;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -3178,10 +3160,10 @@ native class Ext
 
                 class Bar extends Ext.chart.series.sprite.StackedCartesian
                 {
-                    function getIndexNearPoint (x : variant, y : variant) : number;
+                    override function getIndexNearPoint (x : variant, y : variant) : number;
                     function renderClipped (surface : variant, ctx : variant, clip : variant) : void;
-                    static function addMembers (members : variant) : Ext.chart.series.sprite.Bar;
-                    static function addStatics (members : variant) : Ext.chart.series.sprite.Bar;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -3194,8 +3176,8 @@ native class Ext
                 class CandleStick extends Ext.chart.series.sprite.Aggregative
                 {
                     function constructor ();
-                    static function addMembers (members : variant) : Ext.chart.series.sprite.CandleStick;
-                    static function addStatics (members : variant) : Ext.chart.series.sprite.CandleStick;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -3216,9 +3198,9 @@ native class Ext
                     function renderClipped (surface : Ext.draw.Surface, ctx : Ext.draw.engine.SvgContext, clip : variant[], region : variant[]) : void;
                     function setField (field : string) : void;
                     function setFlipXY (flipXY : boolean) : void;
-                    function updatePlainBBox (plain : variant) : void;
-                    static function addMembers (members : variant) : Ext.chart.series.sprite.Cartesian;
-                    static function addStatics (members : variant) : Ext.chart.series.sprite.Cartesian;
+                    override function updatePlainBBox (plain : variant) : void;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -3230,9 +3212,9 @@ native class Ext
 
                 class Line extends Ext.chart.series.sprite.Aggregative
                 {
-                    function updatePlainBBox (plain : variant) : void;
-                    static function addMembers (members : variant) : Ext.chart.series.sprite.Line;
-                    static function addStatics (members : variant) : Ext.chart.series.sprite.Line;
+                    override function updatePlainBBox (plain : variant) : void;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -3245,10 +3227,10 @@ native class Ext
                 class Pie3DPart extends Ext.draw.sprite.Path
                 {
                     function updatePath (path : variant) : void;
-                    function updatePlainBBox (plain : variant) : void;
-                    function updateTransformedBBox (transform : variant) : void;
-                    static function addMembers (members : variant) : Ext.chart.series.sprite.Pie3DPart;
-                    static function addStatics (members : variant) : Ext.chart.series.sprite.Pie3DPart;
+                    override function updatePlainBBox (plain : variant) : void;
+                    override function updateTransformedBBox (transform : variant) : void;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -3263,8 +3245,8 @@ native class Ext
                     function getRendererIndex () : number;
                     function render (ctx : variant, surface : variant, clipRegion : variant) : variant;
                     function setRendererIndex (rendererIndex : number) : void;
-                    static function addMembers (members : variant) : Ext.chart.series.sprite.PieSlice;
-                    static function addStatics (members : variant) : Ext.chart.series.sprite.PieSlice;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -3278,9 +3260,9 @@ native class Ext
                 {
                     function getField () : variant;
                     function setField (field : variant) : void;
-                    function updatePlainBBox (plain : variant) : void;
-                    static function addMembers (members : variant) : Ext.chart.series.sprite.Polar;
-                    static function addStatics (members : variant) : Ext.chart.series.sprite.Polar;
+                    override function updatePlainBBox (plain : variant) : void;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -3293,8 +3275,8 @@ native class Ext
                 class Radar extends Ext.chart.series.sprite.Polar
                 {
                     function render (surface : variant, ctx : variant) : variant;
-                    static function addMembers (members : variant) : Ext.chart.series.sprite.Radar;
-                    static function addStatics (members : variant) : Ext.chart.series.sprite.Radar;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -3307,8 +3289,8 @@ native class Ext
                 class Scatter extends Ext.chart.series.sprite.Cartesian
                 {
                     function renderClipped (surface : variant, ctx : variant, clip : variant, clipRegion : variant) : void;
-                    static function addMembers (members : variant) : Ext.chart.series.sprite.Scatter;
-                    static function addStatics (members : variant) : Ext.chart.series.sprite.Scatter;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -3321,8 +3303,8 @@ native class Ext
                 class StackedCartesian extends Ext.chart.series.sprite.Cartesian
                 {
                     function getIndexNearPoint (x : variant, y : variant) : number;
-                    static function addMembers (members : variant) : Ext.chart.series.sprite.StackedCartesian;
-                    static function addStatics (members : variant) : Ext.chart.series.sprite.StackedCartesian;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -3340,10 +3322,10 @@ native class Ext
 
         class ArrayStore extends Ext.data.Store
         {
-            function getProxy () : variant;
-            function setProxy (proxy : variant) : void;
-            static function addMembers (members : variant) : Ext.data.ArrayStore;
-            static function addStatics (members : variant) : Ext.data.ArrayStore;
+            override function getProxy () : variant;
+            override function setProxy (proxy : variant) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function createAlias (alias : string, origin : string) : void;
             static function createAlias (alias : string, origin : variant) : void;
@@ -3373,8 +3355,8 @@ native class Ext
             function setPauseOnException (pauseOnException : boolean) : void;
             function setProxy (proxy : Ext.data.proxy.Proxy) : void;
             function start () : void;
-            static function addMembers (members : variant) : Ext.data.Batch;
-            static function addStatics (members : variant) : Ext.data.Batch;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3427,8 +3409,8 @@ native class Ext
             function upload (form : string, url : string, params : string, options : variant) : void;
             function upload (form : HTMLElement, url : string, params : string, options : variant) : void;
             function upload (form : Ext.dom.Element, url : string, params : string, options : variant) : void;
-            static function addMembers (members : variant) : Ext.data.Connection;
-            static function addStatics (members : variant) : Ext.data.Connection;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3440,10 +3422,10 @@ native class Ext
 
         class DirectStore extends Ext.data.Store
         {
-            function getProxy () : variant;
-            function setProxy (proxy : variant) : void;
-            static function addMembers (members : variant) : Ext.data.DirectStore;
-            static function addStatics (members : variant) : Ext.data.DirectStore;
+            override function getProxy () : variant;
+            override function setProxy (proxy : variant) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function createAlias (alias : string, origin : string) : void;
             static function createAlias (alias : string, origin : variant) : void;
@@ -3459,8 +3441,8 @@ native class Ext
             function getMessage () : string;
             function setField (field : string) : void;
             function setMessage (message : string) : void;
-            static function addMembers (members : variant) : Ext.data.Error;
-            static function addStatics (members : variant) : Ext.data.Error;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3475,8 +3457,8 @@ native class Ext
             function add () : variant;
             function getByField (fieldName : string) : Object[];
             function isValid () : boolean;
-            static function addMembers (members : variant) : Ext.data.Errors;
-            static function addStatics (members : variant) : Ext.data.Errors;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3497,7 +3479,7 @@ native class Ext
             function getDefaultValue () : variant;
             function getEncode () : variant;
             function getMapping () : variant;
-            function getName () : string;
+            override function getName () : string;
             function getPersist () : boolean;
             function getSortDir () : string;
             function getSortType () : function () : void;
@@ -3517,8 +3499,8 @@ native class Ext
             function setSortType (sortType : function  () : void) : void;
             function setType (type : string) : void;
             function setType (type : variant) : void;
-            static function addMembers (members : variant) : Ext.data.Field;
-            static function addStatics (members : variant) : Ext.data.Field;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3538,8 +3520,8 @@ native class Ext
             static function abort (request : variant) : void;
             static function abort (request : string) : void;
             static function request (options : variant) : variant;
-            static function addMembers (members : variant) : Ext.data.JsonP;
-            static function addStatics (members : variant) : Ext.data.JsonP;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3573,7 +3555,7 @@ native class Ext
             function commit (silent : boolean) : void;
             function commit () : void;
             function copy (id : string) : Ext.data.Model;
-            function destroy () : void;
+            override function destroy () : void;
             function endEdit (silent : boolean, modifiedFieldNames : string[]) : void;
             function erase (options : variant, scope : variant) : Ext.data.Model;
             function erase (options : function  () : void, scope : variant) : Ext.data.Model;
@@ -3612,7 +3594,7 @@ native class Ext
             function setBelongsTo (belongsTo : string[]) : void;
             function setBelongsTo (belongsTo : Object[]) : void;
             function setClientIdProperty (clientIdProperty : string) : void;
-            function setConvertedData (data : variant) : Ext.data.Model;
+            function setConvertedData (data : variant) : variant;
             function setData (rawData : variant) : Ext.data.Model;
             function setDirty () : void;
             function setFields () : variant[];
@@ -3636,8 +3618,8 @@ native class Ext
             function toUrl () : string;
             function unjoin (store : Ext.data.Store) : void;
             function validate () : Ext.data.Errors;
-            static function addMembers (members : variant) : Ext.data.Model;
-            static function addStatics (members : variant) : Ext.data.Model;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3660,8 +3642,8 @@ native class Ext
             static function getModel (id : string) : Ext.data.Model;
             static function getModel (id : variant) : Ext.data.Model;
             static function registerType (name : string, config : variant) : variant;
-            static function addMembers (members : variant) : Ext.data.ModelManager;
-            static function addStatics (members : variant) : Ext.data.ModelManager;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3737,17 +3719,17 @@ native class Ext
             function isLoading () : boolean;
             function isRoot () : boolean;
             function isVisible () : boolean;
-            function remove (destroy : boolean) : Ext.data.NodeInterface;
-            function remove () : Ext.data.NodeInterface;
-            function removeAll (destroy : boolean) : Ext.data.NodeInterface;
-            function removeAll () : Ext.data.NodeInterface;
+            function remove (destroy : boolean) : variant;
+            function remove () : variant;
+            function removeAll (destroy : boolean) : variant;
+            function removeAll () : variant;
             function removeChild (node : Ext.data.NodeInterface, destroy : boolean) : Ext.data.NodeInterface;
             function removeChild (node : Ext.data.NodeInterface) : Ext.data.NodeInterface;
             function replaceChild (newChild : Ext.data.NodeInterface, oldChild : Ext.data.NodeInterface) : Ext.data.NodeInterface;
             function sort (sortFn : function  () : void, recursive : boolean, suppressEvent : boolean) : void;
             function updateInfo (silent : variant) : boolean;
-            static function addMembers (members : variant) : Ext.data.NodeInterface;
-            static function addStatics (members : variant) : Ext.data.NodeInterface;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3773,8 +3755,8 @@ native class Ext
             function setRecursive (recursive : boolean) : void;
             function setRootVisible (rootVisible : boolean) : void;
             function setSorters (sorters : variant) : void;
-            static function addMembers (members : variant) : Ext.data.NodeStore;
-            static function addStatics (members : variant) : Ext.data.NodeStore;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function createAlias (alias : string, origin : string) : void;
             static function createAlias (alias : string, origin : variant) : void;
@@ -3841,8 +3823,8 @@ native class Ext
             function setUrl (url : variant) : void;
             function setWithCredentials (withCredentials : boolean) : void;
             function wasSuccessful () : boolean;
-            static function addMembers (members : variant) : Ext.data.Operation;
-            static function addStatics (members : variant) : Ext.data.Operation;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3898,8 +3880,8 @@ native class Ext
             function setUsername (username : string) : void;
             function setWithCredentials (withCredentials : boolean) : void;
             function setXmlData (xmlData : variant) : void;
-            static function addMembers (members : variant) : Ext.data.Request;
-            static function addStatics (members : variant) : Ext.data.Request;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3925,8 +3907,8 @@ native class Ext
             function setRecords (records : Ext.data.Model[]) : void;
             function setSuccess (success : boolean) : void;
             function setTotal (total : number) : void;
-            static function addMembers (members : variant) : Ext.data.ResultSet;
-            static function addStatics (members : variant) : Ext.data.ResultSet;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3947,8 +3929,8 @@ native class Ext
             static function asUCString (value : variant) : string;
             static function asUCText (value : variant) : string;
             static function none (value : variant) : variant;
-            static function addMembers (members : variant) : Ext.data.SortTypes;
-            static function addStatics (members : variant) : Ext.data.SortTypes;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -3971,7 +3953,7 @@ native class Ext
             function average (field : string) : number;
             function clearFilter (suppressEvent : boolean) : void;
             function clearFilter () : void;
-            function destroy () : void;
+            override function destroy () : void;
             function each (fn : function  () : void, scope : variant) : void;
             function each (fn : function  () : void) : void;
             function filter (filters : Object[], value : string, anyMatch : boolean, caseSensitive : boolean) : void;
@@ -4132,8 +4114,8 @@ native class Ext
             function sort (sorters : Ext.util.Sorter[]) : void;
             function sum (field : string) : number;
             function sync (options : variant) : variant;
-            static function addMembers (members : variant) : Ext.data.Store;
-            static function addStatics (members : variant) : Ext.data.Store;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function createAlias (alias : string, origin : string) : void;
             static function createAlias (alias : string, origin : variant) : void;
@@ -4150,8 +4132,8 @@ native class Ext
             static function register (stores : Ext.data.Store) : void;
             static function unregister (stores : string) : void;
             static function unregister (stores : variant) : void;
-            static function addMembers (members : variant) : Ext.data.StoreManager;
-            static function addStatics (members : variant) : Ext.data.StoreManager;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -4169,11 +4151,11 @@ native class Ext
             function getNodeById (id : variant) : Ext.data.NodeInterface;
             function getNodeParam () : string;
             function getRoot () : variant;
-            function load (options : variant) : variant;
-            function load () : variant;
+            override function load (options : variant) : variant;
+            override function load () : variant;
             function onProxyLoad (operation : variant) : void;
-            function removeAll (silent : boolean) : void;
-            function removeAll () : void;
+            override function removeAll (silent : boolean) : void;
+            override function removeAll () : void;
             function setClearOnLoad (clearOnLoad : boolean) : void;
             function setDefaultRootId (defaultRootId : string) : void;
             function setDefaultRootProperty (defaultRootProperty : string) : void;
@@ -4181,8 +4163,8 @@ native class Ext
             function setRoot (root : Ext.data.Model) : void;
             function setRoot (root : Ext.data.NodeInterface) : void;
             function setRoot (root : variant) : void;
-            static function addMembers (members : variant) : Ext.data.TreeStore;
-            static function addStatics (members : variant) : Ext.data.TreeStore;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function createAlias (alias : string, origin : string) : void;
             static function createAlias (alias : string, origin : variant) : void;
@@ -4204,8 +4186,8 @@ native class Ext
             static var STRING : variant;
             static var stripRe : RegExp;
 
-            static function addMembers (members : variant) : Ext.data.Types;
-            static function addStatics (members : variant) : Ext.data.Types;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -4233,8 +4215,8 @@ native class Ext
             static function inclusion (config : variant, value : string) : boolean;
             static function length (config : variant, value : string) : boolean;
             static function presence (config : variant, value : variant) : boolean;
-            static function addMembers (members : variant) : Ext.data.Validations;
-            static function addStatics (members : variant) : Ext.data.Validations;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -4254,7 +4236,7 @@ native class Ext
                 function getAssociatedModel () : string;
                 function getAssociatedName () : string;
                 function getAssociationKey () : string;
-                function getName () : variant;
+                override function getName () : variant;
                 function getOwnerModel () : variant;
                 function getOwnerName () : string;
                 function getPrimaryKey () : string;
@@ -4270,8 +4252,8 @@ native class Ext
                 function setPrimaryKey (primaryKey : string) : void;
                 function setReader (reader : Ext.data.reader.Reader) : void;
                 function setType (type : string) : void;
-                static function addMembers (members : variant) : Ext.data.association.Association;
-                static function addStatics (members : variant) : Ext.data.association.Association;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function createAlias (alias : string, origin : string) : void;
                 static function createAlias (alias : string, origin : variant) : void;
@@ -4290,8 +4272,8 @@ native class Ext
                 function setGetterName (getterName : string) : void;
                 function setInstanceName (instanceName : variant) : void;
                 function setSetterName (setterName : string) : void;
-                static function addMembers (members : variant) : Ext.data.association.BelongsTo;
-                static function addStatics (members : variant) : Ext.data.association.BelongsTo;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function createAlias (alias : string, origin : string) : void;
                 static function createAlias (alias : string, origin : variant) : void;
@@ -4315,8 +4297,8 @@ native class Ext
                 function setForeignKey (foreignKey : string) : void;
                 function setStore (store : variant) : void;
                 function setStoreName (storeName : string) : void;
-                static function addMembers (members : variant) : Ext.data.association.HasMany;
-                static function addStatics (members : variant) : Ext.data.association.HasMany;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function createAlias (alias : string, origin : string) : void;
                 static function createAlias (alias : string, origin : variant) : void;
@@ -4335,8 +4317,8 @@ native class Ext
                 function setGetterName (getterName : string) : void;
                 function setInstanceName (instanceName : variant) : void;
                 function setSetterName (setterName : string) : void;
-                static function addMembers (members : variant) : Ext.data.association.HasOne;
-                static function addStatics (members : variant) : Ext.data.association.HasOne;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function createAlias (alias : string, origin : string) : void;
                 static function createAlias (alias : string, origin : variant) : void;
@@ -4352,12 +4334,12 @@ native class Ext
             class Sequential extends Ext.data.identifier.Simple
             {
                 function constructor ();
-                function getPrefix () : string;
+                override function getPrefix () : string;
                 function getSeed () : number;
-                function setPrefix (prefix : string) : void;
+                override function setPrefix (prefix : string) : void;
                 function setSeed (seed : number) : void;
-                static function addMembers (members : variant) : Ext.data.identifier.Sequential;
-                static function addStatics (members : variant) : Ext.data.identifier.Sequential;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4372,8 +4354,8 @@ native class Ext
                 function constructor (config : variant);
                 function getPrefix () : string;
                 function setPrefix (prefix : string) : void;
-                static function addMembers (members : variant) : Ext.data.identifier.Simple;
-                static function addStatics (members : variant) : Ext.data.identifier.Simple;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4394,8 +4376,8 @@ native class Ext
                 function reconfigure (config : variant) : void;
                 function setId (id : variant) : void;
                 function setVersion (version : number) : void;
-                static function addMembers (members : variant) : Ext.data.identifier.Uuid;
-                static function addStatics (members : variant) : Ext.data.identifier.Uuid;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4428,8 +4410,8 @@ native class Ext
                 function setStore (store : variant) : void;
                 function setTrailingBufferZone (trailingBufferZone : number) : void;
                 function setViewSize (viewSize : number) : void;
-                static function addMembers (members : variant) : Ext.data.plugin.Buffered;
-                static function addStatics (members : variant) : Ext.data.plugin.Buffered;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4449,7 +4431,7 @@ native class Ext
 
                 function constructor (config : variant);
                 function constructor ();
-                function doRequest (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : variant;
+                override function doRequest (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : variant;
                 function getHeaders () : variant;
                 function getMethod (request : Ext.data.Request) : string;
                 function getPassword () : string;
@@ -4461,8 +4443,8 @@ native class Ext
                 function setUseDefaultXhrHeader (useDefaultXhrHeader : boolean) : void;
                 function setUsername (username : string) : void;
                 function setWithCredentials (withCredentials : boolean) : void;
-                static function addMembers (members : variant) : Ext.data.proxy.Ajax;
-                static function addStatics (members : variant) : Ext.data.proxy.Ajax;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4475,8 +4457,8 @@ native class Ext
             class Client extends Ext.data.proxy.Proxy
             {
                 function clear () : void;
-                static function addMembers (members : variant) : Ext.data.proxy.Client;
-                static function addStatics (members : variant) : Ext.data.proxy.Client;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4490,20 +4472,20 @@ native class Ext
             {
                 function buildUrl () : string;
                 function doRequest (operation : variant, callback : variant, scope : variant) : void;
-                function getApi () : variant;
+                override function getApi () : variant;
                 function getDirectFn () : variant;
-                function getExtraParams () : variant;
+                override function getExtraParams () : variant;
                 function getParamOrder () : variant;
                 function getParamsAsHash () : boolean;
-                function setApi (api : variant) : void;
+                override function setApi (api : variant) : void;
                 function setDirectFn (directFn : function  () : void) : void;
                 function setDirectFn (directFn : string) : void;
-                function setExtraParams (extraParams : variant) : void;
+                override function setExtraParams (extraParams : variant) : void;
                 function setParamOrder (paramOrder : string) : void;
                 function setParamOrder (paramOrder : string[]) : void;
                 function setParamsAsHash (paramsAsHash : boolean) : void;
-                static function addMembers (members : variant) : Ext.data.proxy.Direct;
-                static function addStatics (members : variant) : Ext.data.proxy.Direct;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4516,9 +4498,9 @@ native class Ext
             class JsonP extends Ext.data.proxy.Server
             {
                 function abort () : void;
-                function buildUrl (request : Ext.data.Request) : string;
-                function destroy () : void;
-                function doRequest (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : variant;
+                override function buildUrl (request : Ext.data.Request) : string;
+                override function destroy () : void;
+                override function doRequest (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : variant;
                 function getAutoAppendParams () : boolean;
                 function getCallbackKey () : string;
                 function getDefaultWriterType () : string;
@@ -4527,8 +4509,8 @@ native class Ext
                 function setCallbackKey (callbackKey : string) : void;
                 function setDefaultWriterType (defaultWriterType : string) : void;
                 function setRecordParam (recordParam : string) : void;
-                static function addMembers (members : variant) : Ext.data.proxy.JsonP;
-                static function addStatics (members : variant) : Ext.data.proxy.JsonP;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4540,8 +4522,8 @@ native class Ext
 
             class LocalStorage extends Ext.data.proxy.WebStorage
             {
-                static function addMembers (members : variant) : Ext.data.proxy.LocalStorage;
-                static function addStatics (members : variant) : Ext.data.proxy.LocalStorage;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4553,15 +4535,15 @@ native class Ext
 
             class Memory extends Ext.data.proxy.Client
             {
-                function clear () : void;
-                function create (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : void;
-                function destroy (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : void;
+                override function clear () : void;
+                override function create (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : void;
+                override function destroy (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : void;
                 function getData () : variant;
-                function read (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : void;
+                override function read (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : void;
                 function setData (data : variant) : void;
-                function update (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : void;
-                static function addMembers (members : variant) : Ext.data.proxy.Memory;
-                static function addStatics (members : variant) : Ext.data.proxy.Memory;
+                override function update (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4593,8 +4575,8 @@ native class Ext
                 function setWriter (writer : string) : void;
                 function setWriter (writer : Ext.data.writer.Writer) : void;
                 function update (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : void;
-                static function addMembers (members : variant) : Ext.data.proxy.Proxy;
-                static function addStatics (members : variant) : Ext.data.proxy.Proxy;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4609,14 +4591,14 @@ native class Ext
                 function buildUrl (request : variant) : variant;
                 function getActionMethods () : variant;
                 function getAppendId () : boolean;
-                function getBatchActions () : boolean;
+                override function getBatchActions () : boolean;
                 function getFormat () : string;
                 function setActionMethods (actionMethods : variant) : void;
                 function setAppendId (appendId : boolean) : void;
-                function setBatchActions (batchActions : boolean) : void;
+                override function setBatchActions (batchActions : boolean) : void;
                 function setFormat (format : string) : void;
-                static function addMembers (members : variant) : Ext.data.proxy.Rest;
-                static function addStatics (members : variant) : Ext.data.proxy.Rest;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4632,8 +4614,8 @@ native class Ext
                 function afterRequest (request : Ext.data.Request, success : boolean) : void;
                 function buildRequest (operation : Ext.data.Operation) : Ext.data.Request;
                 function buildUrl (request : Ext.data.Request) : string;
-                function create () : void;
-                function destroy () : void;
+                override function create () : void;
+                override function destroy () : void;
                 function doRequest (operation : Ext.data.Operation, callback : function  () : void, scope : variant) : void;
                 function encodeFilters (filters : Ext.util.Filter[]) : string;
                 function encodeSorters (sorters : Ext.util.Sorter[]) : string;
@@ -4670,8 +4652,8 @@ native class Ext
                 function setTimeout (timeout : number) : void;
                 function setUrl (url : string) : void;
                 function update () : void;
-                static function addMembers (members : variant) : Ext.data.proxy.Server;
-                static function addStatics (members : variant) : Ext.data.proxy.Server;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4683,8 +4665,8 @@ native class Ext
 
             class SessionStorage extends Ext.data.proxy.WebStorage
             {
-                static function addMembers (members : variant) : Ext.data.proxy.SessionStorage;
-                static function addStatics (members : variant) : Ext.data.proxy.SessionStorage;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4713,8 +4695,8 @@ native class Ext
                 function setTableExists (tableExists : boolean) : void;
                 function setUniqueIdStrategy (uniqueIdStrategy : boolean) : void;
                 function update (operation : variant, callback : variant, scope : variant) : void;
-                static function addMembers (members : variant) : Ext.data.proxy.Sql;
-                static function addStatics (members : variant) : Ext.data.proxy.Sql;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4730,7 +4712,7 @@ native class Ext
 
                 function constructor (config : variant);
                 function constructor ();
-                function clear () : void;
+                override function clear () : void;
                 function create (operation : variant, callback : variant, scope : variant) : void;
                 function destroy (operation : variant, callback : variant, scope : variant) : void;
                 function getDefaultDateFormat () : string;
@@ -4743,8 +4725,8 @@ native class Ext
                 function setRecord (record : Ext.data.Model, id : string) : void;
                 function setRecord (record : Ext.data.Model) : void;
                 function update (operation : variant, callback : variant, scope : variant) : void;
-                static function addMembers (members : variant) : Ext.data.proxy.WebStorage;
-                static function addStatics (members : variant) : Ext.data.proxy.WebStorage;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4761,12 +4743,12 @@ native class Ext
             class Array extends Ext.data.reader.Json
             {
                 function constructor (meta : variant);
-                function getSuccessProperty () : variant;
-                function getTotalProperty () : variant;
+                override function getSuccessProperty () : variant;
+                override function getTotalProperty () : variant;
                 function setSuccessProperty (successProperty : variant) : void;
                 function setTotalProperty (totalProperty : variant) : void;
-                static function addMembers (members : variant) : Ext.data.reader.Array;
-                static function addStatics (members : variant) : Ext.data.reader.Array;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4779,12 +4761,12 @@ native class Ext
             class Json extends Ext.data.reader.Reader
             {
                 function getRecord () : string;
-                function getResponseData (response : variant) : variant;
+                override function getResponseData (response : variant) : variant;
                 function getUseSimpleAccessors () : boolean;
                 function setRecord (record : string) : void;
                 function setUseSimpleAccessors (useSimpleAccessors : boolean) : void;
-                static function addMembers (members : variant) : Ext.data.reader.Json;
-                static function addStatics (members : variant) : Ext.data.reader.Json;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4819,8 +4801,8 @@ native class Ext
                 function setRootProperty (rootProperty : string) : void;
                 function setSuccessProperty (successProperty : string) : void;
                 function setTotalProperty (totalProperty : string) : void;
-                static function addMembers (members : variant) : Ext.data.reader.Reader;
-                static function addStatics (members : variant) : Ext.data.reader.Reader;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4834,11 +4816,11 @@ native class Ext
             {
                 function getData (data : variant) : variant;
                 function getRecord () : string;
-                function getResponseData (response : variant) : variant;
-                function readRecords (doc : variant) : Ext.data.ResultSet;
+                override function getResponseData (response : variant) : variant;
+                override function readRecords (doc : variant) : Ext.data.ResultSet;
                 function setRecord (record : string) : void;
-                static function addMembers (members : variant) : Ext.data.reader.Xml;
-                static function addStatics (members : variant) : Ext.data.reader.Xml;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4862,8 +4844,8 @@ native class Ext
                 function setEncode (encode : boolean) : void;
                 function setEncodeRequest (encodeRequest : boolean) : void;
                 function setRootProperty (rootProperty : string) : void;
-                static function addMembers (members : variant) : Ext.data.writer.Json;
-                static function addStatics (members : variant) : Ext.data.writer.Json;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4883,8 +4865,8 @@ native class Ext
                 function setNameProperty (nameProperty : string) : void;
                 function setWriteAllFields (writeAllFields : boolean) : void;
                 function write (request : Ext.data.Request) : Ext.data.Request;
-                static function addMembers (members : variant) : Ext.data.writer.Writer;
-                static function addStatics (members : variant) : Ext.data.writer.Writer;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4905,8 +4887,8 @@ native class Ext
                 function setHeader (header : string) : void;
                 function setRecord (record : string) : void;
                 function writeRecords (request : variant, data : variant[]) : variant;
-                static function addMembers (members : variant) : Ext.data.writer.Xml;
-                static function addStatics (members : variant) : Ext.data.writer.Xml;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -4925,12 +4907,12 @@ native class Ext
         {
             function constructor (config : variant);
             function collectData () : void;
-            function destroy () : void;
+            override function destroy () : void;
             function findItemByChild () : void;
             function findTargetByEvent () : void;
-            function getBaseCls () : string;
-            function getData () : Object[];
-            function getDefaultType () : string;
+            override function getBaseCls () : string;
+            override function getData () : Object[];
+            override function getDefaultType () : string;
             function getDeferEmptyText () : boolean;
             function getDeselectOnContainerClick () : boolean;
             function getEmptyText () : string;
@@ -4948,7 +4930,7 @@ native class Ext
             function getPressedDelay () : number;
             function getRecords () : void;
             function getScrollToTopOnRefresh () : boolean;
-            function getScrollable () : boolean;
+            override function getScrollable () : boolean;
             function getSelectedCls () : string;
             function getSelectedNodes () : void;
             function getSelectedRecords () : void;
@@ -4959,14 +4941,14 @@ native class Ext
             function getViewItems () : variant;
             function handleException () : void;
             function indexOf () : void;
-            function initialize () : void;
+            override function initialize () : void;
             function prepareData (data : variant, index : number, record : Ext.data.Model) : variant;
             function prepareData (data : Object[], index : number, record : Ext.data.Model) : variant;
             function refresh () : void;
             function refreshNode () : void;
-            function setBaseCls (baseCls : string) : void;
+            override function setBaseCls (baseCls : string) : void;
             function setData (data : Object[]) : void;
-            function setDefaultType (defaultType : string) : void;
+            override function setDefaultType (defaultType : string) : void;
             function setDeferEmptyText (deferEmptyText : boolean) : void;
             function setDeselectOnContainerClick (deselectOnContainerClick : boolean) : void;
             function setEmptyText (emptyText : string) : void;
@@ -4983,15 +4965,15 @@ native class Ext
             function setPressedCls (pressedCls : string) : void;
             function setPressedDelay (pressedDelay : number) : void;
             function setScrollToTopOnRefresh (scrollToTopOnRefresh : boolean) : void;
-            function setScrollable (scrollable : boolean) : void;
+            override function setScrollable (scrollable : boolean) : void;
             function setSelectedCls (selectedCls : string) : void;
             function setStore (store : Ext.data.Store) : void;
             function setStore (store : variant) : void;
             function setTriggerCtEvent (triggerCtEvent : string) : void;
             function setTriggerEvent (triggerEvent : string) : void;
             function setUseComponents (useComponents : boolean) : void;
-            static function addMembers (members : variant) : Ext.dataview.DataView;
-            static function addStatics (members : variant) : Ext.dataview.DataView;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5003,22 +4985,22 @@ native class Ext
 
         class IndexBar extends Ext.Component
         {
-            function destroy () : void;
-            function getBaseCls () : string;
+            override function destroy () : void;
+            override function getBaseCls () : string;
             function getDirection () : string;
             function getLetters () : variant[];
             function getListPrefix () : string;
-            function getUi () : string;
+            override function getUi () : string;
             function isHorizontal () : void;
             function isVertical () : void;
             function refresh () : void;
-            function setBaseCls (baseCls : string) : void;
+            override function setBaseCls (baseCls : string) : void;
             function setDirection (direction : string) : void;
             function setLetters (letters : variant[]) : void;
             function setListPrefix (listPrefix : string) : void;
-            function setUi (ui : string) : void;
-            static function addMembers (members : variant) : Ext.dataview.IndexBar;
-            static function addStatics (members : variant) : Ext.dataview.IndexBar;
+            override function setUi (ui : string) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5033,17 +5015,17 @@ native class Ext
             var bufferSize : number;
 
             function constructor ();
-            function destroy () : void;
-            function getBaseCls () : string;
-            function getDefaultType () : string;
+            override function destroy () : void;
+            override function getBaseCls () : string;
+            override function getDefaultType () : string;
             function getDisclosureProperty () : string;
             function getGrouped () : boolean;
             function getIcon () : variant;
             function getIndexBar () : variant;
             function getInfinite () : boolean;
-            function getItemAt (index : number) : variant;
+            override function getItemAt (index : number) : variant;
             function getItemHeight () : number;
-            function getItemIndex (item : number) : number;
+            override function getItemIndex (item : number) : number;
             function getMinimumBufferDistance () : number;
             function getOnItemDisclosure () : variant;
             function getPinHeaders () : boolean;
@@ -5051,14 +5033,14 @@ native class Ext
             function getRefreshHeightOnUpdate () : boolean;
             function getScrollDockedItems () : variant[];
             function getStriped () : boolean;
-            function getUi () : string;
+            override function getUi () : string;
             function getUseHeaders () : boolean;
             function getUseSimpleItems () : boolean;
             function getVariableHeights () : boolean;
-            function getViewItems () : variant;
-            function initialize () : void;
-            function setBaseCls (baseCls : string) : void;
-            function setDefaultType (defaultType : string) : void;
+            override function getViewItems () : variant;
+            override function initialize () : void;
+            override function setBaseCls (baseCls : string) : void;
+            override function setDefaultType (defaultType : string) : void;
             function setDisclosureProperty (disclosureProperty : string) : void;
             function setGrouped (grouped : boolean) : void;
             function setIcon (icon : variant) : void;
@@ -5074,12 +5056,12 @@ native class Ext
             function setPreventSelectionOnDisclose (preventSelectionOnDisclose : boolean) : void;
             function setRefreshHeightOnUpdate (refreshHeightOnUpdate : boolean) : void;
             function setStriped (striped : boolean) : void;
-            function setUi (ui : string) : void;
+            override function setUi (ui : string) : void;
             function setUseHeaders (useHeaders : boolean) : void;
             function setUseSimpleItems (useSimpleItems : boolean) : void;
             function setVariableHeights (variableHeights : boolean) : void;
-            static function addMembers (members : variant) : Ext.dataview.List;
-            static function addStatics (members : variant) : Ext.dataview.List;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5095,7 +5077,7 @@ native class Ext
             function getAllowDeselect () : boolean;
             function getBackButton () : variant;
             function getBackText () : string;
-            function getBaseCls () : string;
+            override function getBaseCls () : string;
             function getClearSelectionOnListChange () : boolean;
             function getDetailCard () : Ext.Component;
             function getDetailContainer () : Ext.Container;
@@ -5111,7 +5093,7 @@ native class Ext
             function getTitle () : string;
             function getTitleTextTpl (node : Ext.data.Model) : string;
             function getToolbar () : variant;
-            function getUi () : variant;
+            override function getUi () : variant;
             function getUpdateTitleText () : boolean;
             function getUseSimpleItems () : boolean;
             function getUseTitleAsBackText () : boolean;
@@ -5123,7 +5105,7 @@ native class Ext
             function setAllowDeselect (allowDeselect : boolean) : void;
             function setBackButton (backButton : variant) : void;
             function setBackText (backText : string) : void;
-            function setBaseCls (baseCls : string) : void;
+            override function setBaseCls (baseCls : string) : void;
             function setClearSelectionOnListChange (clearSelectionOnListChange : boolean) : void;
             function setDetailCard (detailCard : Ext.Component) : void;
             function setDetailContainer (detailContainer : Ext.Container) : void;
@@ -5145,8 +5127,8 @@ native class Ext
             function setUseSimpleItems (useSimpleItems : boolean) : void;
             function setUseTitleAsBackText (useTitleAsBackText : boolean) : void;
             function setVariableHeights (variableHeights : boolean) : void;
-            static function addMembers (members : variant) : Ext.dataview.NestedList;
-            static function addStatics (members : variant) : Ext.dataview.NestedList;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5162,22 +5144,22 @@ native class Ext
 
             class DataItem extends Ext.Container
             {
-                function getBaseCls () : string;
+                override function getBaseCls () : string;
                 function getDataMap () : variant;
-                function getDefaultType () : string;
+                override function getDefaultType () : string;
                 function getItemCls () : string;
-                function getItems () : variant[];
-                function getRecord () : Ext.data.Model;
-                function getWidth () : string;
-                function setBaseCls (baseCls : string) : void;
+                override function getItems () : variant[];
+                override function getRecord () : Ext.data.Model;
+                override function getWidth () : string;
+                override function setBaseCls (baseCls : string) : void;
                 function setDataMap (dataMap : variant) : void;
-                function setDefaultType (defaultType : string) : void;
+                override function setDefaultType (defaultType : string) : void;
                 function setItemCls (itemCls : string) : void;
-                function setItems (items : variant[]) : void;
-                function setRecord (record : Ext.data.Model) : void;
-                function setWidth (width : string) : void;
-                static function addMembers (members : variant) : Ext.dataview.component.DataItem;
-                static function addStatics (members : variant) : Ext.dataview.component.DataItem;
+                override function setItems (items : variant[]) : void;
+                override function setRecord (record : Ext.data.Model) : void;
+                override function setWidth (width : string) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5189,23 +5171,23 @@ native class Ext
 
             class ListItem extends Ext.dataview.component.DataItem
             {
-                function destroy () : void;
-                function getBaseCls () : string;
+                override function destroy () : void;
+                override function getBaseCls () : string;
                 function getBody () : variant;
-                function getDataMap () : variant;
+                override function getDataMap () : variant;
                 function getDisclosure () : variant;
                 function getHeader () : variant;
-                function getItems () : variant;
-                function getTpl () : variant;
-                function setBaseCls (baseCls : string) : void;
+                override function getItems () : variant;
+                override function getTpl () : variant;
+                override function setBaseCls (baseCls : string) : void;
                 function setBody (body : variant) : void;
-                function setDataMap (dataMap : variant) : void;
+                override function setDataMap (dataMap : variant) : void;
                 function setDisclosure (disclosure : variant) : void;
                 function setHeader (header : variant) : void;
-                function setItems (items : variant) : void;
+                override function setItems (items : variant) : void;
                 function setTpl (tpl : variant) : void;
-                static function addMembers (members : variant) : Ext.dataview.component.ListItem;
-                static function addStatics (members : variant) : Ext.dataview.component.ListItem;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5217,18 +5199,18 @@ native class Ext
 
             class SimpleListItem extends Ext.Component
             {
-                function destroy () : void;
-                function getBaseCls () : string;
+                override function destroy () : void;
+                override function getBaseCls () : string;
                 function getDisclosure () : variant;
                 function getHeader () : variant;
-                function getRecord () : Ext.data.Model;
-                function initialize () : void;
-                function setBaseCls (baseCls : string) : void;
+                override function getRecord () : Ext.data.Model;
+                override function initialize () : void;
+                override function setBaseCls (baseCls : string) : void;
                 function setDisclosure (disclosure : variant) : void;
                 function setHeader (header : variant) : void;
-                function setRecord (record : Ext.data.Model) : void;
-                static function addMembers (members : variant) : Ext.dataview.component.SimpleListItem;
-                static function addStatics (members : variant) : Ext.dataview.component.SimpleListItem;
+                override function setRecord (record : Ext.data.Model) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5244,9 +5226,9 @@ native class Ext
 
             class Container extends Ext.Component
             {
-                function destroy () : void;
-                static function addMembers (members : variant) : Ext.dataview.element.Container;
-                static function addStatics (members : variant) : Ext.dataview.element.Container;
+                override function destroy () : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5265,8 +5247,8 @@ native class Ext
         class Accelerometer extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Accelerometer;
-            static function addStatics (members : variant) : Ext.device.Accelerometer;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5279,8 +5261,8 @@ native class Ext
         class Browser extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Browser;
-            static function addStatics (members : variant) : Ext.device.Browser;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5293,8 +5275,8 @@ native class Ext
         class Camera extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Camera;
-            static function addStatics (members : variant) : Ext.device.Camera;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5307,8 +5289,8 @@ native class Ext
         class Capture extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Capture;
-            static function addStatics (members : variant) : Ext.device.Capture;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5322,8 +5304,8 @@ native class Ext
         class Compass extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Compass;
-            static function addStatics (members : variant) : Ext.device.Compass;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5335,8 +5317,8 @@ native class Ext
 
         class Connection extends Ext.Base
         {
-            static function addMembers (members : variant) : Ext.device.Connection;
-            static function addStatics (members : variant) : Ext.device.Connection;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5349,8 +5331,8 @@ native class Ext
         class Contacts extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Contacts;
-            static function addStatics (members : variant) : Ext.device.Contacts;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5363,8 +5345,8 @@ native class Ext
         class Device extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Device;
-            static function addStatics (members : variant) : Ext.device.Device;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5377,8 +5359,8 @@ native class Ext
         class FileSystem extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.FileSystem;
-            static function addStatics (members : variant) : Ext.device.FileSystem;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5391,8 +5373,8 @@ native class Ext
         class Geolocation extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Geolocation;
-            static function addStatics (members : variant) : Ext.device.Geolocation;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5405,8 +5387,8 @@ native class Ext
         class Globalization extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Globalization;
-            static function addStatics (members : variant) : Ext.device.Globalization;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5419,8 +5401,8 @@ native class Ext
         class Media extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Media;
-            static function addStatics (members : variant) : Ext.device.Media;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5433,8 +5415,8 @@ native class Ext
         class Notification extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Notification;
-            static function addStatics (members : variant) : Ext.device.Notification;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5447,8 +5429,8 @@ native class Ext
         class Orientation extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Orientation;
-            static function addStatics (members : variant) : Ext.device.Orientation;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5461,8 +5443,8 @@ native class Ext
         class Purchases extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Purchases;
-            static function addStatics (members : variant) : Ext.device.Purchases;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5473,11 +5455,11 @@ native class Ext
 
             class Product extends Ext.data.Model
             {
-                function getFields () : variant[];
+                override function getFields () : variant[];
                 function purchase (config : variant) : void;
                 function setFields (fields : variant[]) : void;
-                static function addMembers (members : variant) : Ext.device.Purchases.Product;
-                static function addStatics (members : variant) : Ext.device.Purchases.Product;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5494,8 +5476,8 @@ native class Ext
         class Push extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Push;
-            static function addStatics (members : variant) : Ext.device.Push;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5508,8 +5490,8 @@ native class Ext
         class SQLite extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.SQLite;
-            static function addStatics (members : variant) : Ext.device.SQLite;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5522,8 +5504,8 @@ native class Ext
         class Splashscreen extends Ext.Base
         {
             static function constructor ();
-            static function addMembers (members : variant) : Ext.device.Splashscreen;
-            static function addStatics (members : variant) : Ext.device.Splashscreen;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -5540,8 +5522,8 @@ native class Ext
             {
                 function getFrequency () : number;
                 function setFrequency (frequency : number) : void;
-                static function addMembers (members : variant) : Ext.device.accelerometer.Abstract;
-                static function addStatics (members : variant) : Ext.device.accelerometer.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5561,8 +5543,8 @@ native class Ext
             {
                 function close () : void;
                 function open (options : variant) : void;
-                static function addMembers (members : variant) : Ext.device.browser.Abstract;
-                static function addStatics (members : variant) : Ext.device.browser.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5582,8 +5564,8 @@ native class Ext
             class Abstract extends Ext.Base
             {
                 function capture (options : variant, scope : variant, destination : string, encoding : string, width : number, height : number) : void;
-                static function addMembers (members : variant) : Ext.device.camera.Abstract;
-                static function addStatics (members : variant) : Ext.device.camera.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5609,8 +5591,8 @@ native class Ext
 
             class Default extends Ext.Base
             {
-                static function addMembers (members : variant) : Ext.device.communicator.Default;
-                static function addStatics (members : variant) : Ext.device.communicator.Default;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5628,8 +5610,8 @@ native class Ext
             {
                 function getFrequency () : number;
                 function setFrequency (frequency : number) : void;
-                static function addMembers (members : variant) : Ext.device.compass.Abstract;
-                static function addStatics (members : variant) : Ext.device.compass.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5660,8 +5642,8 @@ native class Ext
                 function isOnline () : boolean;
                 function setOnline (online : boolean) : void;
                 function setType (type : variant) : void;
-                static function addMembers (members : variant) : Ext.device.connection.Abstract;
-                static function addStatics (members : variant) : Ext.device.connection.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5685,8 +5667,8 @@ native class Ext
                 function getLocalizedLabel (config : variant) : string;
                 function getThumbnail (config : variant) : string;
                 function setIncludeImages (includeImages : boolean) : void;
-                static function addMembers (members : variant) : Ext.device.contacts.Abstract;
-                static function addStatics (members : variant) : Ext.device.contacts.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5710,8 +5692,8 @@ native class Ext
                 var uuid : string;
 
                 function openURL (url : string) : void;
-                static function addMembers (members : variant) : Ext.device.device.Abstract;
-                static function addStatics (members : variant) : Ext.device.device.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5738,8 +5720,8 @@ native class Ext
                 function setFileSystemType (fileSystemType : number) : void;
                 function setReaderType (readerType : string) : void;
                 function setStringEncoding (stringEncoding : string) : void;
-                static function addMembers (members : variant) : Ext.device.filesystem.Abstract;
-                static function addStatics (members : variant) : Ext.device.filesystem.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5757,8 +5739,8 @@ native class Ext
                 function readMetadata (config : variant) : void;
                 function upload (config : variant) : variant;
                 function writeMetadata (config : variant) : void;
-                static function addMembers (members : variant) : Ext.device.filesystem.Cordova;
-                static function addStatics (members : variant) : Ext.device.filesystem.Cordova;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5776,8 +5758,8 @@ native class Ext
                 function getFile (config : variant) : void;
                 function readEntries (config : variant) : void;
                 function removeRecursively (config : variant) : void;
-                static function addMembers (members : variant) : Ext.device.filesystem.DirectoryEntry;
-                static function addStatics (members : variant) : Ext.device.filesystem.DirectoryEntry;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5793,14 +5775,14 @@ native class Ext
                 function copyTo (config : variant) : void;
                 function getFileSystem () : Ext.device.filesystem.FileSystem;
                 function getFullPath () : string;
-                function getName () : string;
+                override function getName () : string;
                 function getParent (config : variant) : void;
                 function isDirectory () : boolean;
                 function isFile () : boolean;
                 function moveTo (config : variant) : void;
                 function remove (config : variant) : void;
-                static function addMembers (members : variant) : Ext.device.filesystem.Entry;
-                static function addStatics (members : variant) : Ext.device.filesystem.Entry;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5819,8 +5801,8 @@ native class Ext
                 function seek (config : variant) : void;
                 function truncate (config : variant) : void;
                 function write (config : variant) : void;
-                static function addMembers (members : variant) : Ext.device.filesystem.FileEntry;
-                static function addStatics (members : variant) : Ext.device.filesystem.FileEntry;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5834,8 +5816,8 @@ native class Ext
             {
                 function constructor (id : variant);
                 function getRoot () : Ext.device.filesystem.DirectoryEntry;
-                static function addMembers (members : variant) : Ext.device.filesystem.FileSystem;
-                static function addStatics (members : variant) : Ext.device.filesystem.FileSystem;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5848,8 +5830,8 @@ native class Ext
             class HTML5 extends Ext.device.filesystem.Abstract
             {
                 function requestFileSystem (config : variant) : void;
-                static function addMembers (members : variant) : Ext.device.filesystem.HTML5;
-                static function addStatics (members : variant) : Ext.device.filesystem.HTML5;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5878,8 +5860,8 @@ native class Ext
                 function setMaximumAge (maximumAge : number) : void;
                 function setTimeout (timeout : number) : void;
                 function watchPosition (config : variant) : void;
-                static function addMembers (members : variant) : Ext.device.geolocation.Abstract;
-                static function addStatics (members : variant) : Ext.device.geolocation.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5910,8 +5892,8 @@ native class Ext
                 function setItems (items : string) : void;
                 function setNumberType (numberType : string) : void;
                 function setSelector (selector : string) : void;
-                static function addMembers (members : variant) : Ext.device.globalization.Abstract;
-                static function addStatics (members : variant) : Ext.device.globalization.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5931,8 +5913,8 @@ native class Ext
             {
                 function getSrc () : variant;
                 function setSrc (src : variant) : void;
-                static function addMembers (members : variant) : Ext.device.media.Abstract;
-                static function addStatics (members : variant) : Ext.device.media.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5951,8 +5933,8 @@ native class Ext
             {
                 function show (config : variant) : void;
                 function vibrate () : void;
-                static function addMembers (members : variant) : Ext.device.notification.Abstract;
-                static function addStatics (members : variant) : Ext.device.notification.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5971,8 +5953,8 @@ native class Ext
 
             class Abstract extends Ext.Base
             {
-                static function addMembers (members : variant) : Ext.device.orientation.Abstract;
-                static function addStatics (members : variant) : Ext.device.orientation.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -5991,10 +5973,10 @@ native class Ext
             class Purchase extends Ext.data.Model
             {
                 function complete (config : variant) : void;
-                function getFields () : variant[];
+                override function getFields () : variant[];
                 function setFields (fields : variant[]) : void;
-                static function addMembers (members : variant) : Ext.device.purchases.Purchase;
-                static function addStatics (members : variant) : Ext.device.purchases.Purchase;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -6019,8 +6001,8 @@ native class Ext
                 var SOUND : number;
 
                 function register (config : variant) : void;
-                static function addMembers (members : variant) : Ext.device.push.Abstract;
-                static function addStatics (members : variant) : Ext.device.push.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -6038,8 +6020,8 @@ native class Ext
 
             class Abstract extends Ext.Base
             {
-                static function addMembers (members : variant) : Ext.device.splashscreen.Abstract;
-                static function addStatics (members : variant) : Ext.device.splashscreen.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -6062,8 +6044,8 @@ native class Ext
                 function getVersion () : string;
                 function readTransaction (config : variant) : void;
                 function transaction (config : variant) : void;
-                static function addMembers (members : variant) : Ext.device.sqlite.Database;
-                static function addStatics (members : variant) : Ext.device.sqlite.Database;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -6079,8 +6061,8 @@ native class Ext
                 function getInsertId () : number;
                 function getRows () : Ext.device.sqlite.SQLResultSetRowList;
                 function getRowsAffected () : number;
-                static function addMembers (members : variant) : Ext.device.sqlite.SQLResultSet;
-                static function addStatics (members : variant) : Ext.device.sqlite.SQLResultSet;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -6095,8 +6077,8 @@ native class Ext
                 function constructor (data : variant);
                 function getLength () : number;
                 function item (index : number) : variant;
-                static function addMembers (members : variant) : Ext.device.sqlite.SQLResultSetRowList;
-                static function addStatics (members : variant) : Ext.device.sqlite.SQLResultSetRowList;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -6110,8 +6092,8 @@ native class Ext
             {
                 function constructor (id : variant);
                 function executeSql (config : variant) : void;
-                static function addMembers (members : variant) : Ext.device.sqlite.SQLTransaction;
-                static function addStatics (members : variant) : Ext.device.sqlite.SQLTransaction;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -6136,8 +6118,8 @@ native class Ext
                 function setDatabaseName (databaseName : string) : void;
                 function setDatabaseSize (databaseSize : variant) : void;
                 function setDatabaseVersion (databaseVersion : string) : void;
-                static function addMembers (members : variant) : Ext.device.storage.Abstract;
-                static function addStatics (members : variant) : Ext.device.storage.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -6154,8 +6136,8 @@ native class Ext
 
                 class HTML5 extends Ext.device.storage.Abstract
                 {
-                    static function addMembers (members : variant) : Ext.device.storage.HTML5.HTML5;
-                    static function addStatics (members : variant) : Ext.device.storage.HTML5.HTML5;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -6181,8 +6163,8 @@ native class Ext
                 function onMessage (callback : function  () : void) : void;
                 function send (receiverId : string, message : variant, foreground : boolean) : Ext.Promise;
                 function send (receiverId : string, message : variant) : Ext.Promise;
-                static function addMembers (members : variant) : Ext.device.tunnel.Abstract;
-                static function addStatics (members : variant) : Ext.device.tunnel.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -6203,7 +6185,7 @@ native class Ext
             function getCode () : variant;
             function getData () : variant;
             function getMessage () : string;
-            function getName () : string;
+            override function getName () : string;
             function getResult () : variant;
             function getStatus () : boolean;
             function getTransaction () : variant;
@@ -6216,8 +6198,8 @@ native class Ext
             function setStatus (status : boolean) : void;
             function setTransaction (transaction : variant) : void;
             function setXhr (xhr : variant) : void;
-            static function addMembers (members : variant) : Ext.direct.Event;
-            static function addStatics (members : variant) : Ext.direct.Event;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6230,13 +6212,13 @@ native class Ext
         class ExceptionEvent extends Ext.direct.RemotingEvent
         {
             function getError () : variant;
-            function getName () : string;
-            function getStatus () : boolean;
+            override function getName () : string;
+            override function getStatus () : boolean;
             function setError (error : variant) : void;
-            function setName (name : string) : void;
-            function setStatus (status : boolean) : void;
-            static function addMembers (members : variant) : Ext.direct.ExceptionEvent;
-            static function addStatics (members : variant) : Ext.direct.ExceptionEvent;
+            override function setName (name : string) : void;
+            override function setStatus (status : boolean) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6249,8 +6231,8 @@ native class Ext
         class JsonProvider extends Ext.direct.Provider
         {
             function createEvent (response : variant) : Ext.direct.Event;
-            static function addMembers (members : variant) : Ext.direct.JsonProvider;
-            static function addStatics (members : variant) : Ext.direct.JsonProvider;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6270,8 +6252,8 @@ native class Ext
             static function parseMethod (fn : function  () : void) : function () : void;
             static function removeProvider (provider : string) : variant;
             static function removeProvider (provider : Ext.direct.Provider) : variant;
-            static function addMembers (members : variant) : Ext.direct.Manager;
-            static function addStatics (members : variant) : Ext.direct.Manager;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6283,18 +6265,18 @@ native class Ext
 
         class PollingProvider extends Ext.direct.JsonProvider
         {
-            function connect () : void;
-            function disconnect () : void;
+            override function connect () : void;
+            override function disconnect () : void;
             function getBaseParams () : variant;
             function getInterval () : number;
             function getUrl () : variant;
-            function isConnected () : boolean;
+            override function isConnected () : boolean;
             function setBaseParams (baseParams : variant) : void;
             function setInterval (interval : number) : void;
             function setUrl (url : string) : void;
             function setUrl (url : function  () : void) : void;
-            static function addMembers (members : variant) : Ext.direct.PollingProvider;
-            static function addStatics (members : variant) : Ext.direct.PollingProvider;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6314,8 +6296,8 @@ native class Ext
             function getId () : string;
             function isConnected () : boolean;
             function setId (id : string) : void;
-            static function addMembers (members : variant) : Ext.direct.Provider;
-            static function addStatics (members : variant) : Ext.direct.Provider;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6327,14 +6309,14 @@ native class Ext
 
         class RemotingEvent extends Ext.direct.Event
         {
-            function getName () : string;
+            override function getName () : string;
             function getTid () : variant;
-            function getTransaction () : Ext.direct.Transaction;
-            function setName (name : string) : void;
+            override function getTransaction () : Ext.direct.Transaction;
+            override function setName (name : string) : void;
             function setTid (tid : variant) : void;
-            function setTransaction (transaction : variant) : void;
-            static function addMembers (members : variant) : Ext.direct.RemotingEvent;
-            static function addStatics (members : variant) : Ext.direct.RemotingEvent;
+            override function setTransaction (transaction : variant) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6347,8 +6329,8 @@ native class Ext
 
         class RemotingProvider extends Ext.direct.JsonProvider
         {
-            function connect () : void;
-            function disconnect () : void;
+            override function connect () : void;
+            override function disconnect () : void;
             function getActions () : variant;
             function getEnableBuffer () : variant;
             function getEnableUrlEncode () : string;
@@ -6356,7 +6338,7 @@ native class Ext
             function getNamespace () : variant;
             function getTimeout () : number;
             function getUrl () : string;
-            function isConnected () : boolean;
+            override function isConnected () : boolean;
             function setActions (actions : variant) : void;
             function setEnableBuffer (enableBuffer : number) : void;
             function setEnableBuffer (enableBuffer : boolean) : void;
@@ -6366,8 +6348,8 @@ native class Ext
             function setNamespace (namespace : variant) : void;
             function setTimeout (timeout : number) : void;
             function setUrl (url : string) : void;
-            static function addMembers (members : variant) : Ext.direct.RemotingProvider;
-            static function addStatics (members : variant) : Ext.direct.RemotingProvider;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6398,8 +6380,8 @@ native class Ext
             function setMethod (method : variant) : void;
             function setProvider (provider : variant) : void;
             function setRetryCount (retryCount : number) : void;
-            static function addMembers (members : variant) : Ext.direct.Transaction;
-            static function addStatics (members : variant) : Ext.direct.Transaction;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6415,8 +6397,8 @@ native class Ext
 
         class CompositeElement extends Ext.dom.CompositeElementLite
         {
-            static function addMembers (members : variant) : Ext.dom.CompositeElement;
-            static function addStatics (members : variant) : Ext.dom.CompositeElement;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function createAlias (alias : string, origin : string) : void;
             static function createAlias (alias : string, origin : variant) : void;
@@ -6430,24 +6412,24 @@ native class Ext
             var elements : HTMLElement[];
 
             function constructor (elements : variant, root : variant);
-            function add (els : HTMLElement[], root : HTMLElement) : Ext.dom.CompositeElementLite;
-            function add (els : HTMLElement[], root : string) : Ext.dom.CompositeElementLite;
-            function add (els : HTMLElement[]) : Ext.dom.CompositeElementLite;
-            function add (els : Ext.dom.CompositeElementLite, root : HTMLElement) : Ext.dom.CompositeElementLite;
-            function add (els : Ext.dom.CompositeElementLite, root : string) : Ext.dom.CompositeElementLite;
-            function add (els : Ext.dom.CompositeElementLite) : Ext.dom.CompositeElementLite;
-            function addListener (eventName : variant, handler : variant, scope : variant, opt : variant) : Ext.dom.CompositeElementLite;
+            function add (els : HTMLElement[], root : HTMLElement) : variant;
+            function add (els : HTMLElement[], root : string) : variant;
+            function add (els : HTMLElement[]) : variant;
+            function add (els : Ext.dom.CompositeElementLite, root : HTMLElement) : variant;
+            function add (els : Ext.dom.CompositeElementLite, root : string) : variant;
+            function add (els : Ext.dom.CompositeElementLite) : variant;
+            function addListener (eventName : variant, handler : variant, scope : variant, opt : variant) : variant;
             function clear () : void;
             function contains (el : string) : boolean;
             function contains (el : HTMLElement) : boolean;
             function contains (el : Ext.dom.Element) : boolean;
             function contains (el : number) : boolean;
-            function each (fn : function  () : void, scope : variant) : Ext.dom.CompositeElementLite;
-            function each (fn : function  () : void) : Ext.dom.CompositeElementLite;
-            function fill (els : HTMLElement[]) : Ext.dom.CompositeElementLite;
-            function fill (els : Ext.dom.CompositeElementLite) : Ext.dom.CompositeElementLite;
-            function filter (selector : string) : Ext.dom.CompositeElementLite;
-            function filter (selector : function  () : void) : Ext.dom.CompositeElementLite;
+            function each (fn : function  () : void, scope : variant) : variant;
+            function each (fn : function  () : void) : variant;
+            function fill (els : HTMLElement[]) : variant;
+            function fill (els : Ext.dom.CompositeElementLite) : variant;
+            function filter (selector : string) : variant;
+            function filter (selector : function  () : void) : variant;
             function first () : Ext.dom.Element;
             function getCount () : number;
             function indexOf (el : string) : number;
@@ -6456,32 +6438,32 @@ native class Ext
             function indexOf (el : number) : number;
             function item (index : number) : Ext.dom.Element;
             function last () : Ext.dom.Element;
-            function removeElement (el : string, removeDom : boolean) : Ext.dom.CompositeElementLite;
-            function removeElement (el : string) : Ext.dom.CompositeElementLite;
-            function removeElement (el : HTMLElement, removeDom : boolean) : Ext.dom.CompositeElementLite;
-            function removeElement (el : HTMLElement) : Ext.dom.CompositeElementLite;
-            function removeElement (el : Ext.dom.Element, removeDom : boolean) : Ext.dom.CompositeElementLite;
-            function removeElement (el : Ext.dom.Element) : Ext.dom.CompositeElementLite;
-            function removeElement (el : number, removeDom : boolean) : Ext.dom.CompositeElementLite;
-            function removeElement (el : number) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : string, replacement : string, domReplace : boolean) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : string, replacement : string) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : string, replacement : Ext.dom.Element, domReplace : boolean) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : string, replacement : Ext.dom.Element) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : HTMLElement, replacement : string, domReplace : boolean) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : HTMLElement, replacement : string) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : HTMLElement, replacement : Ext.dom.Element, domReplace : boolean) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : HTMLElement, replacement : Ext.dom.Element) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : Ext.dom.Element, replacement : string, domReplace : boolean) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : Ext.dom.Element, replacement : string) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : Ext.dom.Element, replacement : Ext.dom.Element, domReplace : boolean) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : Ext.dom.Element, replacement : Ext.dom.Element) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : number, replacement : string, domReplace : boolean) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : number, replacement : string) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : number, replacement : Ext.dom.Element, domReplace : boolean) : Ext.dom.CompositeElementLite;
-            function replaceElement (el : number, replacement : Ext.dom.Element) : Ext.dom.CompositeElementLite;
-            static function addMembers (members : variant) : Ext.dom.CompositeElementLite;
-            static function addStatics (members : variant) : Ext.dom.CompositeElementLite;
+            function removeElement (el : string, removeDom : boolean) : variant;
+            function removeElement (el : string) : variant;
+            function removeElement (el : HTMLElement, removeDom : boolean) : variant;
+            function removeElement (el : HTMLElement) : variant;
+            function removeElement (el : Ext.dom.Element, removeDom : boolean) : variant;
+            function removeElement (el : Ext.dom.Element) : variant;
+            function removeElement (el : number, removeDom : boolean) : variant;
+            function removeElement (el : number) : variant;
+            function replaceElement (el : string, replacement : string, domReplace : boolean) : variant;
+            function replaceElement (el : string, replacement : string) : variant;
+            function replaceElement (el : string, replacement : Ext.dom.Element, domReplace : boolean) : variant;
+            function replaceElement (el : string, replacement : Ext.dom.Element) : variant;
+            function replaceElement (el : HTMLElement, replacement : string, domReplace : boolean) : variant;
+            function replaceElement (el : HTMLElement, replacement : string) : variant;
+            function replaceElement (el : HTMLElement, replacement : Ext.dom.Element, domReplace : boolean) : variant;
+            function replaceElement (el : HTMLElement, replacement : Ext.dom.Element) : variant;
+            function replaceElement (el : Ext.dom.Element, replacement : string, domReplace : boolean) : variant;
+            function replaceElement (el : Ext.dom.Element, replacement : string) : variant;
+            function replaceElement (el : Ext.dom.Element, replacement : Ext.dom.Element, domReplace : boolean) : variant;
+            function replaceElement (el : Ext.dom.Element, replacement : Ext.dom.Element) : variant;
+            function replaceElement (el : number, replacement : string, domReplace : boolean) : variant;
+            function replaceElement (el : number, replacement : string) : variant;
+            function replaceElement (el : number, replacement : Ext.dom.Element, domReplace : boolean) : variant;
+            function replaceElement (el : number, replacement : Ext.dom.Element) : variant;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function createAlias (alias : string, origin : string) : void;
             static function createAlias (alias : string, origin : variant) : void;
@@ -6499,17 +6481,17 @@ native class Ext
             var dom : HTMLElement;
             var id : string;
 
-            function addCls (names : string, prefix : string, suffix : string) : Ext.dom.Element;
-            function addCls (names : string, prefix : string) : Ext.dom.Element;
-            function addCls (names : string) : Ext.dom.Element;
-            function appendChild (element : HTMLElement) : Ext.dom.Element;
-            function appendChild (element : Ext.dom.Element) : Ext.dom.Element;
-            function appendTo (el : string) : Ext.dom.Element;
-            function appendTo (el : HTMLElement) : Ext.dom.Element;
-            function appendTo (el : Ext.dom.Element) : Ext.dom.Element;
-            function applyStyles (styles : string) : Ext.dom.Element;
-            function applyStyles (styles : variant) : Ext.dom.Element;
-            function applyStyles (styles : function  () : void) : Ext.dom.Element;
+            function addCls (names : string, prefix : string, suffix : string) : variant;
+            function addCls (names : string, prefix : string) : variant;
+            function addCls (names : string) : variant;
+            function appendChild (element : HTMLElement) : variant;
+            function appendChild (element : Ext.dom.Element) : variant;
+            function appendTo (el : string) : variant;
+            function appendTo (el : HTMLElement) : variant;
+            function appendTo (el : Ext.dom.Element) : variant;
+            function applyStyles (styles : string) : variant;
+            function applyStyles (styles : variant) : variant;
+            function applyStyles (styles : function  () : void) : variant;
             function child (selector : string, returnDom : boolean) : variant;
             function child (selector : string) : variant;
             function contains (element : HTMLElement) : boolean;
@@ -6519,7 +6501,7 @@ native class Ext
             function createChild (config : variant, returnDom : boolean) : Ext.dom.Element;
             function createChild (config : variant) : Ext.dom.Element;
             function cssTranslate () : void;
-            function destroy () : void;
+            override function destroy () : void;
             function down (selector : string, returnDom : boolean) : variant;
             function down (selector : string) : variant;
             function findParent (simpleSelector : string, maxDepth : number, returnEl : boolean) : variant;
@@ -6583,15 +6565,15 @@ native class Ext
             function getY () : number;
             function hasCls (name : string) : boolean;
             function hide () : void;
-            function insertAfter (el : string) : Ext.dom.Element;
-            function insertAfter (el : HTMLElement) : Ext.dom.Element;
-            function insertAfter (el : Ext.dom.Element) : Ext.dom.Element;
-            function insertBefore (el : string) : Ext.dom.Element;
-            function insertBefore (el : HTMLElement) : Ext.dom.Element;
-            function insertBefore (el : Ext.dom.Element) : Ext.dom.Element;
-            function insertFirst (element : string) : Ext.dom.Element;
-            function insertFirst (element : HTMLElement) : Ext.dom.Element;
-            function insertFirst (element : Ext.dom.Element) : Ext.dom.Element;
+            function insertAfter (el : string) : variant;
+            function insertAfter (el : HTMLElement) : variant;
+            function insertAfter (el : Ext.dom.Element) : variant;
+            function insertBefore (el : string) : variant;
+            function insertBefore (el : HTMLElement) : variant;
+            function insertBefore (el : Ext.dom.Element) : variant;
+            function insertFirst (element : string) : variant;
+            function insertFirst (element : HTMLElement) : variant;
+            function insertFirst (element : Ext.dom.Element) : variant;
             function insertHtml (where : string, html : string, returnEl : boolean) : variant;
             function insertHtml (where : string, html : string) : variant;
             function insertSibling (el : string, where : string, returnDom : boolean) : Ext.dom.Element;
@@ -6635,60 +6617,60 @@ native class Ext
             function prev (returnDom : boolean) : variant;
             function prev () : variant;
             function query (selector : string) : HTMLElement[];
-            function removeCls (names : string, prefix : string, suffix : string) : Ext.dom.Element;
-            function removeCls (names : string, prefix : string) : Ext.dom.Element;
-            function removeCls (names : string) : Ext.dom.Element;
-            function repaint () : Ext.dom.Element;
-            function replace (element : string) : Ext.dom.Element;
-            function replace (element : HTMLElement) : Ext.dom.Element;
-            function replace (element : Ext.dom.Element) : Ext.dom.Element;
-            function replaceCls (oldName : string, newName : string, prefix : string, suffix : string) : Ext.dom.Element;
-            function replaceCls (oldName : string, newName : string, prefix : string) : Ext.dom.Element;
-            function replaceCls (oldName : string, newName : string) : Ext.dom.Element;
+            function removeCls (names : string, prefix : string, suffix : string) : variant;
+            function removeCls (names : string, prefix : string) : variant;
+            function removeCls (names : string) : variant;
+            function repaint () : variant;
+            function replace (element : string) : variant;
+            function replace (element : HTMLElement) : variant;
+            function replace (element : Ext.dom.Element) : variant;
+            function replaceCls (oldName : string, newName : string, prefix : string, suffix : string) : variant;
+            function replaceCls (oldName : string, newName : string, prefix : string) : variant;
+            function replaceCls (oldName : string, newName : string) : variant;
             function replaceWith (el : string) : Ext.dom.Element;
             function replaceWith (el : HTMLElement) : Ext.dom.Element;
             function replaceWith (el : Ext.dom.Element) : Ext.dom.Element;
             function replaceWith (el : variant) : Ext.dom.Element;
             function select (selector : string, composite : boolean) : variant;
             function select (selector : HTMLElement[], composite : boolean) : variant;
-            function set (attributes : variant, useSet : boolean) : Ext.dom.Element;
-            function set (attributes : variant) : Ext.dom.Element;
-            function setBottom (bottom : string) : Ext.dom.Element;
-            function setBox (box : variant) : Ext.dom.Element;
+            function set (attributes : variant, useSet : boolean) : variant;
+            function set (attributes : variant) : variant;
+            function setBottom (bottom : string) : variant;
+            function setBox (box : variant) : variant;
             function setCls (className : string) : void;
             function setCls (className : variant[]) : void;
-            function setHeight (height : number) : Ext.dom.Element;
-            function setHeight (height : string) : Ext.dom.Element;
+            function setHeight (height : number) : variant;
+            function setHeight (height : string) : variant;
             function setHtml (html : string) : void;
-            function setLeft (left : string) : Ext.dom.Element;
-            function setMaxHeight (height : number) : Ext.dom.Element;
-            function setMaxHeight (height : string) : Ext.dom.Element;
-            function setMaxWidth (width : number) : Ext.dom.Element;
-            function setMaxWidth (width : string) : Ext.dom.Element;
-            function setMinHeight (height : number) : Ext.dom.Element;
-            function setMinHeight (height : string) : Ext.dom.Element;
-            function setMinWidth (width : number) : Ext.dom.Element;
-            function setMinWidth (width : string) : Ext.dom.Element;
-            function setRight (right : string) : Ext.dom.Element;
-            function setSize (width : number, height : number) : Ext.dom.Element;
-            function setSize (width : number, height : string) : Ext.dom.Element;
-            function setSize (width : string, height : number) : Ext.dom.Element;
-            function setSize (width : string, height : string) : Ext.dom.Element;
-            function setStyle (property : string, value : string) : Ext.dom.Element;
-            function setStyle (property : string) : Ext.dom.Element;
-            function setStyle (property : variant, value : string) : Ext.dom.Element;
-            function setStyle (property : variant) : Ext.dom.Element;
-            function setTop (top : string) : Ext.dom.Element;
+            function setLeft (left : string) : variant;
+            function setMaxHeight (height : number) : variant;
+            function setMaxHeight (height : string) : variant;
+            function setMaxWidth (width : number) : variant;
+            function setMaxWidth (width : string) : variant;
+            function setMinHeight (height : number) : variant;
+            function setMinHeight (height : string) : variant;
+            function setMinWidth (width : number) : variant;
+            function setMinWidth (width : string) : variant;
+            function setRight (right : string) : variant;
+            function setSize (width : number, height : number) : variant;
+            function setSize (width : number, height : string) : variant;
+            function setSize (width : string, height : number) : variant;
+            function setSize (width : string, height : string) : variant;
+            function setStyle (property : string, value : string) : variant;
+            function setStyle (property : string) : variant;
+            function setStyle (property : variant, value : string) : variant;
+            function setStyle (property : variant) : variant;
+            function setTop (top : string) : variant;
             function setTopLeft () : void;
-            function setVisibilityMode (mode : variant) : Ext.dom.Element;
-            function setVisible (visible : boolean) : Ext.dom.Element;
-            function setWidth (width : number) : Ext.dom.Element;
-            function setWidth (width : string) : Ext.dom.Element;
-            function setX (x : number) : Ext.dom.Element;
-            function setXY (pos : Number[]) : Ext.dom.Element;
-            function setY (y : number) : Ext.dom.Element;
+            function setVisibilityMode (mode : variant) : variant;
+            function setVisible (visible : boolean) : variant;
+            function setWidth (width : number) : variant;
+            function setWidth (width : string) : variant;
+            function setX (x : number) : variant;
+            function setXY (pos : Number[]) : variant;
+            function setY (y : number) : variant;
             function show () : void;
-            function toggleCls (className : string) : Ext.dom.Element;
+            function toggleCls (className : string) : variant;
             function translatePoints (x : number, y : number) : variant;
             function translatePoints (x : number) : variant;
             function translatePoints (x : variant[], y : number) : variant;
@@ -6703,8 +6685,8 @@ native class Ext
             function wrap (config : variant) : variant;
             function wrap (domNode : boolean) : variant;
             function wrap () : variant;
-            static function addMembers (members : variant) : Ext.dom.Element;
-            static function addStatics (members : variant) : Ext.dom.Element;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function createAlias (alias : string, origin : string) : void;
             static function createAlias (alias : string, origin : variant) : void;
@@ -6745,8 +6727,8 @@ native class Ext
             function selectNode (selector : string, root : HTMLElement) : HTMLElement;
             function selectNode (selector : string, root : string) : HTMLElement;
             function selectNode (selector : string) : HTMLElement;
-            static function addMembers (members : variant) : Ext.dom.Query;
-            static function addStatics (members : variant) : Ext.dom.Query;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6772,8 +6754,8 @@ native class Ext
             static function removeFrameCallback (id : string) : void;
             static function schedule (callback : function  () : void, scope : variant) : string;
             static function step (frameTime : number) : void;
-            static function addMembers (members : variant) : Ext.draw.Animator;
-            static function addStatics (members : variant) : Ext.draw.Animator;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6795,12 +6777,12 @@ native class Ext
             function getHSL (target : variant[]) : variant[];
             function getHSL () : variant[];
             function setFromString (str : string) : variant;
-            function setHSL (h : number, s : number, l : number) : Ext.draw.Color;
+            function setHSL (h : number, s : number, l : number) : variant;
             function toHex (color : string) : string;
             function toHex (color : variant[]) : string;
-            function toString () : string;
-            static function addMembers (members : variant) : Ext.draw.Color;
-            static function addStatics (members : variant) : Ext.draw.Color;
+            override function toString () : string;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create (red : Ext.draw.Color, green : number, blue : number, alpha : number) : Ext.draw.Color;
             static function create (red : Ext.draw.Color, green : number, blue : number) : Ext.draw.Color;
@@ -6839,22 +6821,22 @@ native class Ext
         class Component extends Ext.Container
         {
             function constructor (config : variant);
-            function destroy () : void;
+            override function destroy () : void;
             function getBackground () : variant;
-            function getCls () : string;
+            override function getCls () : string;
             function getResizeHandler () : function () : void;
             function getSprites () : variant;
             function getSurface (id : string) : Ext.draw.Surface;
             function getSurface () : Ext.draw.Surface;
-            function initialize () : void;
+            override function initialize () : void;
             function onPlaceWatermark () : void;
             function renderFrame () : void;
             function setBackground (background : variant) : void;
-            function setCls (cls : string) : void;
+            override function setCls (cls : string) : void;
             function setResizeHandler (resizeHandler : function  () : void) : void;
             function setSprites (sprites : variant) : void;
-            static function addMembers (members : variant) : Ext.draw.Component;
-            static function addStatics (members : variant) : Ext.draw.Component;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6873,8 +6855,8 @@ native class Ext
             static function reflectFn (a : variant) : variant;
             static function smooth (dataX : variant, dataY : variant, value : variant) : variant;
             static function spline (points : variant[]) : void;
-            static function addMembers (members : variant) : Ext.draw.Draw;
-            static function addStatics (members : variant) : Ext.draw.Draw;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6892,7 +6874,7 @@ native class Ext
             function addAll (sprites : Ext.draw.sprite.Sprite) : void;
             function clear (destroySprite : boolean) : void;
             function clear () : void;
-            function destroy () : void;
+            override function destroy () : void;
             function each (fn : function  () : void) : void;
             function get (id : string) : Ext.draw.sprite.Sprite;
             function get (id : number) : Ext.draw.sprite.Sprite;
@@ -6906,8 +6888,8 @@ native class Ext
             function setDirty () : void;
             function setSurface (surface : variant) : void;
             function show (o : boolean) : void;
-            static function addMembers (members : variant) : Ext.draw.Group;
-            static function addStatics (members : variant) : Ext.draw.Group;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6928,8 +6910,8 @@ native class Ext
             function setFeeder (feeder : function  () : void) : number;
             function setLimit (limit : number) : void;
             function setScope (scope : variant) : void;
-            static function addMembers (members : variant) : Ext.draw.LimitedCache;
-            static function addStatics (members : variant) : Ext.draw.LimitedCache;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -6944,12 +6926,12 @@ native class Ext
             var a : number;
 
             function constructor (xx : number, xy : number, yx : number, yy : number, dx : number, dy : number);
-            function append (xx : number, xy : number, yx : number, yy : number, dx : number, dy : number) : Ext.draw.Matrix;
-            function appendMatrix (matrix : Ext.draw.Matrix) : Ext.draw.Matrix;
+            function append (xx : number, xy : number, yx : number, yy : number, dx : number, dy : number) : variant;
+            function appendMatrix (matrix : Ext.draw.Matrix) : variant;
             function clone () : Ext.draw.Matrix;
             function equals (matrix : Ext.draw.Matrix) : boolean;
-            function flipX () : Ext.draw.Matrix;
-            function flipY () : Ext.draw.Matrix;
+            function flipX () : variant;
+            function flipY () : variant;
             function getDX () : number;
             function getDY () : number;
             function getScaleX () : number;
@@ -6961,23 +6943,23 @@ native class Ext
             function inverse (target : Ext.draw.Matrix) : Ext.draw.Matrix;
             function inverse () : Ext.draw.Matrix;
             function isIdentity () : boolean;
-            function multiply (matrix : Ext.draw.Matrix) : Ext.draw.Matrix;
-            function prepend (xx : number, xy : number, yx : number, yy : number, dx : number, dy : number) : Ext.draw.Matrix;
-            function prependMatrix (matrix : Ext.draw.Matrix) : Ext.draw.Matrix;
-            function reset () : Ext.draw.Matrix;
-            function rotate (angle : number, rcx : Nullable.<number>, rcy : Nullable.<number>, prepend : boolean) : Ext.draw.Matrix;
-            function rotate (angle : number, rcx : Nullable.<number>, rcy : Nullable.<number>) : Ext.draw.Matrix;
-            function rotateFromVector (x : number, y : number, prepend : boolean) : Ext.draw.Matrix;
-            function rotateFromVector (x : number, y : number) : Ext.draw.Matrix;
-            function scale (sx : number, sy : number, scx : number, scy : number, prepend : boolean) : Ext.draw.Matrix;
-            function scale (sx : number, sy : number, scx : number, scy : number) : Ext.draw.Matrix;
-            function set (xx : number, xy : number, yx : number, yy : number, dx : number, dy : number) : Ext.draw.Matrix;
-            function skewX (angle : number) : Ext.draw.Matrix;
-            function skewY (angle : number) : Ext.draw.Matrix;
+            function multiply (matrix : Ext.draw.Matrix) : variant;
+            function prepend (xx : number, xy : number, yx : number, yy : number, dx : number, dy : number) : variant;
+            function prependMatrix (matrix : Ext.draw.Matrix) : variant;
+            function reset () : variant;
+            function rotate (angle : number, rcx : Nullable.<number>, rcy : Nullable.<number>, prepend : boolean) : variant;
+            function rotate (angle : number, rcx : Nullable.<number>, rcy : Nullable.<number>) : variant;
+            function rotateFromVector (x : number, y : number, prepend : boolean) : variant;
+            function rotateFromVector (x : number, y : number) : variant;
+            function scale (sx : number, sy : number, scx : number, scy : number, prepend : boolean) : variant;
+            function scale (sx : number, sy : number, scx : number, scy : number) : variant;
+            function set (xx : number, xy : number, yx : number, yy : number, dx : number, dy : number) : variant;
+            function skewX (angle : number) : variant;
+            function skewY (angle : number) : variant;
             function split () : variant;
             function toArray () : variant[];
-            function toContext (ctx : variant) : Ext.draw.Matrix;
-            function toString () : variant[];
+            function toContext (ctx : variant) : variant;
+            override function toString () : variant[];
             function toSvg () : string;
             function toVerticalArray () : variant;
             function transformBBox (bbox : variant, radius : number, target : variant) : variant;
@@ -6986,12 +6968,12 @@ native class Ext
             function transformBBox (bbox : variant) : variant;
             function transformList (list : variant[]) : variant[];
             function transformPoint (point : variant[]) : variant[];
-            function translate (x : number, y : number, prepend : boolean) : Ext.draw.Matrix;
-            function translate (x : number, y : number) : Ext.draw.Matrix;
+            function translate (x : number, y : number, prepend : boolean) : variant;
+            function translate (x : number, y : number) : variant;
             function x (x : number, y : number) : number;
             function y (x : number, y : number) : number;
-            static function addMembers (members : variant) : Ext.draw.Matrix;
-            static function addStatics (members : variant) : Ext.draw.Matrix;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create (mat : variant) : Ext.draw.Matrix;
             static function createAffineMatrixFromTwoPair (x0 : number, y0 : number, x1 : number, y1 : number, x0p : number, y0p : number, x1p : number, y1p : number) : void;
@@ -7029,12 +7011,12 @@ native class Ext
             function moveTo (x : number, y : number) : void;
             function quadraticCurveTo (cx : number, cy : number, x : number, y : number) : void;
             function rect (x : number, y : number, width : number, height : number) : void;
-            function toString () : string;
+            override function toString () : string;
             function toStripes (target : variant[]) : variant[];
             function toStripes () : variant[];
             function transform (matrix : Ext.draw.Matrix) : void;
-            static function addMembers (members : variant) : Ext.draw.Path;
-            static function addStatics (members : variant) : Ext.draw.Path;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7051,8 +7033,8 @@ native class Ext
             function getStrategy () : string;
             function setData (dataX : number, dataOpen : number, dataHigh : number, dataLow : number, dataClose : number) : void;
             function setStrategy (strategy : string) : void;
-            static function addMembers (members : variant) : Ext.draw.SegmentTree;
-            static function addStatics (members : variant) : Ext.draw.SegmentTree;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7070,7 +7052,7 @@ native class Ext
             function constructor (config : variant);
             function add () : void;
             function clear () : void;
-            function destroy () : void;
+            override function destroy () : void;
             function getBackground () : variant;
             function getDirty () : boolean;
             function getGroups () : variant[];
@@ -7088,8 +7070,8 @@ native class Ext
             function setItems (items : Ext.draw.Group) : void;
             function setRegion (region : variant[]) : void;
             function waitFor (surface : Ext.draw.Surface) : void;
-            static function addMembers (members : variant) : Ext.draw.Surface;
-            static function addStatics (members : variant) : Ext.draw.Surface;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7104,8 +7086,8 @@ native class Ext
         {
             static function measureText (text : string, font : string) : variant;
             static function measureTextSingleLine (text : string, font : string) : variant;
-            static function addMembers (members : variant) : Ext.draw.TextMeasurer;
-            static function addStatics (members : variant) : Ext.draw.TextMeasurer;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7117,8 +7099,8 @@ native class Ext
 
         class TimingFunctions extends Ext.Base
         {
-            static function addMembers (members : variant) : Ext.draw.TimingFunctions;
-            static function addStatics (members : variant) : Ext.draw.TimingFunctions;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7133,14 +7115,14 @@ native class Ext
 
             class Canvas extends Ext.draw.Surface
             {
-                function clear () : void;
+                override function clear () : void;
                 function clearTransform () : void;
-                function destroy () : void;
+                override function destroy () : void;
                 function getHighPrecision () : boolean;
                 function initElement () : void;
                 function setHighPrecision (highPrecision : boolean) : void;
-                static function addMembers (members : variant) : Ext.draw.engine.Canvas;
-                static function addStatics (members : variant) : Ext.draw.engine.Canvas;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7153,7 +7135,7 @@ native class Ext
             class Svg extends Ext.draw.Surface
             {
                 function constructor (config : variant);
-                function clear () : void;
+                override function clear () : void;
                 function clearTransform () : void;
                 function createSvgNode (type : string) : variant;
                 function destroy (path : variant, matrix : variant, band : variant) : void;
@@ -7161,8 +7143,8 @@ native class Ext
                 function remove (sprite : variant, destroySprite : variant) : void;
                 function renderSprite (sprite : Ext.draw.sprite.Sprite) : boolean;
                 function setHighPrecision (highPrecision : boolean) : void;
-                static function addMembers (members : variant) : Ext.draw.engine.Svg;
-                static function addStatics (members : variant) : Ext.draw.engine.Svg;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7201,8 +7183,8 @@ native class Ext
                 function strokeRect (x : number, y : number, width : number, height : number) : void;
                 function strokeText (text : string, x : number, y : number) : void;
                 function transform (xx : number, yx : number, xy : number, yy : number, dx : number, dy : number) : void;
-                static function addMembers (members : variant) : Ext.draw.engine.SvgContext;
-                static function addStatics (members : variant) : Ext.draw.engine.SvgContext;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7215,8 +7197,8 @@ native class Ext
                 {
                     function constructor (ctx : variant, surface : variant, element : variant, compression : variant);
                     function addColorStop (offset : number, color : string) : void;
-                    static function addMembers (members : variant) : Ext.draw.engine.SvgContext.Gradient;
-                    static function addStatics (members : variant) : Ext.draw.engine.SvgContext.Gradient;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -7235,8 +7217,8 @@ native class Ext
             {
                 function constructor (config : variant);
                 function generateGradient (ctx : Ext.draw.engine.SvgContext, bbox : variant) : variant;
-                static function addMembers (members : variant) : Ext.draw.gradient.Gradient;
-                static function addStatics (members : variant) : Ext.draw.gradient.Gradient;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7248,9 +7230,9 @@ native class Ext
 
             class Linear extends Ext.draw.gradient.Gradient
             {
-                function generateGradient (ctx : Ext.draw.engine.SvgContext, bbox : variant) : variant;
-                static function addMembers (members : variant) : Ext.draw.gradient.Linear;
-                static function addStatics (members : variant) : Ext.draw.gradient.Linear;
+                override function generateGradient (ctx : Ext.draw.engine.SvgContext, bbox : variant) : variant;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7262,13 +7244,13 @@ native class Ext
 
             class Radial extends Ext.draw.gradient.Gradient
             {
-                function generateGradient (ctx : Ext.draw.engine.SvgContext, bbox : variant) : variant;
+                override function generateGradient (ctx : Ext.draw.engine.SvgContext, bbox : variant) : variant;
                 function getEnd () : variant;
                 function getStart () : variant;
                 function setEnd (end : variant) : void;
                 function setStart (start : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.gradient.Radial;
-                static function addStatics (members : variant) : Ext.draw.gradient.Radial;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7287,14 +7269,14 @@ native class Ext
                 function constructor ();
                 function clearDurationOn (attrs : variant) : void;
                 function clearEasingOn (attrs : variant) : void;
-                function destroy () : void;
+                override function destroy () : void;
                 function getCustomDuration () : variant;
                 function getCustomEasings () : variant;
                 function getDuration () : number;
                 function getEasing () : function () : void;
-                function popUp (attributes : variant, changes : variant) : void;
-                function prepareAttributes (attr : variant) : void;
-                function pushDown (attr : variant, changes : variant) : variant;
+                override function popUp (attributes : variant, changes : variant) : void;
+                override function prepareAttributes (attr : variant) : void;
+                override function pushDown (attr : variant, changes : variant) : variant;
                 function setCustomDuration (customDuration : variant) : void;
                 function setCustomEasings (customEasings : variant) : void;
                 function setDuration (duration : number) : void;
@@ -7302,8 +7284,8 @@ native class Ext
                 function setEasing (easing : function  () : void) : void;
                 function setEasingOn (attrs : variant, easing : string) : void;
                 function stop () : void;
-                static function addMembers (members : variant) : Ext.draw.modifier.Animation;
-                static function addStatics (members : variant) : Ext.draw.modifier.Animation;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7318,13 +7300,13 @@ native class Ext
                 function filterChanges (attr : variant, changes : variant) : variant;
                 function getEnabled () : boolean;
                 function getHighlightStyle () : variant;
-                function popUp (attributes : variant, changes : variant) : void;
-                function prepareAttributes (attr : variant) : void;
-                function pushDown (attr : variant, changes : variant) : variant;
+                override function popUp (attributes : variant, changes : variant) : void;
+                override function prepareAttributes (attr : variant) : void;
+                override function pushDown (attr : variant, changes : variant) : variant;
                 function setEnabled (enabled : boolean) : void;
                 function setHighlightStyle (highlightStyle : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.modifier.Highlight;
-                static function addStatics (members : variant) : Ext.draw.modifier.Highlight;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7346,8 +7328,8 @@ native class Ext
                 function setNext (next : Ext.draw.modifier.Modifier) : void;
                 function setPrevious (previous : Ext.draw.modifier.Modifier) : void;
                 function setSprite (sprite : Ext.draw.sprite.Sprite) : void;
-                static function addMembers (members : variant) : Ext.draw.modifier.Modifier;
-                static function addStatics (members : variant) : Ext.draw.modifier.Modifier;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7359,11 +7341,11 @@ native class Ext
 
             class Target extends Ext.draw.modifier.Modifier
             {
-                function popUp (attributes : variant, changes : variant) : void;
-                function prepareAttributes (attr : variant) : void;
-                function pushDown (attr : variant, changes : variant) : variant;
-                static function addMembers (members : variant) : Ext.draw.modifier.Target;
-                static function addStatics (members : variant) : Ext.draw.modifier.Target;
+                override function popUp (attributes : variant, changes : variant) : void;
+                override function prepareAttributes (attr : variant) : void;
+                override function pushDown (attr : variant, changes : variant) : variant;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7380,9 +7362,9 @@ native class Ext
 
             class Arc extends Ext.draw.sprite.Circle
             {
-                function updatePath (path : variant, attr : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.sprite.Arc;
-                static function addStatics (members : variant) : Ext.draw.sprite.Arc;
+                override function updatePath (path : variant, attr : variant) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7397,10 +7379,10 @@ native class Ext
             class Circle extends Ext.draw.sprite.Path
             {
                 function updatePath (path : variant, attr : variant) : void;
-                function updatePlainBBox (plain : variant) : void;
-                function updateTransformedBBox (transform : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.sprite.Circle;
-                static function addStatics (members : variant) : Ext.draw.sprite.Circle;
+                override function updatePlainBBox (plain : variant) : void;
+                override function updateTransformedBBox (transform : variant) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7415,9 +7397,9 @@ native class Ext
                 function constructor ();
                 function add (sprite : variant) : void;
                 function render (surface : variant, ctx : variant, region : variant) : void;
-                function updatePlainBBox (plain : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.sprite.Composite;
-                static function addStatics (members : variant) : Ext.draw.sprite.Composite;
+                override function updatePlainBBox (plain : variant) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7430,10 +7412,10 @@ native class Ext
             class Ellipse extends Ext.draw.sprite.Path
             {
                 function updatePath (path : variant, attr : variant) : void;
-                function updatePlainBBox (plain : variant) : void;
-                function updateTransformedBBox (transform : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.sprite.Ellipse;
-                static function addStatics (members : variant) : Ext.draw.sprite.Ellipse;
+                override function updatePlainBBox (plain : variant) : void;
+                override function updateTransformedBBox (transform : variant) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7445,9 +7427,9 @@ native class Ext
 
             class EllipticalArc extends Ext.draw.sprite.Ellipse
             {
-                function updatePath (path : variant, attr : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.sprite.EllipticalArc;
-                static function addStatics (members : variant) : Ext.draw.sprite.EllipticalArc;
+                override function updatePath (path : variant, attr : variant) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7459,9 +7441,9 @@ native class Ext
 
             class Image extends Ext.draw.sprite.Rect
             {
-                function render (surface : variant, ctx : variant) : variant;
-                static function addMembers (members : variant) : Ext.draw.sprite.Image;
-                static function addStatics (members : variant) : Ext.draw.sprite.Image;
+                override function render (surface : variant, ctx : variant) : variant;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7480,8 +7462,8 @@ native class Ext
                 function createInstance (config : variant, bypassNormalization : boolean, avoidCopy : boolean) : variant;
                 function createInstance (config : variant, bypassNormalization : boolean) : variant;
                 function createInstance (config : variant) : variant;
-                function destroy () : void;
-                function getBBox () : void;
+                override function destroy () : void;
+                override function getBBox () : void;
                 function getBBoxFor (index : number, isWithoutTransform : boolean) : variant;
                 function getBBoxFor (index : number) : variant;
                 function getTemplate () : variant;
@@ -7489,8 +7471,8 @@ native class Ext
                 function setAttributesFor (index : number, changes : variant, bypassNormalization : boolean) : void;
                 function setAttributesFor (index : number, changes : variant) : void;
                 function setTemplate (template : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.sprite.Instancing;
-                static function addStatics (members : variant) : Ext.draw.sprite.Instancing;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7504,10 +7486,10 @@ native class Ext
             {
                 function render (surface : variant, ctx : variant) : variant;
                 function updatePath (path : Ext.draw.Path, attr : variant) : void;
-                function updatePlainBBox (plain : variant) : void;
+                override function updatePlainBBox (plain : variant) : void;
                 function updateTransformedBBox (transform : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.sprite.Path;
-                static function addStatics (members : variant) : Ext.draw.sprite.Path;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7520,10 +7502,10 @@ native class Ext
             class Rect extends Ext.draw.sprite.Path
             {
                 function updatePath (path : variant, attr : variant) : void;
-                function updatePlainBBox (plain : variant) : void;
-                function updateTransformedBBox (transform : variant, plain : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.sprite.Rect;
-                static function addStatics (members : variant) : Ext.draw.sprite.Rect;
+                override function updatePlainBBox (plain : variant) : void;
+                override function updateTransformedBBox (transform : variant, plain : variant) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7536,8 +7518,8 @@ native class Ext
             class Sector extends Ext.draw.sprite.Path
             {
                 function updatePath (path : variant, attr : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.sprite.Sector;
-                static function addStatics (members : variant) : Ext.draw.sprite.Sector;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7552,23 +7534,23 @@ native class Ext
                 var attr : variant;
 
                 function constructor (config : variant);
-                function destroy () : void;
+                override function destroy () : void;
                 function getBBox (isWithoutTransform : boolean) : void;
                 function getBBox () : void;
                 function getBBoxCenter (isWithoutTransform : boolean) : variant[];
                 function getParent () : variant;
-                function hide () : Ext.draw.sprite.Sprite;
+                function hide () : variant;
                 function preRender () : void;
                 function render (surface : Ext.draw.Surface, ctx : variant, region : variant[]) : variant;
                 function setAttributes (changes : variant, bypassNormalization : boolean, avoidCopy : boolean) : void;
                 function setAttributes (changes : variant, bypassNormalization : boolean) : void;
                 function setAttributes (changes : variant) : void;
                 function setParent (parent : variant) : void;
-                function show () : Ext.draw.sprite.Sprite;
+                function show () : variant;
                 function updatePlainBBox (plain : variant) : void;
                 function updateTransformedBBox (transform : variant, plain : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.sprite.Sprite;
-                static function addStatics (members : variant) : Ext.draw.sprite.Sprite;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7582,9 +7564,9 @@ native class Ext
             {
                 function constructor (config : variant);
                 function render (surface : variant, ctx : variant) : variant;
-                function updatePlainBBox (plain : variant) : void;
-                static function addMembers (members : variant) : Ext.draw.sprite.Text;
-                static function addStatics (members : variant) : Ext.draw.sprite.Text;
+                override function updatePlainBBox (plain : variant) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7611,8 +7593,8 @@ native class Ext
 
             function constructor (userAgent : variant);
             function is (value : string) : boolean;
-            static function addMembers (members : variant) : Ext.env.Browser;
-            static function addStatics (members : variant) : Ext.env.Browser;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7625,8 +7607,8 @@ native class Ext
         class Feature extends Ext.Base
         {
             function constructor ();
-            static function addMembers (members : variant) : Ext.env.Feature;
-            static function addStatics (members : variant) : Ext.env.Feature;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7643,8 +7625,8 @@ native class Ext
 
             function constructor (userAgent : variant, platform : variant, browserScope : variant);
             function is (value : string) : boolean;
-            static function addMembers (members : variant) : Ext.env.OS;
-            static function addStatics (members : variant) : Ext.env.OS;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7692,10 +7674,10 @@ native class Ext
             var rotation : number;
             var scale : number;
 
-            function stopEvent () : Ext.event.Event;
-            function stopPropagation () : Ext.event.Event;
-            static function addMembers (members : variant) : Ext.event.Event;
-            static function addStatics (members : variant) : Ext.event.Event;
+            function stopEvent () : variant;
+            function stopPropagation () : variant;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7716,8 +7698,8 @@ native class Ext
             class Dom extends Ext.event.publisher.Publisher
             {
                 function constructor ();
-                static function addMembers (members : variant) : Ext.event.publisher.Dom;
-                static function addStatics (members : variant) : Ext.event.publisher.Dom;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7732,8 +7714,8 @@ native class Ext
             class Publisher extends Ext.Base
             {
                 function constructor ();
-                static function addMembers (members : variant) : Ext.event.publisher.Publisher;
-                static function addStatics (members : variant) : Ext.event.publisher.Publisher;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7755,8 +7737,8 @@ native class Ext
 
             class MultiTouch extends Ext.event.recognizer.Touch
             {
-                static function addMembers (members : variant) : Ext.event.recognizer.MultiTouch;
-                static function addStatics (members : variant) : Ext.event.recognizer.MultiTouch;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7776,8 +7758,8 @@ native class Ext
                 function setCallbackScope (callbackScope : variant) : void;
                 function setOnFailed (onFailed : variant) : void;
                 function setOnRecognized (onRecognized : variant) : void;
-                static function addMembers (members : variant) : Ext.event.recognizer.Recognizer;
-                static function addStatics (members : variant) : Ext.event.recognizer.Recognizer;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7790,8 +7772,8 @@ native class Ext
 
             class SingleTouch extends Ext.event.recognizer.Touch
             {
-                static function addMembers (members : variant) : Ext.event.recognizer.SingleTouch;
-                static function addStatics (members : variant) : Ext.event.recognizer.SingleTouch;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7809,8 +7791,8 @@ native class Ext
                 function setMaxDuration (maxDuration : number) : void;
                 function setMaxOffset (maxOffset : number) : void;
                 function setMinDistance (minDistance : number) : void;
-                static function addMembers (members : variant) : Ext.event.recognizer.Swipe;
-                static function addStatics (members : variant) : Ext.event.recognizer.Swipe;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7823,8 +7805,8 @@ native class Ext
 
             class Touch extends Ext.event.recognizer.Recognizer
             {
-                static function addMembers (members : variant) : Ext.event.recognizer.Touch;
-                static function addStatics (members : variant) : Ext.event.recognizer.Touch;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -7840,8 +7822,8 @@ native class Ext
     class feature extends Ext.env.Feature
     {
         static function has (value : string) : boolean;
-        static function addMembers (members : variant) : Ext.feature;
-        static function addStatics (members : variant) : Ext.feature;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -7860,21 +7842,21 @@ native class Ext
             function doChecked () : void;
             function doUnChecked () : void;
             function getChecked () : variant;
-            function getComponent () : variant;
+            override function getComponent () : variant;
             function getGroupValues () : variant[];
             function getSubmitValue () : variant;
-            function getUi () : string;
-            function getValue () : string;
+            override function getUi () : string;
+            override function getValue () : string;
             function isChecked () : boolean;
-            function reset () : Ext.field.Checkbox;
-            function resetGroupValues () : Ext.field.Checkbox;
-            function setComponent (component : variant) : void;
-            function setGroupValues (values : variant[]) : Ext.field.Checkbox;
-            function setUi (ui : string) : void;
+            override function reset () : variant;
+            function resetGroupValues () : variant;
+            override function setComponent (component : variant) : void;
+            function setGroupValues (values : variant[]) : variant;
+            override function setUi (ui : string) : void;
             function setValue (value : string) : void;
             function uncheck () : Ext.field.Checkbox;
-            static function addMembers (members : variant) : Ext.field.Checkbox;
-            static function addStatics (members : variant) : Ext.field.Checkbox;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7889,19 +7871,19 @@ native class Ext
             function getDateFormat () : string;
             function getDestroyPickerOnHide () : boolean;
             function getFormattedValue (format : string) : string;
-            function getUi () : string;
-            function getValue () : Date;
+            override function getUi () : string;
+            override function getValue () : Date;
             function onChange () : void;
-            function reset () : Ext.field.DatePicker;
+            override function reset () : variant;
             function setDateFormat (dateFormat : string) : void;
             function setDestroyPickerOnHide (destroyPickerOnHide : boolean) : void;
             function setPicker (picker : variant) : void;
             function setPicker (picker : Ext.picker.Date) : void;
-            function setUi (ui : string) : void;
-            function setValue (value : variant) : void;
+            override function setUi (ui : string) : void;
+            override function setValue (value : variant) : void;
             function setValue (value : Date) : void;
-            static function addMembers (members : variant) : Ext.field.DatePicker;
-            static function addStatics (members : variant) : Ext.field.DatePicker;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7913,12 +7895,12 @@ native class Ext
 
         class Email extends Ext.field.Text
         {
-            function getAutoCapitalize () : boolean;
-            function getComponent () : variant;
-            function setAutoCapitalize (autoCapitalize : boolean) : void;
-            function setComponent (component : variant) : void;
-            static function addMembers (members : variant) : Ext.field.Email;
-            static function addStatics (members : variant) : Ext.field.Email;
+            override function getAutoCapitalize () : boolean;
+            override function getComponent () : variant;
+            override function setAutoCapitalize (autoCapitalize : boolean) : void;
+            override function setComponent (component : variant) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7933,7 +7915,7 @@ native class Ext
             var isField : boolean;
             var originalValue : variant;
 
-            function getBaseCls () : string;
+            override function getBaseCls () : string;
             function getClearIcon () : boolean;
             function getInputCls () : string;
             function getLabel () : string;
@@ -7941,15 +7923,15 @@ native class Ext
             function getLabelCls () : string;
             function getLabelWidth () : variant;
             function getLabelWrap () : boolean;
-            function getName () : string;
+            override function getName () : string;
             function getRequired () : boolean;
             function getRequiredCls () : string;
             function getTabIndex () : number;
             function getValue () : variant;
             function isDirty () : boolean;
-            function reset () : Ext.field.Field;
+            function reset () : variant;
             function resetOriginalValue () : void;
-            function setBaseCls (baseCls : string) : void;
+            override function setBaseCls (baseCls : string) : void;
             function setClearIcon (clearIcon : boolean) : void;
             function setInputCls (inputCls : string) : void;
             function setLabel (label : string) : void;
@@ -7963,8 +7945,8 @@ native class Ext
             function setRequiredCls (requiredCls : string) : void;
             function setTabIndex (tabIndex : number) : void;
             function setValue (value : variant) : void;
-            static function addMembers (members : variant) : Ext.field.Field;
-            static function addStatics (members : variant) : Ext.field.Field;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7978,14 +7960,14 @@ native class Ext
         {
             function getAccept () : string;
             function getCapture () : string;
-            function getComponent () : variant;
+            override function getComponent () : variant;
             function getMultiple () : boolean;
             function setAccept (accept : string) : void;
             function setCapture (capture : string) : void;
-            function setComponent (component : variant) : void;
+            override function setComponent (component : variant) : void;
             function setMultiple (multiple : boolean) : void;
-            static function addMembers (members : variant) : Ext.field.File;
-            static function addStatics (members : variant) : Ext.field.File;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -7998,12 +7980,12 @@ native class Ext
 
         class Hidden extends Ext.field.Text
         {
-            function getComponent () : variant;
-            function getUi () : string;
-            function setComponent (component : variant) : void;
-            function setUi (ui : string) : void;
-            static function addMembers (members : variant) : Ext.field.Hidden;
-            static function addStatics (members : variant) : Ext.field.Hidden;
+            override function getComponent () : variant;
+            override function getUi () : string;
+            override function setComponent (component : variant) : void;
+            override function setUi (ui : string) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8017,22 +7999,22 @@ native class Ext
         {
             var isFocused : boolean;
 
-            function blur () : Ext.field.Input;
-            function focus () : Ext.field.Input;
+            function blur () : variant;
+            function focus () : variant;
             function getAutoCapitalize () : boolean;
             function getAutoComplete () : boolean;
             function getAutoCorrect () : boolean;
-            function getBaseCls () : string;
+            override function getBaseCls () : string;
             function getChecked () : variant;
-            function getCls () : string;
-            function getDisabled () : boolean;
+            override function getCls () : string;
+            override function getDisabled () : boolean;
             function getFastFocus () : boolean;
             function getFocusCls () : string;
             function getMaxLength () : number;
             function getMaxRows () : number;
             function getMaxValue () : number;
             function getMinValue () : number;
-            function getName () : string;
+            override function getName () : string;
             function getPattern () : string;
             function getPlaceHolder () : string;
             function getReadOnly () : boolean;
@@ -8043,13 +8025,13 @@ native class Ext
             function getValue () : variant;
             function isDirty () : boolean;
             function reset () : void;
-            function select () : Ext.field.Input;
+            function select () : variant;
             function setAutoCapitalize (autoCapitalize : boolean) : void;
             function setAutoComplete (autoComplete : boolean) : void;
             function setAutoCorrect (autoCorrect : boolean) : void;
-            function setBaseCls (baseCls : string) : void;
-            function setCls (cls : string) : void;
-            function setDisabled (disabled : boolean) : void;
+            override function setBaseCls (baseCls : string) : void;
+            override function setCls (cls : string) : void;
+            override function setDisabled (disabled : boolean) : void;
             function setFastFocus (fastFocus : boolean) : void;
             function setFocusCls (focusCls : string) : void;
             function setMaxLength (maxLength : number) : void;
@@ -8066,8 +8048,8 @@ native class Ext
             function setType (type : string) : void;
             function updateCls (newCls : variant, oldCls : variant) : void;
             function updateUseMask (newUseMask : variant) : void;
-            static function addMembers (members : variant) : Ext.field.Input;
-            static function addStatics (members : variant) : Ext.field.Input;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8079,19 +8061,19 @@ native class Ext
 
         class Number extends Ext.field.Text
         {
-            function getComponent () : variant;
+            override function getComponent () : variant;
             function getMaxValue () : number;
             function getMinValue () : number;
             function getStepValue () : number;
-            function getUi () : string;
-            function getValue () : variant;
-            function setComponent (component : variant) : void;
+            override function getUi () : string;
+            override function getValue () : variant;
+            override function setComponent (component : variant) : void;
             function setMaxValue (maxValue : number) : void;
             function setMinValue (minValue : number) : void;
             function setStepValue (stepValue : number) : void;
-            function setUi (ui : string) : void;
-            static function addMembers (members : variant) : Ext.field.Number;
-            static function addStatics (members : variant) : Ext.field.Number;
+            override function setUi (ui : string) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8103,12 +8085,12 @@ native class Ext
 
         class Password extends Ext.field.Text
         {
-            function getAutoCapitalize () : boolean;
-            function getComponent () : variant;
-            function setAutoCapitalize (autoCapitalize : boolean) : void;
-            function setComponent (component : variant) : void;
-            static function addMembers (members : variant) : Ext.field.Password;
-            static function addStatics (members : variant) : Ext.field.Password;
+            override function getAutoCapitalize () : boolean;
+            override function getComponent () : variant;
+            override function setAutoCapitalize (autoCapitalize : boolean) : void;
+            override function setComponent (component : variant) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8120,17 +8102,17 @@ native class Ext
 
         class Radio extends Ext.field.Checkbox
         {
-            function getComponent () : variant;
+            override function getComponent () : variant;
             function getGroupValue () : string;
-            function getSubmitValue () : variant;
-            function getUi () : string;
-            function getValue () : string;
-            function setComponent (component : variant) : void;
+            override function getSubmitValue () : variant;
+            override function getUi () : string;
+            override function getValue () : string;
+            override function setComponent (component : variant) : void;
             function setGroupValue (value : string) : Ext.field.Radio;
-            function setUi (ui : string) : void;
-            function setValue (value : variant) : Ext.field.Radio;
-            static function addMembers (members : variant) : Ext.field.Radio;
-            static function addStatics (members : variant) : Ext.field.Radio;
+            override function setUi (ui : string) : void;
+            override function setValue (value : variant) : variant;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8142,12 +8124,12 @@ native class Ext
 
         class Search extends Ext.field.Text
         {
-            function getComponent () : variant;
-            function getUi () : string;
-            function setComponent (component : variant) : void;
-            function setUi (ui : string) : void;
-            static function addMembers (members : variant) : Ext.field.Search;
-            static function addStatics (members : variant) : Ext.field.Search;
+            override function getComponent () : variant;
+            override function getUi () : string;
+            override function setComponent (component : variant) : void;
+            override function setUi (ui : string) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8159,42 +8141,42 @@ native class Ext
 
         class Select extends Ext.field.Text
         {
-            function destroy () : void;
+            override function destroy () : void;
             function getAutoSelect () : boolean;
             function getDefaultPhonePickerConfig () : variant;
             function getDefaultTabletPickerConfig () : variant;
             function getDisplayField () : variant;
             function getHiddenName () : string;
-            function getName () : string;
+            override function getName () : string;
             function getOptions () : variant[];
-            function getRecord () : Ext.data.Model;
+            override function getRecord () : Ext.data.Model;
             function getStore () : variant;
-            function getUi () : string;
+            override function getUi () : string;
             function getUsePicker () : variant;
-            function getValue () : variant;
+            override function getValue () : variant;
             function getValueField () : variant;
             function onStoreDataChanged (store : variant) : void;
-            function reset () : Ext.field.Select;
+            override function reset () : variant;
             function setAutoSelect (autoSelect : boolean) : void;
             function setDefaultPhonePickerConfig (defaultPhonePickerConfig : variant) : void;
             function setDefaultTabletPickerConfig (defaultTabletPickerConfig : variant) : void;
             function setDisplayField (displayField : string) : void;
             function setDisplayField (displayField : number) : void;
             function setHiddenName (hiddenName : string) : void;
-            function setName (name : string) : void;
+            override function setName (name : string) : void;
             function setOptions (options : variant[]) : void;
             function setStore (store : Ext.data.Store) : void;
             function setStore (store : variant) : void;
             function setStore (store : string) : void;
-            function setUi (ui : string) : void;
+            override function setUi (ui : string) : void;
             function setUsePicker (usePicker : string) : void;
             function setUsePicker (usePicker : boolean) : void;
             function setValueField (valueField : string) : void;
             function setValueField (valueField : number) : void;
             function showPicker () : void;
-            function updateOptions (newOptions : variant[]) : Ext.field.Select;
-            static function addMembers (members : variant) : Ext.field.Select;
-            static function addStatics (members : variant) : Ext.field.Select;
+            function updateOptions (newOptions : variant[]) : variant;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8206,17 +8188,17 @@ native class Ext
 
         class Slider extends Ext.field.Field
         {
-            function getCls () : string;
+            override function getCls () : string;
             function getIncrement () : number;
             function getMaxValue () : number;
             function getMinValue () : number;
             function getReadOnly () : boolean;
-            function getTabIndex () : variant;
-            function getValue () : variant;
+            override function getTabIndex () : variant;
+            override function getValue () : variant;
             function getValues () : variant;
-            function isDirty () : boolean;
-            function reset () : Ext.field.Slider;
-            function setCls (cls : string) : void;
+            override function isDirty () : boolean;
+            override function reset () : variant;
+            override function setCls (cls : string) : void;
             function setIncrement (increment : number) : void;
             function setMaxValue (maxValue : number) : void;
             function setMinValue (minValue : number) : void;
@@ -8225,8 +8207,8 @@ native class Ext
             function setValue (value : number) : void;
             function setValue (value : Number[]) : void;
             function setValues (value : variant) : void;
-            static function addMembers (members : variant) : Ext.field.Slider;
-            static function addStatics (members : variant) : Ext.field.Slider;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8240,27 +8222,27 @@ native class Ext
         {
             function constructor ();
             function getAccelerateOnTapHold () : boolean;
-            function getCls () : string;
-            function getComponent () : variant;
+            override function getCls () : string;
+            override function getComponent () : variant;
             function getCycle () : boolean;
             function getDefaultValue () : number;
             function getGroupButtons () : boolean;
-            function getMaxValue () : number;
-            function getMinValue () : number;
-            function getStepValue () : number;
-            function reset () : Ext.field.Spinner;
+            override function getMaxValue () : number;
+            override function getMinValue () : number;
+            override function getStepValue () : number;
+            override function reset () : variant;
             function setAccelerateOnTapHold (accelerateOnTapHold : boolean) : void;
-            function setCls (cls : string) : void;
-            function setComponent (component : variant) : void;
+            override function setCls (cls : string) : void;
+            override function setComponent (component : variant) : void;
             function setCycle (cycle : boolean) : void;
             function setDefaultValue (defaultValue : number) : void;
             function setGroupButtons (groupButtons : boolean) : void;
-            function setMaxValue (maxValue : number) : void;
-            function setMinValue (minValue : number) : void;
-            function setStepValue (stepValue : number) : void;
+            override function setMaxValue (maxValue : number) : void;
+            override function setMinValue (minValue : number) : void;
+            override function setStepValue (stepValue : number) : void;
             function updateComponent (newComponent : variant) : void;
-            static function addMembers (members : variant) : Ext.field.Spinner;
-            static function addStatics (members : variant) : Ext.field.Spinner;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8274,35 +8256,35 @@ native class Ext
         {
             var startValue : variant;
 
-            function blur () : Ext.field.Text;
-            function focus () : Ext.field.Text;
+            function blur () : variant;
+            function focus () : variant;
             function getAutoCapitalize () : boolean;
             function getAutoComplete () : boolean;
             function getAutoCorrect () : boolean;
             function getBubbleEvents () : variant[];
-            function getClearIcon () : boolean;
-            function getComponent () : variant;
+            override function getClearIcon () : boolean;
+            override function getComponent () : variant;
             function getMaxLength () : number;
             function getPlaceHolder () : string;
             function getReadOnly () : boolean;
-            function getUi () : string;
-            function getValue () : variant;
-            function isDirty () : boolean;
-            function reset () : Ext.field.Text;
-            function resetOriginalValue () : void;
-            function select () : Ext.field.Text;
+            override function getUi () : string;
+            override function getValue () : variant;
+            override function isDirty () : boolean;
+            override function reset () : variant;
+            override function resetOriginalValue () : void;
+            function select () : variant;
             function setAutoCapitalize (autoCapitalize : boolean) : void;
             function setAutoComplete (autoComplete : boolean) : void;
             function setAutoCorrect (autoCorrect : boolean) : void;
             function setBubbleEvents (bubbleEvents : variant[]) : void;
-            function setClearIcon (clearIcon : boolean) : void;
-            function setComponent (component : variant) : void;
+            override function setClearIcon (clearIcon : boolean) : void;
+            override function setComponent (component : variant) : void;
             function setMaxLength (maxLength : number) : void;
             function setPlaceHolder (placeHolder : string) : void;
             function setReadOnly (readOnly : boolean) : void;
-            function setUi (ui : string) : void;
-            static function addMembers (members : variant) : Ext.field.Text;
-            static function addStatics (members : variant) : Ext.field.Text;
+            override function setUi (ui : string) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8314,16 +8296,16 @@ native class Ext
 
         class TextArea extends Ext.field.Text
         {
-            function getAutoCapitalize () : boolean;
-            function getComponent () : variant;
+            override function getAutoCapitalize () : boolean;
+            override function getComponent () : variant;
             function getMaxRows () : number;
-            function getUi () : string;
-            function setAutoCapitalize (autoCapitalize : boolean) : void;
-            function setComponent (component : variant) : void;
+            override function getUi () : string;
+            override function setAutoCapitalize (autoCapitalize : boolean) : void;
+            override function setComponent (component : variant) : void;
             function setMaxRows (maxRows : number) : void;
-            function setUi (ui : string) : void;
-            static function addMembers (members : variant) : Ext.field.TextArea;
-            static function addStatics (members : variant) : Ext.field.TextArea;
+            override function setUi (ui : string) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8337,22 +8319,22 @@ native class Ext
         class Toggle extends Ext.field.Slider
         {
             function getActiveLabel () : string;
-            function getCls () : string;
+            override function getCls () : string;
             function getInactiveLabel () : string;
-            function getLabelAlign () : string;
+            override function getLabelAlign () : string;
             function getMaxValueCls () : string;
             function getMinValueCls () : string;
-            function getValue () : variant;
+            override function getValue () : variant;
             function setActiveLabel (activeLabel : string) : void;
-            function setCls (cls : string) : void;
+            override function setCls (cls : string) : void;
             function setInactiveLabel (inactiveLabel : string) : void;
-            function setLabelAlign (labelAlign : string) : void;
+            override function setLabelAlign (labelAlign : string) : void;
             function setMaxValueCls (maxValueCls : string) : void;
             function setMinValueCls (minValueCls : string) : void;
-            function setValue (newValue : number) : Ext.field.Toggle;
-            function toggle () : Ext.field.Toggle;
-            static function addMembers (members : variant) : Ext.field.Toggle;
-            static function addStatics (members : variant) : Ext.field.Toggle;
+            override function setValue (newValue : number) : variant;
+            function toggle () : variant;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8364,12 +8346,12 @@ native class Ext
 
         class Url extends Ext.field.Text
         {
-            function getAutoCapitalize () : boolean;
-            function getComponent () : variant;
-            function setAutoCapitalize (autoCapitalize : boolean) : void;
-            function setComponent (component : variant) : void;
-            static function addMembers (members : variant) : Ext.field.Url;
-            static function addStatics (members : variant) : Ext.field.Url;
+            override function getAutoCapitalize () : boolean;
+            override function getComponent () : variant;
+            override function setAutoCapitalize (autoCapitalize : boolean) : void;
+            override function setComponent (component : variant) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8385,13 +8367,13 @@ native class Ext
 
         class FieldSet extends Ext.Container
         {
-            function doSetDisabled (newDisabled : variant) : Ext.form.FieldSet;
-            function getBaseCls () : string;
-            function setBaseCls (baseCls : string) : void;
+            function doSetDisabled (newDisabled : variant) : variant;
+            override function getBaseCls () : string;
+            override function setBaseCls (baseCls : string) : void;
             function setInstructions (instructions : string) : void;
             function setTitle (title : string) : void;
-            static function addMembers (members : variant) : Ext.form.FieldSet;
-            static function addStatics (members : variant) : Ext.form.FieldSet;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8403,17 +8385,17 @@ native class Ext
 
         class Panel extends Ext.Panel
         {
-            function doSetDisabled (newDisabled : variant) : Ext.form.Panel;
+            function doSetDisabled (newDisabled : variant) : variant;
             function getApi () : variant;
-            function getBaseCls () : string;
+            override function getBaseCls () : string;
             function getBaseParams () : variant;
             function getEnctype () : variant;
             function getMethod () : string;
             function getMultipartDetection () : boolean;
             function getParamOrder () : variant;
             function getParamsAsHash () : boolean;
-            function getRecord () : Ext.data.Model;
-            function getScrollable () : variant;
+            override function getRecord () : Ext.data.Model;
+            override function getScrollable () : variant;
             function getStandardSubmit () : boolean;
             function getSubmitOnAction () : variant;
             function getTimeout () : number;
@@ -8423,9 +8405,9 @@ native class Ext
             function getValues (enabled : boolean) : variant;
             function getValues () : variant;
             function load (options : variant) : Ext.data.Connection;
-            function reset () : Ext.form.Panel;
+            function reset () : variant;
             function setApi (api : variant) : void;
-            function setBaseCls (baseCls : string) : void;
+            override function setBaseCls (baseCls : string) : void;
             function setBaseParams (baseParams : variant) : void;
             function setEnctype (enctype : variant) : void;
             function setMethod (method : string) : void;
@@ -8433,17 +8415,17 @@ native class Ext
             function setParamOrder (paramOrder : string) : void;
             function setParamOrder (paramOrder : string[]) : void;
             function setParamsAsHash (paramsAsHash : boolean) : void;
-            function setRecord (record : Ext.data.Model) : Ext.form.Panel;
-            function setScrollable (scrollable : variant) : void;
+            override function setRecord (record : Ext.data.Model) : variant;
+            override function setScrollable (scrollable : variant) : void;
             function setStandardSubmit (standardSubmit : boolean) : void;
             function setSubmitOnAction (submitOnAction : variant) : void;
             function setTimeout (timeout : number) : void;
             function setTrackResetOnLoad (trackResetOnLoad : boolean) : void;
             function setUrl (url : string) : void;
-            function setValues (values : variant) : Ext.form.Panel;
+            function setValues (values : variant) : variant;
             function submit (options : variant) : Ext.data.Connection;
-            static function addMembers (members : variant) : Ext.form.Panel;
-            static function addStatics (members : variant) : Ext.form.Panel;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8459,8 +8441,8 @@ native class Ext
 
         class Animation extends Ext.Base
         {
-            static function addMembers (members : variant) : Ext.fx.Animation;
-            static function addStatics (members : variant) : Ext.fx.Animation;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8479,7 +8461,7 @@ native class Ext
             class Abstract extends Ext.Evented
             {
                 function constructor ();
-                function destroy () : void;
+                override function destroy () : void;
                 function getAfter () : variant;
                 function getBefore () : variant;
                 function getDelay () : number;
@@ -8488,7 +8470,7 @@ native class Ext
                 function getEasing () : string;
                 function getElement () : variant;
                 function getIteration () : number;
-                function getName () : string;
+                override function getName () : string;
                 function getOnBeforeEnd () : variant;
                 function getOnBeforeStart () : variant;
                 function getOnEnd () : variant;
@@ -8512,8 +8494,8 @@ native class Ext
                 function setReplacePrevious (replacePrevious : boolean) : void;
                 function setReverse (reverse : variant) : void;
                 function setScope (scope : variant) : void;
-                static function addMembers (members : variant) : Ext.fx.animation.Abstract;
-                static function addStatics (members : variant) : Ext.fx.animation.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -8526,16 +8508,16 @@ native class Ext
 
             class Fade extends Ext.fx.animation.Abstract
             {
-                function getAfter () : variant;
-                function getBefore () : variant;
+                override function getAfter () : variant;
+                override function getBefore () : variant;
                 function getOut () : boolean;
-                function getReverse () : variant;
-                function setAfter (after : variant) : void;
-                function setBefore (before : variant) : void;
+                override function getReverse () : variant;
+                override function setAfter (after : variant) : void;
+                override function setBefore (before : variant) : void;
                 function setOut (out : boolean) : void;
-                function setReverse (reverse : variant) : void;
-                static function addMembers (members : variant) : Ext.fx.animation.Fade;
-                static function addStatics (members : variant) : Ext.fx.animation.Fade;
+                override function setReverse (reverse : variant) : void;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -8549,14 +8531,14 @@ native class Ext
 
             class Pop extends Ext.fx.animation.Abstract
             {
-                function getAfter () : variant;
-                function getBefore () : variant;
+                override function getAfter () : variant;
+                override function getBefore () : variant;
                 function getOut () : boolean;
-                function setAfter (after : variant) : void;
-                function setBefore (before : variant) : void;
+                override function setAfter (after : variant) : void;
+                override function setBefore (before : variant) : void;
                 function setOut (out : boolean) : void;
-                static function addMembers (members : variant) : Ext.fx.animation.Pop;
-                static function addStatics (members : variant) : Ext.fx.animation.Pop;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -8569,22 +8551,22 @@ native class Ext
 
             class Slide extends Ext.fx.animation.Abstract
             {
-                function getDirection () : string;
-                function getEasing () : string;
+                override function getDirection () : string;
+                override function getEasing () : string;
                 function getIsElementBoxFit () : boolean;
                 function getOffset () : number;
                 function getOut () : boolean;
                 function getUseCssTransform () : boolean;
                 function setContainerBox (containerBox : string) : void;
-                function setDirection (direction : string) : void;
-                function setEasing (easing : string) : void;
+                override function setDirection (direction : string) : void;
+                override function setEasing (easing : string) : void;
                 function setElementBox (elementBox : string) : void;
                 function setIsElementBoxFit (isElementBoxFit : boolean) : void;
                 function setOffset (offset : number) : void;
                 function setOut (out : boolean) : void;
                 function setUseCssTransform (useCssTransform : boolean) : void;
-                static function addMembers (members : variant) : Ext.fx.animation.Slide;
-                static function addStatics (members : variant) : Ext.fx.animation.Slide;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -8603,8 +8585,8 @@ native class Ext
                 function setDirection (direction : string) : void;
                 function setEasing (easing : string) : void;
                 function setOut (out : boolean) : void;
-                static function addMembers (members : variant) : Ext.fx.animation.Wipe;
-                static function addStatics (members : variant) : Ext.fx.animation.Wipe;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -8626,8 +8608,8 @@ native class Ext
                 function getStartValue () : number;
                 function setStartTime (startTime : number) : void;
                 function setStartValue (startValue : number) : void;
-                static function addMembers (members : variant) : Ext.fx.easing.Abstract;
-                static function addStatics (members : variant) : Ext.fx.easing.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -8647,8 +8629,8 @@ native class Ext
                 function getEndValue () : number;
                 function setDuration (duration : number) : void;
                 function setEndValue (endValue : number) : void;
-                static function addMembers (members : variant) : Ext.fx.easing.Linear;
-                static function addStatics (members : variant) : Ext.fx.easing.Linear;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -8666,8 +8648,8 @@ native class Ext
             class Card extends Ext.Base
             {
                 function constructor (config : variant);
-                static function addMembers (members : variant) : Ext.fx.layout.Card;
-                static function addStatics (members : variant) : Ext.fx.layout.Card;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -8682,7 +8664,7 @@ native class Ext
 
                 class Abstract extends Ext.Evented
                 {
-                    function destroy () : void;
+                    override function destroy () : void;
                     function getDirection () : string;
                     function getDuration () : variant;
                     function getLayout () : variant;
@@ -8691,8 +8673,8 @@ native class Ext
                     function setDuration (duration : variant) : void;
                     function setLayout (layout : variant) : void;
                     function setReverse (reverse : variant) : void;
-                    static function addMembers (members : variant) : Ext.fx.layout.card.Abstract;
-                    static function addStatics (members : variant) : Ext.fx.layout.card.Abstract;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -8711,10 +8693,10 @@ native class Ext
                 class Scroll extends Ext.fx.layout.card.Abstract
                 {
                     function constructor (config : variant);
-                    function getDuration () : number;
+                    override function getDuration () : number;
                     function setDuration (duration : number) : void;
-                    static function addMembers (members : variant) : Ext.fx.layout.card.Scroll;
-                    static function addStatics (members : variant) : Ext.fx.layout.card.Scroll;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -8730,13 +8712,13 @@ native class Ext
                 class Style extends Ext.fx.layout.card.Abstract
                 {
                     function constructor (config : variant);
-                    function destroy () : void;
+                    override function destroy () : void;
                     function getInAnimation () : variant;
                     function getOutAnimation () : variant;
                     function setInAnimation (inAnimation : variant) : void;
                     function setOutAnimation (outAnimation : variant) : void;
-                    static function addMembers (members : variant) : Ext.fx.layout.card.Style;
-                    static function addStatics (members : variant) : Ext.fx.layout.card.Style;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -8754,8 +8736,8 @@ native class Ext
             class Css extends Ext.Evented
             {
                 function constructor ();
-                static function addMembers (members : variant) : Ext.fx.runner.Css;
-                static function addStatics (members : variant) : Ext.fx.runner.Css;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -8776,8 +8758,8 @@ native class Ext
         class Abstract extends Ext.Base
         {
             function constructor (config : variant);
-            static function addMembers (members : variant) : Ext.layout.Abstract;
-            static function addStatics (members : variant) : Ext.layout.Abstract;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8796,8 +8778,8 @@ native class Ext
             function setAlign (align : string) : void;
             function setOrient (orient : string) : void;
             function setPack (pack : string) : void;
-            static function addMembers (members : variant) : Ext.layout.Box;
-            static function addStatics (members : variant) : Ext.layout.Box;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8809,10 +8791,10 @@ native class Ext
 
         class Card extends Ext.layout.Default
         {
-            function destroy () : void;
+            override function destroy () : void;
             function onItemInnerStateChange (item : variant, isInner : variant, destroying : variant) : void;
-            static function addMembers (members : variant) : Ext.layout.Card;
-            static function addStatics (members : variant) : Ext.layout.Card;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8824,13 +8806,13 @@ native class Ext
 
         class Default extends Ext.layout.Abstract
         {
-            function destroy () : void;
+            override function destroy () : void;
             function getAnimation () : Ext.fx.layout.Card;
             function onItemInnerStateChange (item : Ext.Component, isInner : boolean, destroying : boolean) : void;
             function onItemInnerStateChange (item : Ext.Component, isInner : boolean) : void;
             function setAnimation (animation : Ext.fx.layout.Card) : void;
-            static function addMembers (members : variant) : Ext.layout.Default;
-            static function addStatics (members : variant) : Ext.layout.Default;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8843,8 +8825,8 @@ native class Ext
         class Fit extends Ext.layout.Default
         {
             function onItemInnerStateChange (item : variant, isInner : variant) : void;
-            static function addMembers (members : variant) : Ext.layout.Fit;
-            static function addStatics (members : variant) : Ext.layout.Fit;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8856,12 +8838,12 @@ native class Ext
 
         class FlexBox extends Ext.layout.Box
         {
-            function getAlign () : string;
-            function onItemInnerStateChange (item : variant, isInner : variant) : void;
-            function setAlign (align : string) : void;
+            override function getAlign () : string;
+            override function onItemInnerStateChange (item : variant, isInner : variant) : void;
+            override function setAlign (align : string) : void;
             function setItemFlex (item : Ext.Component, flex : number) : void;
-            static function addMembers (members : variant) : Ext.layout.FlexBox;
-            static function addStatics (members : variant) : Ext.layout.FlexBox;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8876,8 +8858,8 @@ native class Ext
             function getDirection () : string;
             function onItemInnerStateChange (item : variant, isInner : variant) : void;
             function setDirection (direction : string) : void;
-            static function addMembers (members : variant) : Ext.layout.Float;
-            static function addStatics (members : variant) : Ext.layout.Float;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8889,8 +8871,8 @@ native class Ext
 
         class HBox extends Ext.layout.FlexBox
         {
-            static function addMembers (members : variant) : Ext.layout.HBox;
-            static function addStatics (members : variant) : Ext.layout.HBox;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8902,10 +8884,10 @@ native class Ext
 
         class VBox extends Ext.layout.FlexBox
         {
-            function getOrient () : string;
-            function setOrient (orient : string) : void;
-            static function addMembers (members : variant) : Ext.layout.VBox;
-            static function addStatics (members : variant) : Ext.layout.VBox;
+            override function getOrient () : string;
+            override function setOrient (orient : string) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -8921,7 +8903,7 @@ native class Ext
             class BoxDock extends Ext.Base
             {
                 function constructor (config : variant);
-                function destroy () : void;
+                override function destroy () : void;
                 function getBodyElement () : variant;
                 function getContainer () : variant;
                 function getDirection () : string;
@@ -8934,8 +8916,8 @@ native class Ext
                 function setElement (element : variant) : void;
                 function setInnerWrapper (innerWrapper : variant) : void;
                 function setSizeState (sizeState : boolean) : void;
-                static function addMembers (members : variant) : Ext.layout.wrapper.BoxDock;
-                static function addStatics (members : variant) : Ext.layout.wrapper.BoxDock;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -8948,7 +8930,7 @@ native class Ext
             class Dock extends Ext.Base
             {
                 function constructor (config : variant);
-                function destroy () : void;
+                override function destroy () : void;
                 function getBodyElement () : variant;
                 function getContainer () : variant;
                 function getDirection () : string;
@@ -8961,8 +8943,8 @@ native class Ext
                 function setElement (element : variant) : void;
                 function setInnerWrapper (innerWrapper : variant) : void;
                 function setSizeState (sizeState : boolean) : void;
-                static function addMembers (members : variant) : Ext.layout.wrapper.Dock;
-                static function addStatics (members : variant) : Ext.layout.wrapper.Dock;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -8979,8 +8961,8 @@ native class Ext
                 function getSizeState () : variant;
                 function setContainer (container : variant) : void;
                 function setSizeState (sizeState : variant) : void;
-                static function addMembers (members : variant) : Ext.layout.wrapper.Inner;
-                static function addStatics (members : variant) : Ext.layout.wrapper.Inner;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -8997,8 +8979,8 @@ native class Ext
 
         class Bindable extends Ext.mixin.Mixin
         {
-            static function addMembers (members : variant) : Ext.mixin.Bindable;
-            static function addStatics (members : variant) : Ext.mixin.Bindable;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9012,8 +8994,8 @@ native class Ext
 
         class Mixin extends Ext.Base
         {
-            static function addMembers (members : variant) : Ext.mixin.Mixin;
-            static function addStatics (members : variant) : Ext.mixin.Mixin;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9099,7 +9081,7 @@ native class Ext
             function addListener (eventName : variant, fn : string, order : string) : void;
             function addListener (eventName : variant, fn : string) : void;
             function clearListeners () : void;
-            function destroy () : void;
+            override function destroy () : void;
             function enableBubble (events : string) : void;
             function enableBubble (events : string[]) : void;
             function fireAction (eventName : string, args : variant[], fn : function  () : void, scope : variant) : variant;
@@ -9179,9 +9161,9 @@ native class Ext
             function onBefore (eventName : variant, fn : string, scope : variant, options : variant) : void;
             function onBefore (eventName : variant, fn : string, scope : variant) : void;
             function onBefore (eventName : variant, fn : string) : void;
-            function relayEvents (object : variant, events : string) : Ext.mixin.Observable;
-            function relayEvents (object : variant, events : variant[]) : Ext.mixin.Observable;
-            function relayEvents (object : variant, events : variant) : Ext.mixin.Observable;
+            function relayEvents (object : variant, events : string) : variant;
+            function relayEvents (object : variant, events : variant[]) : variant;
+            function relayEvents (object : variant, events : variant) : variant;
             function removeAfterListener (eventName : string, fn : function  () : void, scope : variant, options : variant) : void;
             function removeAfterListener (eventName : string, fn : function  () : void, scope : variant) : void;
             function removeAfterListener (eventName : string, fn : function  () : void) : void;
@@ -9331,8 +9313,8 @@ native class Ext
             function unBefore (eventName : variant, fn : string, scope : variant, options : variant) : void;
             function unBefore (eventName : variant, fn : string, scope : variant) : void;
             function unBefore (eventName : variant, fn : string) : void;
-            static function addMembers (members : variant) : Ext.mixin.Observable;
-            static function addStatics (members : variant) : Ext.mixin.Observable;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9347,8 +9329,8 @@ native class Ext
 
         class Templatable extends Ext.mixin.Mixin
         {
-            static function addMembers (members : variant) : Ext.mixin.Templatable;
-            static function addStatics (members : variant) : Ext.mixin.Templatable;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9366,9 +9348,9 @@ native class Ext
 
         class View extends Ext.Container
         {
-            function getBaseCls () : string;
+            override function getBaseCls () : string;
             function getDefaultBackButtonText () : string;
-            function getItems () : variant;
+            override function getItems () : variant;
             function getLayout () : variant;
             function getNavigationBar () : variant;
             function getPreviousItem () : variant;
@@ -9378,16 +9360,16 @@ native class Ext
             function pop (count : variant) : Ext.Component;
             function push (view : variant) : Ext.Component;
             function reset () : Ext.Component;
-            function setBaseCls (baseCls : string) : void;
+            override function setBaseCls (baseCls : string) : void;
             function setDefaultBackButtonText (defaultBackButtonText : string) : void;
-            function setItems (items : variant[]) : void;
-            function setItems (items : variant) : void;
-            function setLayout (layout : variant) : void;
+            override function setItems (items : variant[]) : void;
+            override function setItems (items : variant) : void;
+            override function setLayout (layout : variant) : void;
             function setNavigationBar (navigationBar : boolean) : void;
             function setNavigationBar (navigationBar : variant) : void;
             function setUseTitleForBackButtonText (useTitleForBackButtonText : boolean) : void;
-            static function addMembers (members : variant) : Ext.navigation.View;
-            static function addStatics (members : variant) : Ext.navigation.View;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9402,8 +9384,8 @@ native class Ext
     {
         static var deviceType : string;
 
-        static function addMembers (members : variant) : Ext.os;
-        static function addStatics (members : variant) : Ext.os;
+        static function addMembers (members : variant) : variant;
+        static function addStatics (members : variant) : variant;
         static function callParent (args : variant) : void;
         static function create () : variant;
         static function createAlias (alias : string, origin : string) : void;
@@ -9419,17 +9401,17 @@ native class Ext
         class Date extends Ext.picker.Picker
         {
             function getDayText () : string;
-            function getDoneButton () : variant;
+            override function getDoneButton () : variant;
             function getMonthText () : string;
             function getSlotOrder () : variant[];
-            function getValue (useDom : variant) : variant;
+            override function getValue (useDom : variant) : variant;
             function getYearFrom () : number;
             function getYearText () : string;
             function getYearTo () : number;
-            function initialize () : void;
+            override function initialize () : void;
             function setDayText (dayText : string) : void;
-            function setDoneButton (doneButton : string) : void;
-            function setDoneButton (doneButton : variant) : void;
+            override function setDoneButton (doneButton : string) : void;
+            override function setDoneButton (doneButton : variant) : void;
             function setMonthText (monthText : string) : void;
             function setSlotOrder (slotOrder : variant[]) : void;
             function setValue (value : variant, animated : variant) : Ext.picker.Picker;
@@ -9441,8 +9423,8 @@ native class Ext
             function updateYearFrom () : void;
             function updateYearText (yearText : variant) : void;
             function updateYearTo () : void;
-            static function addMembers (members : variant) : Ext.picker.Date;
-            static function addStatics (members : variant) : Ext.picker.Date;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9456,32 +9438,32 @@ native class Ext
         {
             function applyCancelButton (config : variant) : variant;
             function applyDoneButton (config : variant) : variant;
-            function destroy () : void;
-            function getBaseCls () : string;
-            function getBottom () : number;
+            override function destroy () : void;
+            override function getBaseCls () : string;
+            override function getBottom () : number;
             function getCancelButton () : variant;
             function getDoneButton () : variant;
-            function getHeight () : number;
+            override function getHeight () : number;
             function getLayout () : variant;
-            function getLeft () : number;
-            function getRight () : number;
+            override function getLeft () : number;
+            override function getRight () : number;
             function getSlots () : variant[];
             function getToolbar () : variant;
             function getToolbarPosition () : string;
             function getUseTitles () : boolean;
             function getValue (useDom : variant) : variant;
             function getValues () : variant;
-            function initialize () : void;
-            function setBaseCls (baseCls : string) : void;
-            function setBottom (bottom : number) : void;
+            override function initialize () : void;
+            override function setBaseCls (baseCls : string) : void;
+            override function setBottom (bottom : number) : void;
             function setCancelButton (cancelButton : string) : void;
             function setCancelButton (cancelButton : variant) : void;
             function setDoneButton (doneButton : string) : void;
             function setDoneButton (doneButton : variant) : void;
-            function setHeight (height : number) : void;
-            function setLayout (layout : variant) : void;
-            function setLeft (left : number) : void;
-            function setRight (right : number) : void;
+            override function setHeight (height : number) : void;
+            override function setLayout (layout : variant) : void;
+            override function setLeft (left : number) : void;
+            override function setRight (right : number) : void;
             function setSlots (slots : variant[]) : void;
             function setToolbar (toolbar : Ext.TitleBar) : void;
             function setToolbar (toolbar : Ext.Toolbar) : void;
@@ -9489,9 +9471,9 @@ native class Ext
             function setToolbarPosition (toolbarPosition : string) : void;
             function setUseTitles (useTitles : boolean) : void;
             function setValue (values : variant, animated : boolean) : Ext.picker.Picker;
-            function show () : Ext.picker.Picker;
-            static function addMembers (members : variant) : Ext.picker.Picker;
-            static function addStatics (members : variant) : Ext.picker.Picker;
+            override function show () : variant;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9510,8 +9492,8 @@ native class Ext
         {
             function getList () : variant;
             function setList (list : variant) : void;
-            static function addMembers (members : variant) : Ext.plugin.BufferedList;
-            static function addStatics (members : variant) : Ext.plugin.BufferedList;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9529,8 +9511,8 @@ native class Ext
             function setAutoPaging (autoPaging : boolean) : void;
             function setLoadMoreText (loadMoreText : string) : void;
             function setNoMoreRecordsText (noMoreRecordsText : string) : void;
-            static function addMembers (members : variant) : Ext.plugin.ListPaging;
-            static function addStatics (members : variant) : Ext.plugin.ListPaging;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9572,8 +9554,8 @@ native class Ext
             function setTranslatable (translatable : boolean) : void;
             function snapBack (force : boolean) : void;
             function snapBack () : void;
-            static function addMembers (members : variant) : Ext.plugin.PullRefresh;
-            static function addStatics (members : variant) : Ext.plugin.PullRefresh;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9589,8 +9571,8 @@ native class Ext
             function getList () : variant;
             function setHandleSelector (handleSelector : string) : void;
             function setList (list : variant) : void;
-            static function addMembers (members : variant) : Ext.plugin.SortableList;
-            static function addStatics (members : variant) : Ext.plugin.SortableList;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9607,7 +9589,7 @@ native class Ext
 
         class Scroller extends Ext.Evented
         {
-            function destroy () : void;
+            override function destroy () : void;
             function getDirection () : string;
             function getDirectionLock () : boolean;
             function getDisabled () : boolean;
@@ -9617,13 +9599,13 @@ native class Ext
             function getSlotSnapSize () : variant;
             function getTranslatable () : variant;
             function isAxisEnabled (axis : string) : boolean;
-            function scrollBy (x : number, y : number, animation : boolean) : Ext.scroll.Scroller;
-            function scrollBy (x : number, y : number, animation : variant) : Ext.scroll.Scroller;
-            function scrollBy (x : number, y : number) : Ext.scroll.Scroller;
-            function scrollTo (x : number, y : number, animation : boolean) : Ext.scroll.Scroller;
-            function scrollTo (x : number, y : number, animation : variant) : Ext.scroll.Scroller;
-            function scrollTo (x : number, y : number) : Ext.scroll.Scroller;
-            function scrollToEnd (animation : variant) : Ext.scroll.Scroller;
+            function scrollBy (x : number, y : number, animation : boolean) : variant;
+            function scrollBy (x : number, y : number, animation : variant) : variant;
+            function scrollBy (x : number, y : number) : variant;
+            function scrollTo (x : number, y : number, animation : boolean) : variant;
+            function scrollTo (x : number, y : number, animation : variant) : variant;
+            function scrollTo (x : number, y : number) : variant;
+            function scrollToEnd (animation : variant) : variant;
             function setDirection (direction : string) : void;
             function setDirectionLock (directionLock : boolean) : void;
             function setDisabled (disabled : boolean) : void;
@@ -9634,9 +9616,9 @@ native class Ext
             function setSlotSnapSize (slotSnapSize : number) : void;
             function setSlotSnapSize (slotSnapSize : variant) : void;
             function setTranslatable (translatable : variant) : void;
-            function updateBoundary () : Ext.scroll.Scroller;
-            static function addMembers (members : variant) : Ext.scroll.Scroller;
-            static function addStatics (members : variant) : Ext.scroll.Scroller;
+            function updateBoundary () : variant;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9649,7 +9631,7 @@ native class Ext
         class View extends Ext.Evented
         {
             function constructor (config : variant);
-            function destroy () : void;
+            override function destroy () : void;
             function getCls () : string;
             function getElement () : variant;
             function getIndicators () : variant;
@@ -9662,8 +9644,8 @@ native class Ext
             function setIndicatorsHidingDelay (indicatorsHidingDelay : number) : void;
             function setIndicatorsUi (indicatorsUi : string) : void;
             function setScroller (scroller : variant) : void;
-            static function addMembers (members : variant) : Ext.scroll.View;
-            static function addStatics (members : variant) : Ext.scroll.View;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9682,26 +9664,26 @@ native class Ext
                 function getAutoHide () : boolean;
                 function getAxis () : string;
                 function getBarCls () : string;
-                function getBaseCls () : string;
-                function getHidden () : boolean;
+                override function getBaseCls () : string;
+                override function getHidden () : boolean;
                 function getLength () : variant;
                 function getMinLength () : number;
                 function getRatio () : number;
-                function getUi () : string;
+                override function getUi () : string;
                 function getValue () : variant;
                 function setActive (active : boolean) : void;
                 function setAutoHide (autoHide : boolean) : void;
                 function setAxis (axis : string) : void;
                 function setBarCls (barCls : string) : void;
-                function setBaseCls (baseCls : string) : void;
-                function setHidden (hidden : boolean) : void;
+                override function setBaseCls (baseCls : string) : void;
+                override function setHidden (hidden : boolean) : void;
                 function setLength (length : variant) : void;
                 function setMinLength (minLength : number) : void;
                 function setRatio (ratio : number) : void;
-                function setUi (ui : string) : void;
+                override function setUi (ui : string) : void;
                 function setValue (value : variant) : void;
-                static function addMembers (members : variant) : Ext.scroll.indicator.Abstract;
-                static function addStatics (members : variant) : Ext.scroll.indicator.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -9725,7 +9707,7 @@ native class Ext
             function applyIncrement (increment : number) : number;
             function getAllowThumbsOverlapping () : boolean;
             function getAnimation () : variant;
-            function getBaseCls () : string;
+            override function getBaseCls () : string;
             function getIncrement () : number;
             function getMaxValue () : number;
             function getMinValue () : number;
@@ -9739,7 +9721,7 @@ native class Ext
             function setAllowThumbsOverlapping (allowThumbsOverlapping : boolean) : void;
             function setAnimation (animation : boolean) : void;
             function setAnimation (animation : variant) : void;
-            function setBaseCls (baseCls : string) : void;
+            override function setBaseCls (baseCls : string) : void;
             function setIncrement (increment : number) : void;
             function setMaxValue (maxValue : number) : void;
             function setMinValue (minValue : number) : void;
@@ -9749,8 +9731,8 @@ native class Ext
             function setValue (value : Number[]) : void;
             function setValues (value : variant) : void;
             function updateValue (newValue : variant, oldValue : variant) : void;
-            static function addMembers (members : variant) : Ext.slider.Slider;
-            static function addStatics (members : variant) : Ext.slider.Slider;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9762,13 +9744,13 @@ native class Ext
 
         class Thumb extends Ext.Component
         {
-            function getBaseCls () : string;
+            override function getBaseCls () : string;
             function getDraggable () : variant;
-            function initialize () : void;
-            function setBaseCls (baseCls : string) : void;
-            function setDraggable (draggable : variant) : void;
-            static function addMembers (members : variant) : Ext.slider.Thumb;
-            static function addStatics (members : variant) : Ext.slider.Thumb;
+            override function initialize () : void;
+            override function setBaseCls (baseCls : string) : void;
+            override function setDraggable (draggable : variant) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9788,20 +9770,20 @@ native class Ext
         class Panel extends Ext.Container
         {
             function doTabChange (tabBar : variant, newTab : variant) : boolean;
-            function getCls () : string;
+            override function getCls () : string;
             function getLayout () : variant;
             function getTabBar () : variant;
             function getTabBarPosition () : string;
-            function getUi () : string;
-            function initialize () : void;
-            function setCls (cls : string) : void;
-            function setLayout (layout : variant) : void;
+            override function getUi () : string;
+            override function initialize () : void;
+            override function setCls (cls : string) : void;
+            override function setLayout (layout : variant) : void;
             function setTabBar (tabBar : variant) : void;
             function setTabBarPosition (tabBarPosition : string) : void;
-            function setUi (ui : string) : void;
+            override function setUi (ui : string) : void;
             function updateUi (newUi : variant, oldUi : variant) : void;
-            static function addMembers (members : variant) : Ext.tab.Panel;
-            static function addStatics (members : variant) : Ext.tab.Panel;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9886,7 +9868,7 @@ native class Ext
             function insert (index : number, key : string) : variant;
             function last () : variant;
             function remove (o : variant) : variant;
-            function removeAll (items : variant[]) : Ext.util.AbstractMixedCollection;
+            function removeAll (items : variant[]) : variant;
             function removeAt (index : number) : variant;
             function removeAtKey (key : string) : variant;
             function replace (key : string, o : variant) : variant;
@@ -9897,8 +9879,8 @@ native class Ext
             function sum (property : string, start : number, end : number) : number;
             function sum (property : string, start : number) : number;
             function sum (property : string) : number;
-            static function addMembers (members : variant) : Ext.util.AbstractMixedCollection;
-            static function addStatics (members : variant) : Ext.util.AbstractMixedCollection;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9911,16 +9893,16 @@ native class Ext
 
         class BufferedCollection extends Ext.util.Collection
         {
-            function getAutoFilter () : boolean;
-            function getAutoSort () : boolean;
+            override function getAutoFilter () : boolean;
+            override function getAutoSort () : boolean;
             function getPageSize () : number;
             function getTotalCount () : number;
-            function setAutoFilter (autoFilter : boolean) : void;
-            function setAutoSort (autoSort : boolean) : void;
+            override function setAutoFilter (autoFilter : boolean) : void;
+            override function setAutoSort (autoSort : boolean) : void;
             function setPageSize (pageSize : number) : void;
             function setTotalCount (totalCount : number) : void;
-            static function addMembers (members : variant) : Ext.util.BufferedCollection;
-            static function addStatics (members : variant) : Ext.util.BufferedCollection;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -9943,12 +9925,12 @@ native class Ext
             function add (key : string, item : variant) : variant;
             function addAll (addItems : variant) : void;
             function addAll (addItems : variant[]) : void;
-            function addFilters (filters : variant) : Ext.util.Collection;
+            function addFilters (filters : variant) : variant;
             function clear () : void;
             function clone () : Ext.util.MixedCollection;
             function contains (item : variant) : boolean;
             function containsKey (key : string) : boolean;
-            function destroy () : void;
+            override function destroy () : void;
             function each (fn : function  () : void, scope : variant) : void;
             function eachKey (fn : function  () : void, scope : variant) : void;
             function filter (property : variant, value : variant, anyMatch : variant, caseSensitive : variant) : variant[];
@@ -9972,20 +9954,20 @@ native class Ext
             function indexOf (item : variant) : number;
             function indexOfKey (key : string) : number;
             function insert (index : number, key : string, item : variant) : variant;
-            function insertSorters () : Ext.util.Collection;
+            function insertSorters () : variant;
             function last () : variant;
             function remove (item : variant) : variant;
-            function removeAll (items : variant[]) : Ext.util.Collection;
+            function removeAll (items : variant[]) : variant;
             function removeAt (index : number) : variant;
             function removeAtKey (key : string) : variant;
-            function removeFilters (filters : variant) : Ext.util.Collection;
-            function removeSorters (sorters : variant) : Ext.util.Collection;
+            function removeFilters (filters : variant) : variant;
+            function removeSorters (sorters : variant) : variant;
             function replace (oldKey : string, item : variant) : variant;
             function setAutoFilter (autoFilter : boolean) : void;
             function setAutoSort (autoSort : boolean) : void;
             function sort (sorters : variant, defaultDirection : variant) : variant[];
-            static function addMembers (members : variant) : Ext.util.Collection;
-            static function addStatics (members : variant) : Ext.util.Collection;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10010,8 +9992,8 @@ native class Ext
             function setFn (fn : variant) : void;
             function setInterval (interval : variant) : void;
             function setScope (scope : variant) : void;
-            static function addMembers (members : variant) : Ext.util.DelayedTask;
-            static function addStatics (members : variant) : Ext.util.DelayedTask;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10024,7 +10006,7 @@ native class Ext
         class Draggable extends Ext.Base
         {
             function constructor (config : variant);
-            function destroy () : void;
+            override function destroy () : void;
             function disable () : Ext.util.Draggable;
             function enable () : Ext.util.Draggable;
             function getCls () : string;
@@ -10044,8 +10026,8 @@ native class Ext
             function setInitialOffset (initialOffset : variant) : void;
             function setInitialOffset (initialOffset : number) : void;
             function setTranslatable (translatable : variant) : void;
-            static function addMembers (members : variant) : Ext.util.Draggable;
-            static function addStatics (members : variant) : Ext.util.Draggable;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10064,8 +10046,8 @@ native class Ext
             function isDisabled () : boolean;
             function isMonitoring () : boolean;
             function setBaseCls (baseCls : string) : void;
-            static function addMembers (members : variant) : Ext.util.Droppable;
-            static function addStatics (members : variant) : Ext.util.Droppable;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10097,8 +10079,8 @@ native class Ext
             function setScope (scope : variant) : void;
             function setValue (value : RegExp) : void;
             function setValue (value : variant) : void;
-            static function addMembers (members : variant) : Ext.util.Filter;
-            static function addStatics (members : variant) : Ext.util.Filter;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10128,8 +10110,8 @@ native class Ext
             static function leftPad (string : string, size : number) : string;
             static function toggle (string : string, value : string, other : string) : string;
             static function trim (string : string) : string;
-            static function addMembers (members : variant) : Ext.util.Format;
-            static function addStatics (members : variant) : Ext.util.Format;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10150,7 +10132,7 @@ native class Ext
             var speed : number;
             var timestamp : Date;
 
-            function destroy () : void;
+            override function destroy () : void;
             function getAllowHighAccuracy () : boolean;
             function getAutoUpdate () : boolean;
             function getFrequency () : number;
@@ -10163,8 +10145,8 @@ native class Ext
             function setTimeout (timeout : number) : void;
             function updateLocation (callback : function  () : void, scope : variant) : void;
             function updateLocation (callback : function  () : void) : void;
-            static function addMembers (members : variant) : Ext.util.Geolocation;
-            static function addStatics (members : variant) : Ext.util.Geolocation;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10178,12 +10160,12 @@ native class Ext
         {
             function getGroupFn () : function () : void;
             function getSortProperty () : string;
-            function getSorterFn () : function () : void;
+            override function getSorterFn () : function () : void;
             function setGroupFn (groupFn : function  () : void) : void;
             function setSortProperty (sortProperty : string) : void;
-            function setSorterFn (sorterFn : function  () : void) : void;
-            static function addMembers (members : variant) : Ext.util.Grouper;
-            static function addStatics (members : variant) : Ext.util.Grouper;
+            override function setSorterFn (sorterFn : function  () : void) : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10197,12 +10179,12 @@ native class Ext
         {
             function constructor (config : variant);
             function add (key : string, value : variant) : variant;
-            function clear (initial : variant) : Ext.util.HashMap;
+            function clear (initial : variant) : variant;
             function clone () : Ext.util.HashMap;
             function contains (value : variant) : boolean;
             function containsKey (key : string) : boolean;
-            function each (fn : function  () : void, scope : variant) : Ext.util.HashMap;
-            function each (fn : function  () : void) : Ext.util.HashMap;
+            function each (fn : function  () : void, scope : variant) : variant;
+            function each (fn : function  () : void) : variant;
             function get (key : string) : variant;
             function getCount () : number;
             function getKeys () : variant[];
@@ -10210,8 +10192,8 @@ native class Ext
             function remove (o : variant) : boolean;
             function removeByKey (key : string) : boolean;
             function replace (key : string, value : variant) : variant;
-            static function addMembers (members : variant) : Ext.util.HashMap;
-            static function addStatics (members : variant) : Ext.util.HashMap;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10232,8 +10214,8 @@ native class Ext
             static function pluralize (word : string) : string;
             static function singular (matcher : RegExp, replacer : string) : void;
             static function singularize (word : string) : string;
-            static function addMembers (members : variant) : Ext.util.Inflector;
-            static function addStatics (members : variant) : Ext.util.Inflector;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10248,9 +10230,9 @@ native class Ext
         {
             function constructor (point1 : Ext.util.Point, point2 : Ext.util.Point);
             function intersects (lineSegment : Ext.util.LineSegment) : Ext.util.Point;
-            function toString () : string;
-            static function addMembers (members : variant) : Ext.util.LineSegment;
-            static function addStatics (members : variant) : Ext.util.LineSegment;
+            override function toString () : string;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10268,8 +10250,8 @@ native class Ext
             function sortByKey (dir : string) : void;
             function sortByKey (fn : function  () : void) : void;
             function sortByKey () : void;
-            static function addMembers (members : variant) : Ext.util.MixedCollection;
-            static function addStatics (members : variant) : Ext.util.MixedCollection;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10283,8 +10265,8 @@ native class Ext
         class PaintMonitor extends Ext.Base
         {
             function constructor (config : variant);
-            static function addMembers (members : variant) : Ext.util.PaintMonitor;
-            static function addStatics (members : variant) : Ext.util.PaintMonitor;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10300,8 +10282,8 @@ native class Ext
             function constructor (x : number);
             function constructor ();
             function clone () : Ext.util.Point;
-            function copyFrom (point : Ext.util.Point) : Ext.util.Point;
-            function copyFrom (point : variant) : Ext.util.Point;
+            function copyFrom (point : Ext.util.Point) : variant;
+            function copyFrom (point : variant) : variant;
             function equals (point : Ext.util.Point) : boolean;
             function equals (point : variant) : boolean;
             function isCloseTo (point : Ext.util.Point, threshold : variant) : boolean;
@@ -10310,10 +10292,10 @@ native class Ext
             function isCloseTo (point : variant, threshold : number) : boolean;
             function roundedEquals (point : Ext.util.Point) : boolean;
             function roundedEquals (point : variant) : boolean;
-            function toString () : string;
-            function translate (x : number, y : number) : Ext.util.Point;
-            static function addMembers (members : variant) : Ext.util.Point;
-            static function addStatics (members : variant) : Ext.util.Point;
+            override function toString () : string;
+            function translate (x : number, y : number) : variant;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10330,8 +10312,8 @@ native class Ext
         class Region extends Ext.Base
         {
             function constructor (top : number, right : number, bottom : number, left : number);
-            function adjust (top : number, right : number, bottom : number, left : number) : Ext.util.Region;
-            function constrainTo (targetRegion : Ext.util.Region) : Ext.util.Region;
+            function adjust (top : number, right : number, bottom : number, left : number) : variant;
+            function constrainTo (targetRegion : Ext.util.Region) : variant;
             function contains (region : Ext.util.Region) : boolean;
             function copy () : Ext.util.Region;
             function equals (region : Ext.util.Region) : boolean;
@@ -10344,12 +10326,12 @@ native class Ext
             function isOutOfBound (axis : string, p : number) : boolean;
             function isOutOfBoundX (p : number) : boolean;
             function isOutOfBoundY (p : number) : boolean;
-            function round () : Ext.util.Region;
-            function toString () : string;
-            function translateBy (offset : variant) : Ext.util.Region;
+            function round () : variant;
+            override function toString () : string;
+            function translateBy (offset : variant) : variant;
             function union (region : Ext.util.Region) : Ext.util.Region;
-            static function addMembers (members : variant) : Ext.util.Region;
-            static function addStatics (members : variant) : Ext.util.Region;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10366,8 +10348,8 @@ native class Ext
         class SizeMonitor extends Ext.Base
         {
             function constructor (config : variant);
-            static function addMembers (members : variant) : Ext.util.SizeMonitor;
-            static function addStatics (members : variant) : Ext.util.SizeMonitor;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10384,7 +10366,7 @@ native class Ext
             var sortRoot : string;
             var sorters : Ext.util.MixedCollection;
 
-            function destroy () : void;
+            override function destroy () : void;
             function initSortable () : void;
             function sort (sorters : string, direction : string, where : string, doSort : boolean) : Ext.util.Sorter[];
             function sort (sorters : string, direction : string, where : string) : Ext.util.Sorter[];
@@ -10398,8 +10380,8 @@ native class Ext
             function sort (sorters : Ext.util.Sorter[], direction : string) : Ext.util.Sorter[];
             function sort (sorters : Ext.util.Sorter[], doSort : boolean) : Ext.util.Sorter[];
             function sort (sorters : Ext.util.Sorter[]) : Ext.util.Sorter[];
-            static function addMembers (members : variant) : Ext.util.Sortable;
-            static function addStatics (members : variant) : Ext.util.Sortable;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10425,8 +10407,8 @@ native class Ext
             function setSorterFn (sorterFn : function  () : void) : void;
             function setTransform (transform : function  () : void) : void;
             function toggle () : void;
-            static function addMembers (members : variant) : Ext.util.Sorter;
-            static function addStatics (members : variant) : Ext.util.Sorter;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10455,8 +10437,8 @@ native class Ext
             function setPreventDefault (preventDefault : boolean) : void;
             function setStopDefault (stopDefault : boolean) : void;
             function setTimer (timer : number) : void;
-            static function addMembers (members : variant) : Ext.util.TapRepeater;
-            static function addStatics (members : variant) : Ext.util.TapRepeater;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10472,9 +10454,9 @@ native class Ext
         class Wrapper extends Ext.Base
         {
             function constructor (elementConfig : variant, wrappedElement : variant);
-            function destroy () : void;
-            static function addMembers (members : variant) : Ext.util.Wrapper;
-            static function addStatics (members : variant) : Ext.util.Wrapper;
+            override function destroy () : void;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10490,7 +10472,7 @@ native class Ext
             class Abstract extends Ext.Base
             {
                 function constructor (config : variant);
-                function destroy () : void;
+                override function destroy () : void;
                 function getArgs () : variant[];
                 function getCallback () : variant;
                 function getElement () : variant;
@@ -10499,8 +10481,8 @@ native class Ext
                 function setCallback (callback : variant) : void;
                 function setElement (element : variant) : void;
                 function setScope (scope : variant) : void;
-                static function addMembers (members : variant) : Ext.util.paintmonitor.Abstract;
-                static function addStatics (members : variant) : Ext.util.paintmonitor.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -10519,7 +10501,7 @@ native class Ext
             class Abstract extends Ext.Base
             {
                 function constructor (config : variant);
-                function destroy () : void;
+                override function destroy () : void;
                 function getArgs () : variant[];
                 function getCallback () : variant;
                 function getElement () : variant;
@@ -10528,8 +10510,8 @@ native class Ext
                 function setCallback (callback : variant) : void;
                 function setElement (element : variant) : void;
                 function setScope (scope : variant) : void;
-                static function addMembers (members : variant) : Ext.util.sizemonitor.Abstract;
-                static function addStatics (members : variant) : Ext.util.sizemonitor.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -10549,7 +10531,7 @@ native class Ext
             class Abstract extends Ext.Evented
             {
                 function constructor (config : variant);
-                function destroy () : void;
+                override function destroy () : void;
                 function getEasing () : variant;
                 function getEasingX () : variant;
                 function getEasingY () : variant;
@@ -10558,8 +10540,8 @@ native class Ext
                 function setEasingX (easingX : variant) : void;
                 function setEasingY (easingY : variant) : void;
                 function setUseWrapper (useWrapper : variant) : void;
-                static function addMembers (members : variant) : Ext.util.translatable.Abstract;
-                static function addStatics (members : variant) : Ext.util.translatable.Abstract;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -10575,8 +10557,8 @@ native class Ext
             {
                 function getElement () : variant;
                 function setElement (element : variant) : void;
-                static function addMembers (members : variant) : Ext.util.translatable.Dom;
-                static function addStatics (members : variant) : Ext.util.translatable.Dom;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -10594,8 +10576,8 @@ native class Ext
 
         class ActionOverFlowMenuButton extends Ext.ux.MenuButton
         {
-            static function addMembers (members : variant) : Ext.ux.ActionOverFlowMenuButton;
-            static function addStatics (members : variant) : Ext.ux.ActionOverFlowMenuButton;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10619,8 +10601,8 @@ native class Ext
         {
             function getMenuItems () : variant[];
             function setMenuItems (menuItems : variant[]) : void;
-            static function addMembers (members : variant) : Ext.ux.MenuButton;
-            static function addStatics (members : variant) : Ext.ux.MenuButton;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10632,8 +10614,8 @@ native class Ext
 
         class TabMenuButton extends Ext.ux.MenuButton
         {
-            static function addMembers (members : variant) : Ext.ux.TabMenuButton;
-            static function addStatics (members : variant) : Ext.ux.TabMenuButton;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;
@@ -10649,8 +10631,8 @@ native class Ext
             class Analytics extends Ext.Base
             {
                 static function constructor ();
-                static function addMembers (members : variant) : Ext.ux.device.Analytics;
-                static function addStatics (members : variant) : Ext.ux.device.Analytics;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -10663,8 +10645,8 @@ native class Ext
             class Twitter extends Ext.Base
             {
                 static function constructor ();
-                static function addMembers (members : variant) : Ext.ux.device.Twitter;
-                static function addStatics (members : variant) : Ext.ux.device.Twitter;
+                static function addMembers (members : variant) : variant;
+                static function addStatics (members : variant) : variant;
                 static function callParent (args : variant) : void;
                 static function create () : variant;
                 static function createAlias (alias : string, origin : string) : void;
@@ -10684,8 +10666,8 @@ native class Ext
                     function setAccountID (accountID : variant) : void;
                     function trackEvent (config : variant) : void;
                     function trackPageview (config : string) : void;
-                    static function addMembers (members : variant) : Ext.ux.device.analytics.Abstract;
-                    static function addStatics (members : variant) : Ext.ux.device.analytics.Abstract;
+                    static function addMembers (members : variant) : variant;
+                    static function addStatics (members : variant) : variant;
                     static function callParent (args : variant) : void;
                     static function create () : variant;
                     static function createAlias (alias : string, origin : string) : void;
@@ -10719,7 +10701,7 @@ native class Ext
             function getOrientation () : string;
             function getPreventPanning () : boolean;
             function getPreventZooming () : boolean;
-            function getSize () : variant;
+            override function getSize () : variant;
             function getUseBodyElement () : boolean;
             function getWindowHeight () : number;
             function getWindowWidth () : number;
@@ -10728,16 +10710,16 @@ native class Ext
             function hideOtherMenus (side : string, animation : string) : void;
             function removeMenu (side : string) : void;
             function setAutoMaximize (autoMaximize : boolean) : void;
-            function setLayout (layout : variant) : void;
-            function setLayout (layout : string) : void;
+            override function setLayout (layout : variant) : void;
+            override function setLayout (layout : string) : void;
             function setMenu (menu : Ext.Menu, config : variant) : void;
             function setPreventPanning (preventPanning : boolean) : void;
             function setPreventZooming (preventZooming : boolean) : void;
             function setUseBodyElement (useBodyElement : boolean) : void;
             function showMenu (side : string) : void;
             function toggleMenu (side : string) : void;
-            static function addMembers (members : variant) : Ext.viewport.Default;
-            static function addStatics (members : variant) : Ext.viewport.Default;
+            static function addMembers (members : variant) : variant;
+            static function addStatics (members : variant) : variant;
             static function callParent (args : variant) : void;
             static function create () : variant;
             static function createAlias (alias : string, origin : string) : void;

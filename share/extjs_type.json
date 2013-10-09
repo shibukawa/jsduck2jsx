@@ -7,6 +7,97 @@
             "params": {
                 "filterFn : Function": ["filterFn : (Ext.util.MixedCollection) -> boolean", "void"]
             }
+        },
+        "Ext.data.Store#load": {
+            "type": "Ext.data.Store"
+        },
+        "Ext.data.TreeStore#load": {
+            "type": "Ext.data.Store"
+        },
+        "Ext.Component#getBubbleTarget": {
+            "type": "Ext.container.Container"
+        },
+        "Ext.Component#hide": {
+            "type": "void"
+        },
+        "Ext.Component#show": {
+            "type": "void"
+        },
+        "Ext.Component#showAt": {
+            "type": "void"
+        },
+        "Ext.LoadMask#hide": {
+            "type": "void"
+        },
+        "Ext.LoadMask#show": {
+            "type": "void"
+        },
+        "Ext.layout.Layout#getLayoutItems": {
+            "type": "Ext.Component[]"
+        },
+        "Ext.app.Application#getApplication": {
+            "type": "Ext.app.Application"
+        },
+        "Ext.container.AbstractContainer#disable": {
+            "type": "void"
+        },
+        "Ext.data.proxy.Server#create" : {
+            "skipOverride": true
+        },
+        "Ext.dom.Element#mask" : {
+            "type": "void",
+            "params": {
+                "msgCls : string": null
+            }
+        },
+        "Ext.dom.Element#setVisible" : {
+            "type": "Ext.dom.Element"
+        },
+        "Ext.dd.DDTarget#getDragEl": {
+            "type": "HTMLElement"
+        },
+        "Ext.form.field.Base#setValue": {
+            "type": "void"
+        },
+        "Ext.form.field.Checkbox#getRawValue": {
+            "type": "string"
+        },
+        "Ext.form.field.Text#setValue": {
+            "type": "void"
+        },
+        "Ext.grid.column.Column#hide": {
+            "type": "void"
+        },
+        "Ext.grid.plugin.Editing#startEdit": {
+            "type": "boolean"
+        },
+        "Ext.form.field.Radio#getSubmitValue": {
+            "type": "string"
+        },
+        "Ext.menu.Menu#hide": {
+            "type": "void"
+        },
+        "Ext.window.MessageBox#hide": {
+            "type": "void"
+        },
+        "Ext.window.MessageBox#show": {
+            "type": "void"
+        },
+        "Ext.window.MessageBox#setIcon": {
+            "type": "void",
+            "params": {
+                "icon : string, width : number": null,
+                "icon : string, height : number": null
+            }
+        },
+        "Ext.data.proxy.Server#create": {
+            "skip" : true
+        },
+        "Ext.direct.Event#getName": {
+            "skip" : true
+        },
+        "Ext.form.field.Field#getName": {
+            "skip" : true
         }
     },
     "common": {
