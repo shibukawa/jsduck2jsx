@@ -1,0 +1,28 @@
+{
+    "special": {
+        "Ext.util.Filter#getFilterFn": {
+            "type": "function (collection : Ext.util.MixedCollection) : boolean)"
+        },
+        "Ext.util.Filter#setFilterFn": {
+            "params": {
+                "filterFn : Function": ["filterFn : (Ext.util.MixedCollection) -> boolean", "void"]
+            }
+        }
+    },
+    "extra": [
+        {
+            "name": "Ext.Menu",
+            "extends": "Ext.Button",
+            "members": []
+        }
+    ],
+    "common": {
+        "Mixed": "variant",
+        "Mixed[]": "variant[]",
+        "TextNode": "Text",
+        "Ext.plugin.Plugin": "",
+        "Arguments": "",
+        "FileTransfer": "variant",
+        "Arrary": "variant[]"
+    }
+}
