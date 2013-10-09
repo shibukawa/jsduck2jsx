@@ -9,6 +9,7 @@ module.exports = function(grunt) {
     libDir: "lib",
     testDir: "test",
     docDir: "doc",
+    outputDir: "output",
 
     watch: {
       build: {
@@ -30,15 +31,9 @@ module.exports = function(grunt) {
         executable: 'node'
       },
 
-      sample: {
-        src: ['<%= sampleDir %>/*.jsx'],
-        add_search_path: ['<%= libDir %>'],
-        executable: 'web'
-      },
-
       test: {
         src: ['<%= testDir %>/*.jsx'],
-        add_search_path: ['<%= libDir %>', '<%= srcDir %>'],
+        add_search_path: ['<%= libDir %>', '<%= srcDir %>', '<%= outputDir %>'],
         test: true
       },
 

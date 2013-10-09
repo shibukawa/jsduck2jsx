@@ -24,7 +24,7 @@ abstract class Member implements Dumpable
         var privateFlag = json['private'] as boolean;
         var deprecated = json['deprecated'] as boolean;
         var isStatic = json['static'] as boolean;
-        var definedHere = parentname == (json['owner'] as string);
+        var definedHere = (parentname == (json['owner'] as string)) && !json['overrides'] as boolean;
         // static methods are not inherited!
         if ((isStatic && !privateFlag && !deprecated) ||  (!isStatic && definedHere && !privateFlag && !deprecated))
         {
@@ -32,6 +32,10 @@ abstract class Member implements Dumpable
 
             this.name = json['name'] as string;
             this.isStatic = isStatic;
+            if (this.name != 'create' && json['overrides'])
+            {
+                console.log(parentname, this.name, json['overrides']);
+            }
         }
         else
         {
@@ -108,11 +112,11 @@ class Method extends Member
                 srcParams.push(new Param(paramJson[i], className, typeinfo, typeInfoKey));
             }
         }
-        if (json['chainable'])
+        /*if (json['chainable'])
         {
             //ret = className;
             ret = 'variant';
-        }
+        }*/
         else if (json['return'])
         {
             ret = typeinfo.convertType(json['return']['type'] as string, typeInfoKey);

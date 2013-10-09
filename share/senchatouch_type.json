@@ -1,12 +1,76 @@
 {
     "special": {
         "Ext.util.Filter#getFilterFn": {
-            "type": "function (collection : Ext.util.MixedCollection) : boolean)"
+            "type": "function (collection : Ext.util.MixedCollection) : boolean"
         },
         "Ext.util.Filter#setFilterFn": {
             "params": {
                 "filterFn : Function": ["filterFn : (Ext.util.MixedCollection) -> boolean", "void"]
             }
+        },
+        "Ext.Video#getUrl": {
+            "type": "string"
+        },
+        "Ext.app.Application#getName": {
+            "skip": true
+        },
+        "Ext.app.Profile#getName": {
+            "skip": true
+        },
+        "Ext.Container#setScrollable": {
+            "type": "void"
+        },
+        "Ext.Container#getScrollable": {
+            "type": "boolean"
+        },
+        "Ext.data.Field#getName": {
+            "skip" : true
+        },
+        "Ext.data.proxy.Ajax#doRequest": {
+            "type": "void"
+        },
+        "Ext.data.proxy.JsonP#doRequest": {
+            "type": "void"
+        },
+        "Ext.draw.Matrix#toString": {
+            "type": "string"
+        },
+        "Ext.field.Field#getName": {
+            "skip" : true
+        },
+        "Ext.field.Input#getName": {
+            "skip" : true
+        },
+        "Ext.fx.animation.Abstract#getName": {
+            "skip" : true
+        },
+        "Ext.data.association.Association#getName": {
+            "type" : "string",
+            "skip" : true
+        },
+        "Ext.data.proxy.Server#create": {
+            "skip" : true
+        },
+        "Ext.draw.Color#toString" : {
+            "type": "string"
+        },
+        "Ext.draw.Path#toString" : {
+            "type": "string"
+        },
+        "Ext.device.filesystem.Entry#getName": {
+            "skip" : true
+        },
+        "Ext.direct.Event#getName": {
+            "skip" : true
+        },
+        "Ext.util.LineSegment#toString": {
+            "type" : "string"
+        },
+        "Ext.util.Point#toString": {
+            "type" : "string"
+        },
+        "Ext.util.Region#toString": {
+            "type" : "string"
         }
     },
     "extra": [

@@ -125,14 +125,14 @@ class _Main {
                 filter = "Ext*";
                 imports.push("js/web.jsx");
                 typeinfo = node.path.resolve(dir, '../share/extjs_type.json');
-                output = node.path.resolve(dir, '../lib/ext.jsx');
+                output = node.path.resolve(dir, '../output/ext.jsx');
                 break;
             case 's':
                 source = node.path.resolve(dir, '../share/json/senchatouch');
                 filter = "Ext*";
                 imports.push("js/web.jsx", "googlemaps.jsx");
                 typeinfo = node.path.resolve(dir, '../share/senchatouch_type.json');
-                output = node.path.resolve(dir, '../lib/sencha-touch.jsx');
+                output = node.path.resolve(dir, '../output/sencha-touch.jsx');
                 break;
             default:
                 source = opt.option;

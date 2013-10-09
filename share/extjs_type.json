@@ -98,6 +98,15 @@
         },
         "Ext.form.field.Field#getName": {
             "skip" : true
+        },
+        "Ext.Error#toString" : {
+            "type": "string"
+        },
+        "Ext.dd.DragDrop#toString" : {
+            "type": "string"
+        },
+        "Ext.draw.Color#toString" : {
+            "type": "string"
         }
     },
     "common": {
