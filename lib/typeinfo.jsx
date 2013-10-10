@@ -136,6 +136,10 @@ class TypeInfo
     {
         var convertedParams = [] : string[];
         var types = [] : string[];
+        var reservedNames = {
+            "class": true,
+            "return": true
+        };
         for (var i = 0; i < params.length; i++)
         {
             var convertedType = this.convertType(params[i][1], ruleKey);
@@ -144,9 +148,9 @@ class TypeInfo
                 return;
             }
             var name = params[i][0];
-            if (name == 'class')
+            if (reservedNames[name])
             {
-                name = 'class_';
+                name = name + '_';
             }
             convertedParams.push([name, convertedType].join(' : '));
             types.push(convertedType);

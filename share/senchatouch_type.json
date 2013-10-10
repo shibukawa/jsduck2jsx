@@ -1,5 +1,8 @@
 {
     "special": {
+        "Ext#fly": {
+            "type": "Ext.dom.Element"
+        },
         "Ext.util.Filter#getFilterFn": {
             "type": "function (collection : Ext.util.MixedCollection) : boolean"
         },

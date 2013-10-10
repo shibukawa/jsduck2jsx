@@ -19,23 +19,32 @@ abstract class Member implements Dumpable
     var isExpose : boolean;
     var isStatic : boolean;
 
-    function constructor(parentname : string, json : variant)
+    function constructor(parentname : string, json : variant, singleton : boolean)
     {
         var privateFlag = json['private'] as boolean;
         var deprecated = json['deprecated'] as boolean;
-        var isStatic = json['static'] as boolean;
-        var definedHere = (parentname == (json['owner'] as string)) && !json['overrides'] as boolean;
+        var isStatic = json['static'] as boolean || singleton;
+        var isOverride = false;
+        if (json['overrides'])
+        {
+            isOverride = true;
+            var overrides = json['overrides'] as variant[];
+            for (var i = 0; i < overrides.length; i++)
+            {
+                if (overrides[i]['owner'] == parentname)
+                {
+                    isOverride = false;
+                    break;
+                }
+            }
+        }
+        var definedHere = (parentname == (json['owner'] as string)) && !isOverride as boolean;
         // static methods are not inherited!
         if ((isStatic && !privateFlag && !deprecated) ||  (!isStatic && definedHere && !privateFlag && !deprecated))
         {
             this.isExpose = true;
-
             this.name = json['name'] as string;
             this.isStatic = isStatic;
-            if (this.name != 'create' && json['overrides'])
-            {
-                console.log(parentname, this.name, json['overrides']);
-            }
         }
         else
         {
@@ -104,9 +113,19 @@ class Method extends Member
     {
         var srcParams = [] : Param[];
         var ret = 'void';
+        // standard params
         if (json['params'])
         {
-            var paramJson = json['params'] as variant[]; 
+            var paramJson = json['params'] as variant[];
+            for (var i = 0; i < paramJson.length; i++)
+            {
+                srcParams.push(new Param(paramJson[i], className, typeinfo, typeInfoKey));
+            }
+        }
+        // params for callback
+        if (json['properties'])
+        {
+            var paramJson = json['properties'] as variant[];
             for (var i = 0; i < paramJson.length; i++)
             {
                 srcParams.push(new Param(paramJson[i], className, typeinfo, typeInfoKey));
@@ -153,10 +172,10 @@ class Method extends Member
         return [definitions, internalNames];
     }
 
-    function constructor(parentname : string, json : variant, typeinfo : TypeInfo)
+    function constructor(parentname : string, json : variant, typeinfo : TypeInfo, singleton : boolean)
     {
-        super(parentname, json);
-        
+        super(parentname, json, singleton);
+
         if (this.isExpose)
         {
             var result = Method.parseMethod(json, typeinfo, parentname, parentname + '#' + this.name, this.name);
@@ -175,7 +194,7 @@ class Method extends Member
                 content.unshift('static ');
             }
             /*
-             * JSX needs override keyword only child is not static. 
+             * JSX needs override keyword only child is not static.
              * parent: static, child: static -> not needed
              * parent: static, child: not static -> needed
              * parent: not static, child : static -> not needed
@@ -211,9 +230,9 @@ class Method extends Member
 class Property extends Member
 {
     var type : string;
-    function constructor(parentname : string, json : variant, typeinfo : TypeInfo)
+    function constructor(parentname : string, json : variant, typeinfo : TypeInfo, singleton : boolean)
     {
-        super(parentname, json);
+        super(parentname, json, singleton);
         if (this.isExpose)
         {
             var typeString = (json['type'] as string).replace(/\|/g, '/');
@@ -286,7 +305,7 @@ class ClassInfo implements Dumpable
 
         var members : variant[];
 
-        // The latest JSDuck's output 
+        // The latest JSDuck's output
         if (json['statics'])
         {
             var instancemethods = json['members']['method'] as variant[];
@@ -308,14 +327,10 @@ class ClassInfo implements Dumpable
             switch (tagname)
             {
             case 'method':
-                var method = new Method(this.name, member, typeinfo);
+                var method = new Method(this.name, member, typeinfo, this.singleton);
                 if (method.isExpose)
                 {
                     this.methods.push(method);
-                    if (this.singleton)
-                    {
-                        method.isStatic = true;
-                    }
                     for (var j = 0; j < method.internalNames.length; j++)
                     {
                         this.findMethods[method.internalNames[j]] = method;
@@ -323,14 +338,10 @@ class ClassInfo implements Dumpable
                 }
                 break;
             case 'property':
-                var property = new Property(this.name, member, typeinfo);
+                var property = new Property(this.name, member, typeinfo, this.singleton);
                 if (property.isExpose)
                 {
                     this.properties.push(property);
-                    if (this.singleton)
-                    {
-                        property.isStatic = true;
-                    }
                     if (!property.isStatic)
                     {
                         this.findProperties[property.name] = property;
