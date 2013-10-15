@@ -8,6 +8,7 @@ class Rule
     var type : string;           // for property or method return value
     var skips : string[];        // skip parameter convination for class
     var omitOverride : boolean;
+    var extras: string[];
 }
 
 class TypeInfo
@@ -132,13 +133,15 @@ class TypeInfo
         return type;
     }
 
-    function convertMethod (ruleKey : string, member : string, params : string[][], ret : string, definitions : string[], internalNames : string[]) : void
+    function convertMethod (ruleKey : string, member : string, params : string[][], ret : string, definitions : string[], internalNames : string[], isStatic : boolean) : void
     {
         var convertedParams = [] : string[];
         var types = [] : string[];
         var reservedNames = {
             "class": true,
-            "return": true
+            "return": true,
+            "this": true,
+            "new": true
         };
         for (var i = 0; i < params.length; i++)
         {
@@ -163,6 +166,13 @@ class TypeInfo
         }
         if (rule)
         {
+            if (rule.extras)
+            {
+                for (var i = 0; i < rule.extras.length; i++)
+                {
+                    definitions.push(rule.extras[i]);
+                }
+            }
             if (rule.skip || rule.skips && rule.skips.indexOf(key) != -1)
             {
                 return;
@@ -194,29 +204,36 @@ class TypeInfo
                 ret = rule.type;
             }
         }
-        else if (internalNames.indexOf((member as string) + '(' + types.join(',') + ')') != -1)
-        {
-            return;
-        }
         else
         {
-            ret = this.convertType(ret, ruleKey);
+            var internalName = (isStatic ? 'static:' : '') + (member as string) + '(' + types.join(',') + ')';
+            if (internalNames.indexOf(internalName) != -1)
+            {
+                return;
+            }
         }
-        internalNames.push(member + '(' + types.join(',') + ')');
-        var result : string;
+        // it is used to check duplication, override detection
+        var internalName = (isStatic ? 'static:' : '') + (member as string) + '(' + types.join(',') + ')';
+        internalNames.push(internalName);
+        ret = this.convertType(ret, ruleKey);
+        var result : string[];
         if (member == 'constructor')
         {
-            result = ['function ', member, ' (', key, ')'].join('');
+            result = ['function ', member, ' (', key, ')'];
         }
         else if (member)
         {
-            result = ['function ', member, ' (', key, ') : ', ret].join('');
+            result = ['function ', member, ' (', key, ') : ', ret];
         }
         else
         {
-            result = ['function  (', key, ') : ', ret].join('');
+            result = ['function  (', key, ') : ', ret];
         }
-        definitions.push(result);
+        if (isStatic)
+        {
+            result.unshift('static ');
+        }
+        definitions.push(result.join(''));
     }
 
     function checkUsedFlag(name : string, key : string) : void

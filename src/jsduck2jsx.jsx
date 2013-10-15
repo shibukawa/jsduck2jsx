@@ -22,7 +22,7 @@ class JSDuck2JSX {
         this.global = new Namespace();
         var filter = new RegExp(filterString.replace(/\./g, "\\.").replace(/\?/g, ".").replace(/\*/g, ".*"));
         var dirs = node.fs.readdirSync(source);
-        var jsons = [] : variant[]; 
+        var jsons = [] : variant[];
         for (var i = 0; i < dirs.length; i++)
         {
             if (dirs[i].match(filter))
@@ -164,7 +164,7 @@ $ jsduck2jsx [options] source
 
 options:
   -o file, --output=file           : set output file.
-  -f filter, --filter=filter       : set filter to file like "JSX*" 
+  -f filter, --filter=filter       : set filter to file like "JSX*"
   -t jsonfile, --typeinfo=jsonfile : extra type info file.
   -h, --help                       : show this message.
             ''');

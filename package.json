@@ -1,6 +1,6 @@
 {
   "name": "jsduck2jsx",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Generate JSX wrapper from JSDuck output files",
   "scripts": {
     "prepublish": "grunt build;grunt doc",
@@ -34,7 +34,7 @@
   "devDependencies": {
     "grunt-contrib-watch": "~0.5.3",
     "grunt": "~0.4.1",
-    "grunt-jsx": ">=0.1.3",
+    "grunt-jsx": ">=0.1.4",
     "getopt.jsx": "~0.1.0"
   },
   "author": "shibukawa",

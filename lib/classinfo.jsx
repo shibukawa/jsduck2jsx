@@ -109,7 +109,7 @@ class Method extends Member
     var definitions : string[];
     var internalNames : string[];
 
-    static function parseMethod(json : variant, typeinfo : TypeInfo, className : string, typeInfoKey : string, methodName : string) : string[][]
+    static function parseMethod(json : variant, typeinfo : TypeInfo, className : string, typeInfoKey : string, methodName : string, isStatic : boolean = false) : string[][]
     {
         var srcParams = [] : Param[];
         var ret = 'void';
@@ -167,7 +167,7 @@ class Method extends Member
         var internalNames = [] : string[];
         for (var i = 0; i < params.length; i++)
         {
-            typeinfo.convertMethod(typeInfoKey, methodName, params[i], ret, definitions, internalNames);
+            typeinfo.convertMethod(typeInfoKey, methodName, params[i], ret, definitions, internalNames, isStatic);
         }
         return [definitions, internalNames];
     }
@@ -178,7 +178,7 @@ class Method extends Member
 
         if (this.isExpose)
         {
-            var result = Method.parseMethod(json, typeinfo, parentname, parentname + '#' + this.name, this.name);
+            var result = Method.parseMethod(json, typeinfo, parentname, parentname + '#' + this.name, this.name, this.isStatic);
             this.definitions = result[0];
             this.internalNames = result[1];
         }
@@ -189,10 +189,6 @@ class Method extends Member
         for (var i = 0; i < this.definitions.length; i++)
         {
             var content = [this.definitions[i]] : string[];
-            if (this.isStatic)
-            {
-                content.unshift('static ');
-            }
             /*
              * JSX needs override keyword only child is not static.
              * parent: static, child: static -> not needed
@@ -273,6 +269,8 @@ class ClassInfo implements Dumpable
     var name : string;
     var baseclass : Nullable.<string>;
     var methods: Method[];
+    var events: Method[];
+    var extras : string[];
     var properties: Property[];
     var findMethods: Map.<Method>;
     var findProperties: Map.<Property>;
@@ -288,6 +286,20 @@ class ClassInfo implements Dumpable
         var deprecated = json['deprecated'] as boolean;
         this.isExpose = (!privateFlag && !deprecated);
         this.name = json['name'] as string;
+        this.extras = [] : string[];
+        if (typeinfo.specialRule.hasOwnProperty(this.name))
+        {
+            var rule = typeinfo.specialRule[this.name];
+            if (rule.skip)
+            {
+                this.isExpose = false;
+                return;
+            }
+            if (rule.extras)
+            {
+                this.extras = rule.extras;
+            }
+        }
         typeinfo.ignoreKey = this.name;
         this.singleton = json['singleton'] as boolean;
         if (typeof json['extends'] == 'string')
@@ -299,6 +311,7 @@ class ClassInfo implements Dumpable
             this.baseclass = null;
         }
         this.methods = [] : Method[];
+        this.events = [] : Method[];
         this.properties = [] : Property[];
         this.findMethods = {} : Map.<Method>;
         this.findProperties = {} : Map.<Property>;
@@ -337,6 +350,17 @@ class ClassInfo implements Dumpable
                     }
                 }
                 break;
+            case 'event':
+                var method = new Method(this.name, member, typeinfo, this.singleton);
+                if (method.isExpose)
+                {
+                    this.events.push(method);
+                    for (var j = 0; j < method.internalNames.length; j++)
+                    {
+                        this.findMethods[method.internalNames[j]] = method;
+                    }
+                }
+                break;
             case 'property':
                 var property = new Property(this.name, member, typeinfo, this.singleton);
                 if (property.isExpose)
@@ -368,17 +392,37 @@ class ClassInfo implements Dumpable
         }
         result.push(this._indent(indent - 1, line.join('')));
         result.push(this._indent(indent - 1, '{'));
-        for (var i = 0; i < this.properties.length; i++)
-        {
-            this.properties[i].dump(result, indent, baseclasses);
-        }
         if (this.properties.length > 0)
         {
-            result.push('');
+            result.push(this._indent(indent, '// Properties'));
+            for (var i = 0; i < this.properties.length; i++)
+            {
+                this.properties[i].dump(result, indent, baseclasses);
+            }
         }
-        for (var i = 0; i < this.methods.length; i++)
+        if (this.methods.length > 0)
         {
-            this.methods[i].dump(result, indent, baseclasses, this.name, this.typeinfo);
+            result.push(this._indent(indent, '// Methods'));
+            for (var i = 0; i < this.methods.length; i++)
+            {
+                this.methods[i].dump(result, indent, baseclasses, this.name, this.typeinfo);
+            }
+        }
+        if (this.events.length > 0)
+        {
+            result.push(this._indent(indent, '// Events'));
+            for (var i = 0; i < this.events.length; i++)
+            {
+                this.events[i].dump(result, indent, baseclasses, this.name, this.typeinfo);
+            }
+        }
+        if (this.extras.length > 0)
+        {
+            result.push(this._indent(indent, '// Extra definitions'));
+            for (var i = 0; i < this.extras.length; i++)
+            {
+                result.push(this._indent(indent, this.extras[i]));
+            }
         }
     }
 

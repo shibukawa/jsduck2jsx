@@ -14,20 +14,19 @@
         "Ext.Video#getUrl": {
             "type": "string"
         },
-        "Ext.app.Application#getName": {
-            "skip": true
-        },
-        "Ext.app.Profile#getName": {
-            "skip": true
-        },
         "Ext.Container#setScrollable": {
             "type": "void"
         },
         "Ext.Container#getScrollable": {
             "type": "boolean"
         },
-        "Ext.data.Field#getName": {
-            "skip" : true
+        "Ext.data.Model": {
+            "extras": [
+                "function constructor (data : variant);",
+                "function constructor (data : variant, id : int);",
+                "function constructor (data : variant, id : int, raw : variant);",
+                "function constructor (data : variant, id : int, raw : variant, convertedData : variant);"
+            ]
         },
         "Ext.data.proxy.Ajax#doRequest": {
             "type": "void"
@@ -38,18 +37,8 @@
         "Ext.draw.Matrix#toString": {
             "type": "string"
         },
-        "Ext.field.Field#getName": {
-            "skip" : true
-        },
-        "Ext.field.Input#getName": {
-            "skip" : true
-        },
-        "Ext.fx.animation.Abstract#getName": {
-            "skip" : true
-        },
         "Ext.data.association.Association#getName": {
-            "type" : "string",
-            "skip" : true
+            "type" : "string"
         },
         "Ext.data.proxy.Server#create": {
             "skip" : true
@@ -59,12 +48,6 @@
         },
         "Ext.draw.Path#toString" : {
             "type": "string"
-        },
-        "Ext.device.filesystem.Entry#getName": {
-            "skip" : true
-        },
-        "Ext.direct.Event#getName": {
-            "skip" : true
         },
         "Ext.util.LineSegment#toString": {
             "type" : "string"
